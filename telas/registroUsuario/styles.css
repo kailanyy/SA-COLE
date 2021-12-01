@@ -1,11 +1,16 @@
 html, body {
-  height:90%;
-  background-image: url(https://www.xmple.com/wallpaper/gradient-blue-linear-white-1920x1080-c2-f5f5f5-87cefa-a-255-f-14.svg);
-  background-size: 100%;
-  
+  height:100%;
+  background-color: #37596B !important;
 }
 
 .container {
   width: 100%;
   height: 100%;
+}
+.login {
+  background-color: #506484;
+}
+
+.navbar {
+  background-color: white;
 }
