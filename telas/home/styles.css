@@ -4,13 +4,27 @@ body{
 }
 
 img{
-    margin-top: 20px;
-    width: 100%;
+    margin: 90px;
+    display: block;
 }
-
+ /*
+ amg olha so
+ mts coisas aqui do css funcionam tipo assim
+ por ex na class da img la no html
+ pode ser colocado displayb block simplesmente botando d-block
+ d=display
+ entendeu?fica menor e so ocupa espaço no html 
+ 
+ ai tipo se vc for usar padd
+ta vo botar nao tira*/
+ 
 .navbar {
     background-color: white;
     height: 100px;
     color: #506484;
     padding: 100px;
+}
+
+.col-4{
+    color: white;
 }
