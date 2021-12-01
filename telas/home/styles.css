@@ -1,5 +1,5 @@
 body{
-    background: #E5E5E5;
+    background-color: #506484 !important;
     margin: 0px;
 }
 
@@ -8,9 +8,9 @@ img{
     width: 100%;
 }
 
-.form-itens{
-    box-shadow:none;
-    outline: none;
-    position: absolute;
-    left: 80%;
+.navbar {
+    background-color: white;
+    height: 100px;
+    color: #506484;
+    padding: 100px;
 }
