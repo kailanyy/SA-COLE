@@ -2,20 +2,12 @@ body{
     background-color: #4A8D70 !important;
     margin: 0px;
 }
-
-img{
-    margin: 90px;
-}
  
 .navbar {
     background-color: white;
     height: 110px;
     color: #4A8D70;
     padding: 100px;
-}
-
-.col-4{
-    color: white;
 }
 
 footer{
