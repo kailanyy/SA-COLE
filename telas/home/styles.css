@@ -1,11 +1,10 @@
 body{
-    background-color: #506484 !important;
+    background-color: #4A8D70 !important;
     margin: 0px;
 }
 
 img{
     margin: 90px;
-    display: block;
 }
  /*
  amg olha so
@@ -20,11 +19,20 @@ ta vo botar nao tira*/
  
 .navbar {
     background-color: white;
-    height: 100px;
-    color: #506484;
+    height: 110px;
+    color: #4A8D70;
     padding: 100px;
 }
 
 .col-4{
     color: white;
+}
+
+footer{
+    background-color: #206648;
+    width: 100%;
+    color: white;
+    padding: 30px;
+    margin: 0px auto;
+    margin-top: 2%;
 }
