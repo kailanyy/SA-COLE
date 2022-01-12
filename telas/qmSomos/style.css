@@ -10,11 +10,17 @@ body{
     padding: 100px;
 }
 
+.col-7{
+    color: white;
+    text-align: center;
+    margin-left: 270px;
+}
+
 footer{
     background-color: #206648;
     width: 100%;
     color: white;
     padding: 30px;
     margin: 0px auto;
-    margin-top: 2%;
+    margin-top: 7%;
 }
