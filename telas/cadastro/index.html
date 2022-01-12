@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fazer Login</title>
+    <title>Cadastre-se</title>
     <link rel="stylesheet" href="../login/styles.css">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../icofont/icofont.min.css">
+
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -24,31 +26,31 @@
         </div>
       </nav>
 
-    <div class="container d-flex flex-column justify-content-center align-items-center mt-5">
-        <div class="loginBox shadow-sm p-3 mb-5 rounded">
+      <div class="container d-flex flex-column justify-content-center align-items-center mt-5 ">
+        <div class="loginBox shadow-sm p-3 mb-5  rounded">
             <div style="color: #FAB328; margin-bottom: 19px;">
                 <h1>
-                    Login
+                    Cadastre-se
                 </h1>
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 ">
                 <span class="input-group-text" style="color: #0d472e;" id="basic-addon1">✿</span>
-                <input  type="text" class="form-control" id="usuario" placeholder="Usuário">
+                <input type="text" class="form-control" id="usuario" placeholder="Usuário">
             </div>
             <div>
                 <input type="password" class="form-control" id="senha" placeholder="Senha">
 
             </div>
             <div class="mx-auto row g-2 mt-2" >
-                <button type="submit" id="btnLogin" onclick="login()" class="btn btn-success" style="width: 40%; margin: 10px auto; margin-bottom: 20px;">Fazer login</button>
+                <button type="submit" onclick="validarPreenchimentoCampos()" class="btn btn-success" style="width: 40%; margin: 10px auto; margin-bottom: 20px;">Fazer cadastro</button>
             </div>
             <div>
-                <a style="color: #0d472e; font-weight: bold;" href="../cadastro/index.html">Não possui uma conta?</a>
+                <a style="color: #0d472e; font-weight: bold;" href="../login/index.html">Já possui uma conta?</a>
             </div>
         </div>
     </div>
 
+
       <script src="../login/script.js"></script>
-      <script src="../../js/bootstrap.min.js"></script>
 </body>
 </html>
