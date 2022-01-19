@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../icofont/icofont.min.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <head>
+            <h1>Mave</h1>
+          </head>
+            <nav> 
+              <a href="../login/index.html" class="btn btn-outline-success btn-lg">
+                <span class="icofont-user"></span>
+                <span>Entre ou cadastre-se</span>
+              </a>
+            </nav>
+        </div>
+      </nav>
+
+    <h3>Registrar estoque de lixo</h3>
+
+    <div class="add">
+<div class="coleta">
+    <h4>Insira o ponto de coleta</h4>
+    <label>CEP</label><br>
+    <input type="text" id="cep"><br>
+    <label>Rua</label><br>
+    <input type="text" id="logradouro"><br>
+    <label>Número</label><br>
+    <input type="text" id="numero"><br>
+    <label>Complemento</label><br>
+    <input type="text" id="complemento"><br>
+    <label>Bairro</label><br>
+    <input type="text" id="bairro"><br>
+    <label>Cidade</label><br>
+    <input type="text" id="localidade"><br>
+</div>
+
+<div class="descarte">
+    <h4>Insira os lixos a serem<br> descartados</h4>
+    <label>Item</label><br>
+    <input type="text" id="item"><br>
+    <label>Quantidade</label><br>
+    <input type="number" id="qntdLixo"><br>
+    <button >Adicionar</button>
+</div>
+</div>
+
+<div class="itens">
+  <h4>Itens registrados</h4>
+  <p id="itensRegistrados"></p>
+  <script src="../registerStockPoint/script1.js"></script>
+  <script>list()</script>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="../registerStockPoint/script.js"></script>
+
+</body>
+</html>

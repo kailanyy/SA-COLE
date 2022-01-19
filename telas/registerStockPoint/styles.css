@@ -1,0 +1,28 @@
+body{
+    background-color: #4A8D70 !important;
+    margin: 0px;
+}
+ 
+.navbar {
+    background-color: white;
+    height: 110px;
+    color: #4A8D70;
+    padding: 100px;
+}
+
+h3{
+    padding: 20px;
+    text-align: center;
+}
+
+.add{
+    display: flex;
+}
+
+.coleta{
+    margin-left: 23pc;
+}
+
+.descarte{
+    margin-left: 100px;
+}
