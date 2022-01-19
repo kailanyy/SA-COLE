@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../icofont/icofont.min.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../icofont/icofont.min.css">
     
 </head>
 <body>
@@ -27,39 +27,56 @@
 
     <h3>Registrar estoque de lixo</h3>
 
-    <div class="add">
-<div class="coleta">
-    <h4>Insira o ponto de coleta</h4>
+<div class="d-flex">
+  <div style="margin-left: 23pc;">
+    <h4>Insira o ponto para coleta</h4>
     <label>CEP</label><br>
     <input type="text" id="cep"><br>
+    <label>Cidade</label><br>
+    <input type="text" id="localidade"><br>
+    <label>Bairro</label><br>
+    <input type="text" id="bairro"><br>
     <label>Rua</label><br>
     <input type="text" id="logradouro"><br>
     <label>Número</label><br>
     <input type="text" id="numero"><br>
     <label>Complemento</label><br>
     <input type="text" id="complemento"><br>
-    <label>Bairro</label><br>
-    <input type="text" id="bairro"><br>
-    <label>Cidade</label><br>
-    <input type="text" id="localidade"><br>
-</div>
+    <button type="submit" onclick="validateFields()">Salvar</button>
 
-<div class="descarte">
-    <h4>Insira os lixos a serem<br> descartados</h4>
-    <label>Item</label><br>
-    <input type="text" id="item"><br>
+  </div>
+
+  <div class="ms-5">
+    <h4>Insira os lixos a serem<br>descartados</h4>
+    <label>Tipo de Lixo</label><br>
+    <select id="trashType">
+      <option value="valor1" selected>Escolha o tipo de lixo</option>
+      <option value="valor1">Lâmpada</option>
+      <option value="valor2">Geladeira</option>
+      <option value="valor3">Pilha</option>
+    </select><br>
+
     <label>Quantidade</label><br>
-    <input type="number" id="qntdLixo"><br>
-    <button >Adicionar</button>
-</div>
+    <input type="number" id="amountTrash"><br>
+    <button type="submit" onclick="validateNewListItem()">Adicionar</button>
+  </div>
 </div>
 
-<div class="itens">
-  <h4>Itens registrados</h4>
-  <p id="itensRegistrados"></p>
-  <script src="../registerStockPoint/script1.js"></script>
-  <script>list()</script>
-</div>
+  <div>
+    <h4>Lixos registrados</h4>
+  </div>
+  <table class='table'>
+    <thead> 
+      <tr> 
+        <th scope='col'>#</th> 
+        <th scope='col'>Tipo de Lixo</th> 
+        <th scope='col'>Quantidade</th> 
+      </tr> 
+    </thead> 
+    <tbody id="listRegisteredItems">
+    </tbody>
+  </table>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="../registerStockPoint/script.js"></script>
 

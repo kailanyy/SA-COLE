@@ -7,13 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" placeholder="CEP" id="cepField">
-    <input type="text" placeholder="Rua" id="ruaField">
-    <input type="text" placeholder="Bairro" id="bairroField">
-    <input type="text" placeholder="Complemento" id="complementoField">
-    <button type="submit" onclick="validateFields()" >Salvar ponto de coleta</button>
 
-    <script src="./script.js"></script>
+
+<button type="button">Voltar</button>
+<h1>Registrar novo ponto de coleta</h1>
+
+<div>
+    <label>CEP</label> <br>
+    <input type="text" id="cep"> <br>
+
+    <label>Cidade</label> <br>
+    <input type="text" id="localidade"> <br>
+
+    <label>Bairro</label> <br>
+    <input type="text" id="bairro"> <br>
+
+    <label>Rua</label> <br>
+    <input type="text" id="logradouro"> <br>
+
+    <label>Número</label> <br>
+    <input type="text" id="numero"> <br>
+
+    <label>Complemento</label> <br>
+    <input type="text" id="complemento"> <br>
+    <button type="submit" onclick="validateFields()" >Salvar ponto de coleta</button>
+</div>
+
+<div id="listCollectionPoint"></div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./script.js"></script>
 
 </body>
 </html>
