@@ -27,50 +27,70 @@
 
     <h3>Registrar estoque de lixo</h3>
 
-<div class="d-flex">
-  <div style="margin-left: 23pc;">
-    <h4>Insira o ponto para coleta</h4>
-    <label>CEP</label><br>
-    <input type="text" id="cep"><br>
-    <label>Cidade</label><br>
-    <input type="text" id="localidade"><br>
-    <label>Bairro</label><br>
-    <input type="text" id="bairro"><br>
-    <label>Rua</label><br>
-    <input type="text" id="logradouro"><br>
-    <label>Número</label><br>
-    <input type="text" id="numero"><br>
-    <label>Complemento</label><br>
-    <input type="text" id="complemento"><br>
-    <button type="submit" onclick="validateFields()">Salvar</button>
-
-  </div>
+<div class="d-flex justify-content-center">
+  <div class="d-flex flex-column" style="width: 230px;">
+    <h4>Insira um local com estoque de lixo</h4>
+    <label>CEP</label>
+    <input type="text" id="cep">
+    <label>Cidade</label>
+    <input type="text" id="localidade">
+    <label>Bairro</label>
+    <input type="text" id="bairro">
+    <label>Rua</label>
+    <input type="text" id="logradouro">
+    <label>Número</label>
+    <input type="text" id="numero">
+    <label>Complemento</label>
+    <input type="text" id="complemento">
+    <button class="mt-1" style="width: 116px;" type="submit" onclick="validateFields()">Salvar</button>
+ </div>
 
   <div class="ms-5">
-    <h4>Insira os lixos a serem<br>descartados</h4>
-    <label>Tipo de Lixo</label><br>
-    <select id="trashType">
-      <option value="valor1" selected>Escolha o tipo de lixo</option>
-      <option value="valor1">Lâmpada</option>
-      <option value="valor2">Geladeira</option>
-      <option value="valor3">Pilha</option>
-    </select><br>
+      <h4>Lixos a serem descartados</h4>
+      <div>
 
-    <label>Quantidade</label><br>
-    <input type="number" id="amountTrash"><br>
-    <button type="submit" onclick="validateNewListItem()">Adicionar</button>
+        <label>Tipo de Lixo</label><br>
+
+            <select id="trashType">
+              <option value="" selected>Escolha o tipo de lixo</option>
+              <option value="Lâmpada">Lâmpada</option>
+              <option value="Geladeira">Geladeira</option>
+              <option value="Pilha">Pilha</option>
+              <option value="Bateria">Bateria</option>
+              <option value="Fios">Fio</option>
+              <option value="Carregador">Carregador</option>
+              <option value="Celulares">Celular</option>
+              <option value="Telefone">Telefone</option>
+              <option value="Rádio">Rádio</option>
+              <option value="Micro-ondas">Micro-ondas</option>
+              <option value="Fogão">Fogão</option>
+              <option value="Televisor">Televisor</option>
+              <option value="Aparelho de Som">Aparelho de Som</option>
+              <option value="Câmera Fotográfica">Câmera Fotográfica</option>
+              <option value="Impressora">Impressora</option>
+              <option value="Teclado">Teclado</option>
+              <option value="Monitor">Monitor</option>
+              <option value="Tablet">Tablet</option>
+            </select><br>
+
+          <label>Quantidade</label>
+
+          <input style="width: 48px; text-align: center;" type="number" id="amountTrash">
+          <button class="mt-1" style="width: 116px;" type="submit" onclick="validateNewListItem()">Adicionar</button>
+     </div>
   </div>
 </div>
 
   <div>
-    <h4>Lixos registrados</h4>
+    <h4 class="ms-3">Itens registrados</h4>
   </div>
-  <table class='table'>
+  <table class='table table-light'>
     <thead> 
       <tr> 
         <th scope='col'>#</th> 
         <th scope='col'>Tipo de Lixo</th> 
         <th scope='col'>Quantidade</th> 
+        <th scope='col'>Ações</th> 
       </tr> 
     </thead> 
     <tbody id="listRegisteredItems">

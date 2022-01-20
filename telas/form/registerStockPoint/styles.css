@@ -1,17 +1,17 @@
 body{
-    background-color: #4A8D70 !important;
+    background-color: rgb(236, 236, 236) !important;
     margin: 0px;
 }
  
 .navbar {
-    background-color: white;
+    background-color: rgb(240, 255, 240);
     height: 110px;
-    color: #4A8D70;
+    color: #5a8d4a;
     padding: 100px;
 }
 
 h3{
     padding: 20px;
     text-align: center;
+    color: #4A8D70;
 }
-

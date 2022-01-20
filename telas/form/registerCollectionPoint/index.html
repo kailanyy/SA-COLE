@@ -5,35 +5,141 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../registerStockPoint/styles.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../icofont/icofont.min.css">
+
 </head>
 <body>
 
 
-<button type="button">Voltar</button>
-<h1>Registrar novo ponto de coleta</h1>
 
-<div>
-    <label>CEP</label> <br>
-    <input type="text" id="cep"> <br>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+        <head>
+            <h1>Mave</h1>
+        </head>
+      <nav> 
+        <a href="../login/index.html" class="btn btn-outline-success btn-lg">
+          <span class="icofont-user"></span>
+          <span>Entre ou cadastre-se</span>
+        </a>
+      </nav>
+  </div>
+</nav>
 
-    <label>Cidade</label> <br>
-    <input type="text" id="localidade"> <br>
+<h3>Cadastrar ponto de coleta</h3>
 
-    <label>Bairro</label> <br>
-    <input type="text" id="bairro"> <br>
 
-    <label>Rua</label> <br>
-    <input type="text" id="logradouro"> <br>
+<div class="d-flex justify-content-center">
+    <div class="d-flex flex-column" style="width: 230px;">
+        <h4>Insira um novo ponto de coleta</h4>
+      <label>CEP</label>
+      <input type="text" id="cep">
+      <label>Cidade</label>
+      <input type="text" id="localidade">
+      <label>Bairro</label>
+      <input type="text" id="bairro">
+      <label>Rua</label>
+      <input type="text" id="logradouro">
+      <label>Número</label>
+      <input type="text" id="numero">
+      <label>Complemento</label>
+      <input type="text" id="complemento">
+      <button class="mt-1" style="width: 116px;" type="submit" onclick="validateFields()">Salvar</button>
+   </div>
 
-    <label>Número</label> <br>
-    <input type="text" id="numero"> <br>
 
-    <label>Complemento</label> <br>
-    <input type="text" id="complemento"> <br>
-    <button type="submit" onclick="validateFields()" >Salvar ponto de coleta</button>
+<div class="ms-5">
+    <h4>Lixos aceitos no ponto de coleta</h4>
+    <label>Tipo de Lixo</label><br>
+    <div style="height: 250px; width: 250px;" class="d-flex flex-column">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Lâmpada">Lâmpada</input>
+                </div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Geladeira">Geladeira</input>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Pilha">Pilha</input>
+                </div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Bateria">Bateria</input>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Fios">Fio</input>
+                </div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Carregador">Carregador</input>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Celulares">Celular</input>
+                </div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Telefone">Telefone</input>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Rádio">Rádio</input>
+                </div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Micro-ondas">Micro-ondas</input>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Fogão">Fogão</input>
+                </div>
+                <div class="col-6"></div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Televisor">Televisor</input>
+                </div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Aparelho de Som">Aparelho de Som</input>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Câmera Fotográfica">Câmera Fotográfica</input>
+                </div>
+                <div class="col-6">
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Impressora">Impressora</input>
+                </div>
+                <div class="col-6">
+                     <input class="mx-1" type="checkbox" value="Teclado">Teclado</input>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6">
+                     <input class="mx-1" type="checkbox" value="Monitor">Monitor</input>
+                </div>
+                <div class="col-6">
+                    <input class="mx-1" type="checkbox" value="Tablet">Tablet</input>
+                </div>
+
+            </div>
+            
+        </div>
+
+
+
+        </div>
+        <div class="col">
+        </div>
+    </div>
+      <button class="mt-1" style="width: 116px;" type="submit" onclick="validateNewListItem()">Adicionar</button>
+</div>
 </div>
 
-<div id="listCollectionPoint"></div>
+
+
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="./script.js"></script>

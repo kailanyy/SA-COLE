@@ -77,11 +77,11 @@ function printListItems() {
     let htmlListString = "";
     for(i = 0; i < newPointItems.length; i++) {
         htmlListString += 
-            "<tr>" +
+            "<tr class='table-light'>" +
                 `<th scope='row'>${i}</th>` +
                 `<td>${newPointItems[i].trashType}</td>` +
                 `<td>${newPointItems[i].amountTrash}</td>` +
-                `<td><button onclick="removeItemByIndex(${i})">Excluir</button></td>` +
+                `<td><button class='btn btn-light' onclick="removeItemByIndex(${i})">Excluir</button></td>` +
             "</tr>"
     }
 
