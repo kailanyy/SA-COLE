@@ -1,5 +1,4 @@
 let newPointItems = []
-let registredStockPoints = []
 
 $("#cep").focusout(function(){
     $.ajax({
