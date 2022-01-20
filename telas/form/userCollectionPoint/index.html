@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus estoques</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../icofont/icofont.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <head>
+            <h1>Mave</h1>
+          </head>
+            <nav> 
+              <a href="../userCollectionPoint/index.html" class="btn btn-outline-light btn-lg">
+                <span class="icofont-google-map"></span>
+                <span>Pontos de coleta</span>
+              </a>
+              <a href="../userStockPoint/index.html" class="btn btn-outline-light btn-lg">
+                <span class="icofont-garbage"></span>
+                <span>Meus estoques</span>
+              </a>
+              <a href="../login/index.html" class="btn btn-outline-light btn-lg">
+                <span class="icofont-user"></span>
+                <span>Conta</span>
+              </a>
+            </nav>
+        </div>
+      </nav>
+
+      <div id="map"></div>
+
+      <!-- to tentando fzr o api do google maps, parei por agr pq quero ver videos de js q to me perdendo mt-->
+
+
+<script src="../userCollectionPoint/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly" async></script>
+    
+</body>
+</html>

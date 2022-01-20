@@ -2,6 +2,10 @@ body{
     background-color: #4A8D70 !important;
     margin: 0px;
 }
+
+::-webkit-scrollbar { 
+    display: none; 
+}
  
 .navbar {
     background-color: white;

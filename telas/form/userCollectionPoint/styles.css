@@ -11,17 +11,11 @@ body{
 }
 
 h3{
-    padding-bottom: 25px;
+    padding-top: 40px;
     text-align: center;
     color: #4A8D70;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
+#map {
+    height: 100%;
+  }

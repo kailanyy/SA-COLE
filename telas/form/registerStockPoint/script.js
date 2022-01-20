@@ -1,4 +1,5 @@
 let newPointItems = []
+let registredStockPoints = []
 
 $("#cep").focusout(function(){
     $.ajax({
@@ -24,7 +25,7 @@ function validateFields() {
     let numero = document.getElementById('numero').value;
     let complemento = document.getElementById('complemento').value;
 
-    if (!cep || !logradouro || !numero || !complemento || !bairro || !localidade) {
+    if (!cep || !logradouro || !numero || !bairro || !localidade) {
         alert('Todos os campos devem estar preenchidos')
         return;
     }
