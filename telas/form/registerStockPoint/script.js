@@ -43,6 +43,12 @@ function saveStockPoint(formFields) {
     console.log(formFields);
 
     let stockPoint = localStorage.getItem("stockPoints");
+    let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
+    formFields = {
+        ...formFields,
+        userID: userInfo.id,
+        id: Math.floor(Date.now() * Math.random()).toString(36)
+    }
 
     if (stockPoint == null) stockPoint = [];
     else stockPoint = JSON.parse(stockPoint);
@@ -50,7 +56,6 @@ function saveStockPoint(formFields) {
     localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
     alert("Ponto de estoque cadastrado com sucesso!");
 }
-
 
 function validateNewListItem() {
     let trashType = document.getElementById('trashType').value;

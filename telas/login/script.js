@@ -14,7 +14,8 @@ function validarPreenchimentoCampos() {
   function cadastrar(usuario, senha) {
     let dadosCadastros = {
       username: usuario,
-      password: senha
+      password: senha,
+      id: Math.floor(Date.now() * Math.random()).toString(36)
     };
   
     let cadastros = localStorage.getItem("dadosCadastros"); 
@@ -25,7 +26,6 @@ function validarPreenchimentoCampos() {
     localStorage.setItem("dadosCadastros", JSON.stringify(cadastros)) 
     alert("Cadastro " + "'" + usuario + "'" + " realizado com sucesso!");
     window.location="../info/index.html"
-  
   }
   
   function listarCadastros() {
@@ -39,7 +39,6 @@ function validarPreenchimentoCampos() {
       cadastros.forEach(cadastro => {
         elementoTela.innerHTML += '<li style="background-color: white;" class="list-group-item" >Nome: ' + cadastro.username + '</li>';
         elementoTela.innerHTML += '<li class="list-group-item ">Senha: ' + cadastro.password + '</li> <br>';
-        
       });
     }
   }
@@ -62,7 +61,10 @@ function validarPreenchimentoCampos() {
       let senha = usuariosCadastrados[i]
       console.log(usuario);
       if (usuario.username === usuarioInput && senha.password === senhaInput) {
-        window.location="../listaCadastros/index.html";
+        localStorage.setItem("loggedUser", JSON.stringify({id: usuario.id})) 
+
+      window.location="../form/userStockPoint/index.html"
+        
         
         return;
       } else {

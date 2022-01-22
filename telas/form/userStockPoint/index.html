@@ -34,16 +34,11 @@
 
     <h3>Meus registros de estoque de lixo</h3>
     <a href="../registerStockPoint/index.html" class="btn btn-secondary" style="margin-left: 36pc; margin-bottom: 2pc;">Adicionar novo estoque</a>
+      <button type="button" onclick="listStockPoints()">Visualizar meus pontos de estoque</button>
 
-    <p id="listRegisteredStock"></p>
-    <ul class="list-group" style="width: 40%; margin: auto;">
-      <li class="list-group-item list-group-item-success">Registro</li>
-      <li class="list-group-item">Localização: 88058468, Florianópolis, Ingleses do Rio Vermelho, Servidão Leonardo da Vinci, 329</li>
-      <li class="list-group-item">Itens registrados: Geladeira (5), Lâmpada (10) </li>
-    </ul>
-
+      <div id="stockPointsList" ></div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="../registerStockPoint/script.js"></script>
+<script src="./script.js"></script>
     
 </body>
 </html>
