@@ -13,21 +13,62 @@ function listStockPoints() {
 
 function printListStockPoints(stockPoints) {
     let htmlListString = "";
+    console.log("stockPoints.length", stockPoints.length);
     for(i = 0; i < stockPoints.length; i++) {
+        console.log(i);
         htmlListString += 
-            `<ul class="list-group" style="width: 40%; margin: auto;">` +
-                `<li class="list-group-item list-group-item-success">${stockPoints[i].bairro}</li>` +
-                `<li class="list-group-item">${stockPoints[i].cep}</li>` +
-                `<li class="list-group-item">${stockPoints[i].complemento}</li>` +
-                `<li class="list-group-item">${stockPoints[i].localidade}</li>` +
-                `<li class="list-group-item">${stockPoints[i].logradouro}</li>` +
-                `<li class="list-group-item">${stockPoints[i].numero}</li>` +
-                `<li class="list-group-item mb-3"><button class='btn btn-light' onclick="removeItemByIndex(${i})">Excluir</button></li>` +
-            "</ul>"
+            `<li class="list-group-item" style="text-align: center; background-color: #126E82; color: white;">${stockPoints[i].bairro}</li>` +
+            `<li class="list-group-item bg-light">${stockPoints[i].cep}</li>` +
+            `<li class="list-group-item bg-light">${stockPoints[i].complemento}</li>` +
+            `<li class="list-group-item bg-light">${stockPoints[i].localidade}</li>` +
+            `<li class="list-group-item bg-light">${stockPoints[i].logradouro}</li>` +
+            `<li class="list-group-item bg-light">${stockPoints[i].numero}</li>` +
+            `${getHtmlStockPointItemsList(stockPoints[i].stockItems)}` +
+            `<li class="list-group-item mb-3"><button class='btn bg-light' onclick="removeItemById(${i})">Excluir</button></li>`
     }
 
-    console.log(htmlListString);
+    console.log("Após toda lógica, printListStockPoints() => ", htmlListString);
 
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }
+
+function getHtmlStockPointItemsList(stockItems) {
+    
+    console.log("Items de estoque", stockItems);
+    let htmlString = "<table class='table table-light' style='text-align: center;'>" +
+        "<thead>" +
+          "<tr>" +
+            "<th scope='col'>Tipo de Lixo</th>" + 
+            "<th scope='col'>Quantidade</th>" + 
+          "</tr>" +
+        "</thead>" +
+        `<tbody>`
+
+    for(y = 0; y < stockItems.length; y++) {
+        console.log("for item");
+        htmlString += 
+            "<tr class='table-light'>" +
+            `<td>${stockItems[y].trashType}</td>` +
+            `<td>${stockItems[y].amountTrash}</td>` +
+            "</tr>"
+    }
+
+    console.log("htmlString", htmlString);
+
+    return htmlString + "</tbody></table>";
+
+} 
+
+function removeItemById(id) {
+    let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
+    
+    let index = stockPoints.find(function(stockPoint){
+        return stockPoint.id === id 
+    });
+    stockPoints.splice(index, 2)
+    localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
+    listStockPoints()
+}
+
+listStockPoints()
 

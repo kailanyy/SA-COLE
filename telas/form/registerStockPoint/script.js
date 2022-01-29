@@ -24,7 +24,7 @@ function validateFields() {
     let numero = document.getElementById('numero').value;
     let complemento = document.getElementById('complemento').value;
 
-    if (!cep || !logradouro || !numero || !bairro || !localidade) {
+    if (!cep || !logradouro || !numero || !bairro || !localidade || !newPointItems.length) {
         alert('Todos os campos devem estar preenchidos')
         return;
     }
@@ -46,6 +46,7 @@ function saveStockPoint(formFields) {
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
     formFields = {
         ...formFields,
+        stockItems: newPointItems,
         userID: userInfo.id,
         id: Math.floor(Date.now() * Math.random()).toString(36)
     }

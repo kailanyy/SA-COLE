@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus estoques</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../icofont/icofont.min.css">
 </head>
@@ -33,10 +33,13 @@
       </nav>
 
     <h3>Meus registros de estoque de lixo</h3>
-    <a href="../registerStockPoint/index.html" class="btn btn-secondary" style="margin-left: 36pc; margin-bottom: 2pc;">Adicionar novo estoque</a>
-      <button type="button" onclick="listStockPoints()">Visualizar meus pontos de estoque</button>
+    <a href="../registerStockPoint/index.html" class="btn btn-secondary">Adicionar novo estoque</a>
 
+    <ul class="list-group" style="width: 25%; margin: auto;">
       <div id="stockPointsList" ></div>
+    </ul>
+
+    
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="./script.js"></script>
     

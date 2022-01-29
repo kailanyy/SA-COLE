@@ -49,8 +49,6 @@ function listCollectionPoint() {
     }
   }
 
-
-
 $("#cep").focusout(function(){
     $.ajax({
         url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
