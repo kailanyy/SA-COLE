@@ -39,11 +39,12 @@ function validateFields() {
 }
 
 function saveStockPoint(formFields) {
-    console.log("Estamos dentro da função saveStockPoint, parametros: ");
+    console.log("função saveStockPoint, parametros: ");
     console.log(formFields);
 
     let stockPoint = localStorage.getItem("stockPoints");
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
+
     formFields = {
         ...formFields,
         stockItems: newPointItems,
@@ -55,7 +56,7 @@ function saveStockPoint(formFields) {
     else stockPoint = JSON.parse(stockPoint);
     stockPoint.push(formFields);
     localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
-    alert("Ponto de estoque cadastrado com sucesso!");
+    alert("Ponto de estoque cadastrado");
 }
 
 function validateNewListItem() {

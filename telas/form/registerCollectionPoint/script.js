@@ -5,36 +5,50 @@ function validateFields() {
     let bairro = document.getElementById('bairro').value;
     let numero = document.getElementById('numero').value;
     let complemento = document.getElementById('complemento').value;
-
-    if (!cep || !logradouro || !numero || !complemento || !bairro || !localidade) {
-        alert('Todos os campos devem estar preenchidos!')
-        return;
-    }
-    saveCollectionPoint({
-        cep,
-        localidade,
-        logradouro,
-        bairro,
-        numero,
-        complemento
+    let checkboxes = [...document.querySelectorAll('input[name=acceptedTrash]:checked')];
+    let acceptedTrash = checkboxes.map(function (checkbox){
+        return checkbox.value;
     })
+    console.log(acceptedTrash);
+
+     if (!cep || !logradouro || !numero || !complemento || !bairro || !localidade) {
+         alert('Todos os campos devem estar preenchidos!')
+         return;
+     }
+     saveCollectionPoint({
+         cep,
+         localidade,
+         logradouro,
+         bairro,
+         numero,
+         complemento,
+         acceptedTrash
+     })
 }
 
 function saveCollectionPoint(formFields) {
-    console.log("Estamos dentro da função saveCollectionPoint, parametros: ");
+    
+    let collectionPoint = localStorage.getItem("collectionPoint");
+    let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
+
+    formFields = {
+        ...formFields,
+        userID: userInfo.id,
+        id: Math.floor(Date.now() * Math.random()).toString(36)
+    }
     console.log(formFields);
-
-    let collectionPoint = localStorage.getItem("saveCollectionPoint");
-
+    
     if (collectionPoint == null) collectionPoint = [];
     else collectionPoint = JSON.parse(collectionPoint);
     collectionPoint.push(formFields);
-    localStorage.setItem("saveCollectionPoint", JSON.stringify(collectionPoint)) 
+    localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
     alert("Ponto de coleta cadastrado com sucesso!");
+    
+
 }
 
 function listCollectionPoint() {
-    let collectionPoint = localStorage.getItem("saveCollectionPoint");
+    let collectionPoint = localStorage.getItem("collectionPoint");
     if (collectionPoint == null)
     alert("Ainda não há pontos de coleta cadastrados.");
     else {

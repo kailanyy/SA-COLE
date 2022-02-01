@@ -27,7 +27,7 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item mb-3"><button class='btn bg-light' onclick="removeItemById(${i})">Excluir</button></li>`
     }
 
-    console.log("Após toda lógica, printListStockPoints() => ", htmlListString);
+    console.log(htmlListString);
 
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }
@@ -53,7 +53,7 @@ function getHtmlStockPointItemsList(stockItems) {
             "</tr>"
     }
 
-    console.log("htmlString", htmlString);
+    console.log("htmlString:", htmlString);
 
     return htmlString + "</tbody></table>";
 
