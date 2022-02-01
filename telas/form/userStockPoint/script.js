@@ -17,12 +17,13 @@ function printListStockPoints(stockPoints) {
     for(i = 0; i < stockPoints.length; i++) {
         console.log(i);
         htmlListString += 
-            `<li class="list-group-item" style="text-align: center; background-color: #126E82; color: white;">${stockPoints[i].bairro}</li>` +
-            `<li class="list-group-item bg-light">${stockPoints[i].cep}</li>` +
-            `<li class="list-group-item bg-light">${stockPoints[i].complemento}</li>` +
-            `<li class="list-group-item bg-light">${stockPoints[i].localidade}</li>` +
-            `<li class="list-group-item bg-light">${stockPoints[i].logradouro}</li>` +
-            `<li class="list-group-item bg-light">${stockPoints[i].numero}</li>` +
+            `<li class="list-group-item" style="text-align: center; background-color: #126E82; color: white;">Ponto de Estoque</li>` +
+            `<li class="list-group-item bg-light"><b>CEP:</b> ${stockPoints[i].cep}</li>` +
+            `<li class="list-group-item bg-light"><b>Cidade:</b> ${stockPoints[i].localidade}</li>` +
+            `<li class="list-group-item bg-light"><b>Bairro:</b> ${stockPoints[i].complemento}</li>` +
+            `<li class="list-group-item bg-light"><b>Rua:</b> ${stockPoints[i].logradouro}</li>` +
+            `<li class="list-group-item bg-light"><b>Número:</b> ${stockPoints[i].numero}</li>` +
+            `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
             `${getHtmlStockPointItemsList(stockPoints[i].stockItems)}` +
             `<li class="list-group-item mb-3"><button class='btn bg-light' onclick="removeItemById(${i})">Excluir</button></li>`
     }
