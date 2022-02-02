@@ -5,6 +5,3 @@ git add paghome.html (exemplo) //// para incluir um arquivo específico no próx
 git commit –m “coloque sua mensagem aqui” //// confirma todas as alterações feitas nos arquivos
 git push origin main //// envia as alterações feitas para o ramo mestre no repositório remoto associado ao diretório de trabalho
 git pull //// baixa as alterações feitas que estão apenas no repositório para os arquivos do seu pc
-
-chave api
-AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ

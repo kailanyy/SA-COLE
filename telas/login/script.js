@@ -78,3 +78,13 @@ function validarPreenchimentoCampos() {
     localStorage.clear();
     window.location = window.location;
   }  
+
+  function mostrarCadastros(){
+    let cadastros = localStorage.getItem("dadosCadastros");
+    if (cadastros == null)
+    alert("Não existe nenhum cadastro.");
+    else {
+    let listagemRegistros = document.getElementById("listaDeRegistro")
+    cadastros = JSON.parse(cadastros);
+  };
+}
