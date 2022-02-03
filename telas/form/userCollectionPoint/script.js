@@ -305,4 +305,12 @@ const CONFIGURATION = {
 
 function initMap() {
 new LocatorPlus(CONFIGURATION);
-} marker
+} 
+
+function showNewCollectionPointMap(){
+    let collectionPoint = localStorage.getItem("collectionPoint");
+
+    collectionPoint = JSON.parse(collectionPoint);
+    collectionPoint.push(CONFIGURATION);
+    initMap()
+}

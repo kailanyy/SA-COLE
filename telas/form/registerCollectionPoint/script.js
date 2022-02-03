@@ -11,7 +11,7 @@ function validateFields() {
     })
     console.log(acceptedTrash);
 
-     if (!cep || !logradouro || !numero || !complemento || !bairro || !localidade) {
+     if (!cep || !logradouro || !numero || !bairro || !localidade) {
          alert('Todos os campos devem estar preenchidos!')
          return;
      }
