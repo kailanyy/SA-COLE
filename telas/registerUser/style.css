@@ -1,0 +1,63 @@
+body{
+    background-color: #D8E3E7 !important;
+    margin: 0px;
+  }
+  
+.navbar {
+    background-color: #126E82;
+    height: 110px;
+    color: rgb(236, 236, 236);
+    padding: 100px;
+}
+  
+  
+input:focus{
+    outline: #126E82 2px solid;
+}
+
+input {
+    color: black;
+    font-weight: bold;
+    border: 2px solid white;
+    width: 300px !important; 
+    text-align: center;
+    border-radius: 4px;
+}
+  
+button {
+    background-color: #126E82 ;
+    border-radius: 4px !important;
+    border: none;
+    color: white;
+    width: 100px;
+    font-weight: bold;
+}
+
+h3{
+    padding-bottom: 25px;
+    text-align: center;
+    color: #126E82;
+    margin-top: 10px !important;
+}
+  
+  
+  
+  /* -esse btn modifica o btn da nav bar tb. eu tirei ele pq ele nao
+  tava modificando na do site aparentemente, mas vc q sabe
+  .btn {
+    position: relative;
+    display: inline-block;
+    width: 277px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 600px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight:900;
+    font-size:17px;
+    letter-spacing: 0.045em;
+  }
+  

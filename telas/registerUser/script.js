@@ -11,6 +11,12 @@ function validarPreenchimentoCampos() {
     cadastrar(usuario, senha);
   }
   
+  Swal.fire({
+    title: 'Tem certeza que deseja excluir?',
+    type: 'warning',
+    confirmButtonText: 'Ok',
+  });
+
   function cadastrar(usuario, senha) {
     let dadosCadastros = {
       username: usuario,
@@ -63,7 +69,7 @@ function validarPreenchimentoCampos() {
       if (usuario.username === usuarioInput && senha.password === senhaInput) {
         localStorage.setItem("loggedUser", JSON.stringify({id: usuario.id})) 
 
-      window.location="../form/userStockPoint/index.html"
+      // window.location="../form/userStockPoint/index.html"
         
         
         return;

@@ -1,12 +1,3 @@
-// let map;
-
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 8,
-//   });
-// }
-
 function listCollectionPoints() {
   let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"))
@@ -53,7 +44,5 @@ function getAcceptedTrash(acceptedTrash) {
   return htmlString;
 
 }
-
-
 
 listCollectionPoints()
