@@ -40,7 +40,18 @@ h3{
     margin-top: 10px !important;
 }
   
-  
+.radio-image label > input{
+    visibility: hidden;
+}
+.radio-image label > input + img{
+    cursor:pointer;
+    border:4px solid #EEE;
+    border-radius:15px;
+    padding:5px;
+}
+.radio-image label > input:checked + img{
+    border:4px solid purple;
+}
   
   /* -esse btn modifica o btn da nav bar tb. eu tirei ele pq ele nao
   tava modificando na do site aparentemente, mas vc q sabe
