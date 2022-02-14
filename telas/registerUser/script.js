@@ -11,12 +11,6 @@ function validarPreenchimentoCampos() {
     cadastrar(usuario, senha);
   }
   
-  Swal.fire({
-    title: 'Tem certeza que deseja excluir?',
-    type: 'warning',
-    confirmButtonText: 'Ok',
-  });
-
   function cadastrar(usuario, senha) {
     let dadosCadastros = {
       username: usuario,
