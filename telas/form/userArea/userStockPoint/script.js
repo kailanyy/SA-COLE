@@ -20,7 +20,7 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item" style="text-align: center; background-color: #126E82; color: white;">Ponto de Estoque</li>` +
             `<li class="list-group-item bg-light"><b>CEP:</b> ${stockPoints[i].cep}</li>` +
             `<li class="list-group-item bg-light"><b>Cidade:</b> ${stockPoints[i].localidade}</li>` +
-            `<li class="list-group-item bg-light"><b>Bairro:</b> ${stockPoints[i].complemento}</li>` +
+            `<li class="list-group-item bg-light"><b>Bairro:</b> ${stockPoints[i].bairro}</li>` +
             `<li class="list-group-item bg-light"><b>Rua:</b> ${stockPoints[i].logradouro}</li>` +
             `<li class="list-group-item bg-light"><b>Número:</b> ${stockPoints[i].numero}</li>` +
             `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
@@ -35,7 +35,7 @@ function printListStockPoints(stockPoints) {
 
 function getHtmlStockPointItemsList(stockItems) {
     
-    console.log("Items de estoque", stockItems);
+    console.log("Itens de estoque", stockItems);
     let htmlString = "<table class='table table-light' style='text-align: center;'>" +
         "<thead>" +
           "<tr>" +
@@ -66,7 +66,7 @@ function removeItemById(id) {
     let index = stockPoints.find(function(stockPoint){
         return stockPoint.id === id 
     });
-    stockPoints.splice(index, 2)
+    stockPoints.splice(index, 1)
     localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
     listStockPoints()
 }
