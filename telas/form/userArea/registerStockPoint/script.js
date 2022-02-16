@@ -38,7 +38,21 @@ function validateFields() {
     })
 }
 
-function saveStockPoint(formFields) {
+// async function saveStockPoint(formFields) {
+//     let geoCoder = await new google.maps.Geocoder({
+//         address: "88032-270"
+//     })
+//     console.log(geoCoder);
+//     if(geoCoder != null || geoCoder === null)
+//     return;
+
+    // let aa = await $.ajax({
+    //     url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+    //     dataType: 'json',
+        
+    //     success: function(resposta)
+    // })
+
     console.log("função saveStockPoint, parametros: ");
     console.log(formFields);
 
