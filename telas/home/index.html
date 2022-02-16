@@ -4,62 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Ínicio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../icofont/icofont.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <head>
-        <h1>Mave</h1>
-      </head>
-        <nav> 
-          <a href="../login/index.html" class="btn btn-outline-success btn-lg">
-            <span class="icofont-user"></span>
-            <span>Entre ou cadastre-se</span>
-          </a>
-        </nav>
-    </div>
-  </nav>
- 
-    <div class="row row align-items-center" style="margin: auto;">
-    <img class="d-block" style="width: 30%; margin-left: 205px; margin-top: 6%;" src="https://media-public.canva.com/ht7ZQ/MADwe6ht7ZQ/1/tl.png">
+  <nav style="padding-bottom: 30px; padding-top: 30px" class="navbar navbar-expand-lg navbar-light">
     
-    <div class="col-4">
-      <h2>Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto</h2>
-      <p>Tem raízes numa peça de literatura clássica em Latim, de 45 AC. Existem muitas variações das passagens do Lorem Ipsum disponíveis, mas a maior parte sofreu alterações de alguma forma, pela injecção de humor, ou de palavras aleatórias que nem sequer parecem suficientemente credíveis. </p>
+    <head>
+      <img style="margin-left: 40px;" width="50px" src="../../png_recycle.png" alt="">
+      <h1 style="color: white; margin-left: 10px;">Mave</h1>
+    </head>
+    
+    <div class="container-fluid d-flex justify-content-end">
+<!-- <div class="navbar-light btn btn-outline-light" 
+        style="border-radius: 100px; border-width: 2px; height: 49px; margin-right: 10px;">
+        <span class="icofont-user"></span>
+        <a class="navbar-brand" href="../registerUser/register/index.html">Cadastre-se agora</a>
+      </div> -->
+          <a href="../registerUser/login/index.html" 
+            style="border-radius: 100px; border-width: 2px; margin-right: 80px;" 
+            class="btn btn-outline-light btn-lg">
+            <span class="icofont-user"></span>
+            <span>Entrar</span>
+          </a>
+  </nav>
+  
+  <div class="d-flex bd-highlight d-flex align-items-center">
+    <div style="width: 60%; margin-left: 30px;">
+        <h2>
+          Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto
+        </h2>
+        <p>
+          Tem raízes numa peça de literatura clássica em Latim, de 45 AC. 
+          Existem muitas variações das passagens do Lorem Ipsum disponíveis, 
+          mas a maior parte sofreu alterações de alguma forma, pela injecção de humor, 
+          ou de palavras aleatórias que nem sequer parecem suficientemente credíveis.
+        </p>
+
+        <button id="btnStart" 
+          style="border-radius: 100px; background-color: #126E82; border: none; color: white; width: 130px; height: 40px;">
+          Começar Agora
+        </button>
+      </div>
+      
+    <div style="margin-left: 100px;">
+      <img style="width: 70%; margin-top: 25px;" src="../../81d648ef-8e0c-4869-835a-a14579254203.png">
     </div>
   </div>
 
-  
-    <footer>
-      <div class="row" style="text-align: center;">
-        <div class="col-3" style="margin-left: 120px;">
-          <h6>Início</h6>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="../home/index.html" class="nav-link p-0 text-light">Home</a></li>
-          </ul>
-        </div>
-  
-        <div class="col-4">
-          <h6>Contato</h6>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a class="nav-link p-0 text-light">mave@mavemave.com</a></li>
-            <li class="nav-item mb-2"><a class="nav-link p-0 text-light">(48) 9915012802</a></li>
-          </ul>
-        </div>
-  
-        <div class="col-2">
-          <h6>Empresa</h6>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="../qmSomos/index.html" class="nav-link p-0 text-light">Quem somos</a></li>
-          </ul>
-        </div>
-    </footer>
-  </div>
-  
-    
+  <footer class="fixed-bottom">
+    <div class="row" style="text-align: center;">
+      <div class="col-3 mt-4" style="margin-left: 120px;">
+        <h6>Início</h6>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="../home/index.html" class="nav-link p-0 text-light">Home</a></li>
+        </ul>
+      </div>
+      <div class="col-4 mt-3">
+        <h6>Contato</h6>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a class="nav-link p-0 text-light">mave@mavemave.com</a></li>
+          <li class="nav-item mb-2"><a class="nav-link p-0 text-light">(48) 9915012802</a></li>
+        </ul>
+      </div>
+      <div class="col-2 mt-4">
+        <h6>Empresa</h6>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="../qmSomos/index.html" class="nav-link p-0 text-light">Quem somos</a></li>
+        </ul>
+      </div>
+  </footer>  
 </body>
 </html>
