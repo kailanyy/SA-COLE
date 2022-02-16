@@ -71,7 +71,7 @@ function validateFields() {
     stockPoint.push(formFields);
     localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
     alert("Ponto de estoque cadastrado");
-}
+
 
 function validateNewListItem() {
     let trashType = document.getElementById('trashType').value;

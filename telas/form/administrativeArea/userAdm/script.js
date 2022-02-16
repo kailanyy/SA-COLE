@@ -1,17 +1,35 @@
-function mostrarCadastros(cadastros){
-    let usuariosCadastrados = localStorage.getItem("dadosCadastros");
-    let listagemRegistros ='<table class="table"><thead><tr>'
-    '<th scope="col">Id</th>' +
-    '<th scope="col">Usuario</th>' +
-    '<th scope="col">Senha</th>' +
-    '<th scope="col">Ação</th></tr></thead>' +
-    '<tbody><tr>';
-    for (i = 0; i < usuariosCadastrados.length; i++){
+// function excluirCadastros(idExcluir) {
+//     usuariosCadastrados = JSON.parse(usuariosCadastrados);
+//     usuariosCadastrados.filter(e => { e.id != idExcluir })
+// }
+
+function listarCadastros() {
+    let usuariosCadastrados = JSON.parse(localStorage.getItem("dadosCadastros"))
+    let htmlListString = ""
+    for(i = 0; i < usuariosCadastrados.length; i++) {
+        htmlListString += 
+            "<tr class='table-light'>" +
+                `<th scope='row'></th>` +
+                `<td>${usuariosCadastrados[i].username}</td>` +
+                `<td>${usuariosCadastrados[i].password}</td>` +
+                `<td><button class='btn btn-light' onclick="removeItemById(${i})">Excluir</button></td>` +
+            "</tr>"
+    }
+
+    console.log(htmlListString);
+
+    document.getElementById('listarCadastro').innerHTML = htmlListString
+}
+
+function removeItemById(id) {
+    let usuariosCadastrados = JSON.parse(localStorage.getItem("dadosCadastros"))
     
-    listagemRegistros +=
-    "<tr class='table-light'>" +
-    `<td>${cadastro[i].username}</td>` +
-    `<td>${cadastro[i].password}</td>` +
-    "</tr>"
-    document.getElementById("listaDeRegistro").innerHTML = listagemRegistros
-    }}
+    let index = usuariosCadastrados.find(function(usuariosCadastrados){
+        return usuariosCadastrados.id === id 
+    });
+    usuariosCadastrados.splice(index, 1)
+    localStorage.setItem("dadosCadastros", JSON.stringify(usuariosCadastrados)) 
+    listarCadastros()
+  }
+  
+  listarCadastros()
