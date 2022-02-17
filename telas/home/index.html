@@ -5,25 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ínicio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/button.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css_bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../icofont/icofont.min.css">
     <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
 </head>
 <body>
   <nav style="padding-bottom: 30px; padding-top: 30px" class="navbar navbar-expand-lg navbar-light">
-    
     <head>
-      <img style="margin-left: 40px;" width="50px" src="../../png_recycle.png" alt="">
+      <img style="margin-left: 40px;" width="50px" src="../../img/png_recycle.png" alt="">
       <h1 style="color: white; margin-left: 10px;">Mave</h1>
     </head>
-    
     <div class="container-fluid d-flex justify-content-end">
-<!-- <div class="navbar-light btn btn-outline-light" 
-        style="border-radius: 100px; border-width: 2px; height: 49px; margin-right: 10px;">
-        <span class="icofont-user"></span>
-        <a class="navbar-brand" href="../registerUser/register/index.html">Cadastre-se agora</a>
-      </div> -->
           <a href="../registerUser/login/index.html" 
             style="border-radius: 100px; border-width: 2px; margin-right: 80px;" 
             class="btn btn-outline-light btn-lg">
@@ -33,26 +27,38 @@
   </nav>
   
   <div style="width: 100%;" class="d-flex bd-highlight align-items-center">
-    <div style="width: 60%; margin-left: 30px;">
-        <h2>
-          Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto
+    <div style="width: 60%; margin-left: 50px;">
+        <h2 style="font-weight: bold;">
+          Seu lixo eletrônico descartado da maneira certa!
         </h2>
         <p>
-          Tem raízes numa peça de literatura clássica em Latim, de 45 AC. 
-          Existem muitas variações das passagens do Lorem Ipsum disponíveis, 
-          mas a maior parte sofreu alterações de alguma forma, pela injecção de humor, 
-          ou de palavras aleatórias que nem sequer parecem suficientemente credíveis.
+          Durante a decomposição de lixos eletrônicos, há formação de substâncias tóxicas que podem causar
+          riscos à saúde e ao meio ambiente. Para fazer a sua parte, os itens que não têm mais utilidade
+          podem ser entregues em nossos postos de coleta!
         </p>
-
-        <button id="btnStart" 
+        <!-- <button id="btnStart" 
           style="border-radius: 100px; background-color: #126E82; border: none; color: white; width: 130px; height: 40px;">
           Começar Agora
-        </button>
+        </button> -->
+        <p class="wrapper">
+          <a class="button" href="#">Começar Agora</a>
+      </p>
+          <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+              <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                  <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+              </filter>
+          </defs>
+      </svg>
       </div>
 
+      
+
+
     <div class="d-flex justify-content-center" style="width: 700px; margin-top: 2%;">
-      <img height="" width="45%" src="../../81d648ef-8e0c-4869-835a-a14579254203.png">
-      <p>Texto</p>
+      <img height="" width="45%" src="../../img/81d648ef-8e0c-4869-835a-a14579254203.png">
+      <!-- <p>Texto</p> -->
     </div>
   </div>
 
@@ -78,5 +84,18 @@
         </ul>
       </div>
   </footer>  
+
+
+  
+  <style type="text/css">
+    #btnStart:hover {
+    color: black !important;
+    background-color: white !important;
+    transition: 0.5s;
+    }
+  </style>
+
+
+
 </body>
 </html>

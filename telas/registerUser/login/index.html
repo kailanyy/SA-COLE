@@ -5,58 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/button.css">
+    <link rel="stylesheet" href="../../../css_bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../../icofont/icofont.min.css">
     <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="../../../login-form-18/login-form-18/css/style.css">
+
+
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <head>
-            <h1>Mave</h1>
-          </head>
-            <nav> 
-              <!-- <a href="../home/index.html" class="btn btn-outline-success btn-lg"> -->
-                <!-- <span class="icofont-home"></span> -->
-                <!-- <span>Página inicial</span> -->
-              </a>
-            </nav>
-        </div>
-      </nav>
-    
-      <!-- <div>
-        <center>
-          <h3>Escolha o tipo de conta</h3>
-        </center>
-      </div> -->
-    
-      <div>
-        <center>
-          <h6 style="color: grey;">
-            Por favor, preencha o formulário abaixo para realizar o login!
-          </h6>
-        </center>
+  <nav style="padding-bottom: 30px; padding-top: 30px" class="navbar navbar-expand-lg navbar-light">
+    <head>
+      <img style="margin-left: 40px;" width="50px" src="../../img/png_recycle.png" alt="">
+      <h1 style="color: white; margin-left: 10px;">Mave</h1>
+    </head>
+    <div class="container-fluid d-flex justify-content-end">
+          <a href="../registerUser/login/index.html" 
+            style="border-radius: 100px; border-width: 2px; margin-right: 80px;" 
+            class="btn btn-outline-light btn-lg">
+            <span class="icofont-user"></span>
+            <span>Inicio</span>
+          </a>
+  </nav>
+
+  
+  <!-- <div style="flex-direction: column" 
+    class="d-flex align-items-center">
+    <h6 style="color: grey;">
+      Por favor, preencha o formulário abaixo para realizar o login!
+    </h6>
+    <div>
+      <input type="text" class="inputLogin input-group mb-3" 
+        id="usuario" placeholder="Usuário">
+          
+      <input type="password" class="inputLogin input-group mb-3" id="senha"
+        placeholder="Senha">
+        
+      <a style="color: grey; font-weight: bold;" href="../register/index.html"
+        >Não possui uma conta?</a>
+        
+        <button id="btnLogin" type="submit" onclick="login()"
+        >Login</button>
       </div>
+    </div> -->
     
-      <center>
-        <div>
-          <input type="text" class="input-group mb-3" 
-            id="usuario" placeholder="Usuário">
-      
-          <input type="password" class="input-group mb-3" id="senha"
-            placeholder="Senha">
-    
-          <a style="color: grey; font-weight: bold;" href="../register/index.html"
-            >Não possui uma conta?</a>
-    
-            <button type="submit" onclick="login()"
-              >Login</button>
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-5">
+          </div>
         </div>
-      </center>
-
-
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-5">
+            <div class="login-wrap p-4 p-md-5">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="fa fa-user-o"></span>
+              </div>
+              <h3 class="text-center mb-4">Faça seu login</h3>
+              <form action="#" class="login-form">
+                <div class="form-group">
+                  <input type="text" class="form-control rounded-left" placeholder="Username" required>
+                </div>
+                <div class="form-group d-flex">
+                  <input type="password" class="form-control rounded-left" placeholder="Password" required>
+                </div>
+                <div class="form-group d-md-flex">
+                  <div class="w-50">
+                    <label class="checkbox-wrap checkbox-primary">Lembrar a senha
+                      <input type="checkbox" checked>
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="w-50 text-md-right">
+                    <a href="#">Esqueci a Senha</a>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary rounded submit p-3 px-5">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -87,7 +126,9 @@
     </div> -->
 
 
-    
-      <script src="../script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="../script.js"></script>
+
 </body>
 </html>
