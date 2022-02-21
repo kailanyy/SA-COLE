@@ -1,11 +1,13 @@
 function validarPreenchimentoCampos() {
     let usuario = document.getElementById('usuario').value;
     let senha = document.getElementById('senha').value;
-  
-    console.log("usuario", usuario);
-  
+    
     if(!usuario || !senha) {
-      alert("Preencha os dois campos para realizar o cadastro!")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Preencha os dois campos para realizar o cadastro!',
+      })
       return;
     }
     cadastrar(usuario, senha);
@@ -24,7 +26,7 @@ function validarPreenchimentoCampos() {
     else cadastros = JSON.parse(cadastros);
     cadastros.push(dadosCadastros);
     localStorage.setItem("dadosCadastros", JSON.stringify(cadastros)) 
-    alert("Cadastro " + "'" + usuario + "'" + " realizado com sucesso!");
+    Swal.fire('Cadastro Realizado!')
     window.location = "../../registerStockPoints/index.html"
   }
   
@@ -52,23 +54,23 @@ function validarPreenchimentoCampos() {
     if (usuariosCadastrados === null) {
       alert("Não existem usuários cadastrados");
     }
-  
-    console.log(usuariosCadastrados);
-    
+      
     for (let i=0; i<usuariosCadastrados.length; i++){
       usuariosCadastrados[i]
       let usuario = usuariosCadastrados[i]
       let senha = usuariosCadastrados[i]
-      console.log(usuario);
       if (usuario.username === usuarioInput && senha.password === senhaInput) {
         localStorage.setItem("loggedUser", JSON.stringify({id: usuario.id})) 
 
       // window.location="../form/userStockPoint/index.html"
         
-        
         return;
       } else {
-        alert("Usuário ou senha incorretos")
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Usuário ou senha incorretos!',
+        })
         return;
       }
     }
