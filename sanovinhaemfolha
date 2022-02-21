@@ -1,0 +1,30 @@
+eu organizei o documento da SA pq tava todo bagunçado, tinha muita coisa solta :))))
+
+!! mudei o nome dos arquivos, já linkei tudo certinho, da p navegar pelas páginas agr
+
+!! mudei o design de todas as pags, únicas q não alterei foi a home, area administrativa e qm somos
+
+!! exclui os arquivos CSS e JS do bootstrap baixados e optei por linkar pelo documento online deles q é completo igual
+
+!! no geral tem os documentos dos ícones q a gente usa nas navs, todas as imagens do site (se forem botar imgs novas
+botem na pasta própria pf), alguns arquivos pro funcionamento da tabela pronta (vendor) e uma pasta p todas as fontes
+q a gente usa no site (a pasta dafont são de todas as fontes baixadas do site, ent se baixerem dele coloquem la).
+algumas não estão em uso mas la pro final da SA revisamos dnv e excluimos
+
+!! nos arquivos da pag CSS (util, main e form) eu deixei comentado p q cada um deles servem.
+pf não alterem nd no util e nem no main (nesse somente p add novas fontes), eles são prontos tb e podem acabar alterando
+a tabela
+
+!! na JS tem apenas o jquery baixado pq não achei a versão recente dele p linkar q nem o bootstrap
+
+!! se forem baixar coisas prontas, q nem a tabela e a tela de login, pf façam isso em outro documento p ver como fica,
+normalmente vem vários arquivos junto com o zip e alguns deles (n sei pq) nem linkados são, ent ficam sem uso
+pode me chamar tb q eu ajudo a linkar tudo direitinho
+
+!! na parte de script está funcionando td que nem a antiga, não mexi em nada
+
+!! no documento "comandos git" tem todos os comandos que vcs precisam p mexer no github pelo terminal,
+lá tem explicadinho o q cada um faz, ent podem consultar qnd vcs não lembrarem algum nome ou p q serve
+
+!! eu tenho guardado o documento das telas antigas então se precisar é só falar, se tiver algum bglh sobre
+as mudanças q eu fiz tb

@@ -1,7 +1,12 @@
-git clone url //// copiar o repositório
+git clone url //// copiar o repositório (se vc ainda não tiver dado git clone)
+git pull //// baixa as alterações feitas que estão apenas no repositório para os arquivos do seu pc (caso vc ja
+tenha dado git clone mas quer atualizar o documento)
+
+! em ordem de uso:
+1: git add -A //// para adicionar de uma vez todos os arquivos modificados no próximo commit
+OU: git add paghome.html (exemplo) //// para incluir um arquivo específico no próximo commit
+2: git commit –m “escreva o q vc alterou entre as aspas” //// confirma todas as alterações feitas nos arquivos
+3: git push origin main //// envia as alterações feitas para o ramo mestre no repositório remoto associado ao
+diretório de trabalho
+
 git status //// exibe a lista de arquivos alterados e os arquivos que ainda não foram adicionados ou confirmados
-git add -A //// para adicionar de uma vez todos os arquivos modificados no próximo commit
-git add paghome.html (exemplo) //// para incluir um arquivo específico no próximo commit
-git commit –m “coloque sua mensagem aqui” //// confirma todas as alterações feitas nos arquivos
-git push origin main //// envia as alterações feitas para o ramo mestre no repositório remoto associado ao diretório de trabalho
-git pull //// baixa as alterações feitas que estão apenas no repositório para os arquivos do seu pc

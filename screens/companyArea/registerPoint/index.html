@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar pontos</title>
+    <link rel="stylesheet" href="../../../css/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../geral/icofont/icofont.min.css">
+    <link rel="stylesheet" href="../../../css/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <head>
+            <div class="d-flex flex-row">
+                <img style="margin-left: 40px;" width="50px" src="../../../geral/imgs/lixoCinza.png">
+                <h1 style="margin-left: 13px; font-family: KGRedHands;">mave</h1>
+            </div>
+        </head>
+        <nav>
+            <a href="../map/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+                <span class="icofont-google-map"></span>
+                <span>Pontos de estoque</span>
+                </a>
+                <a href="../myCollectionPoints/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+                <span class="icofont-garbage"></span>
+                <span>Meus pontos</span>
+                </a>
+                <a href="../../createAccount/login.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
+                <span class="icofont-user"></span>
+                <span>Conta</span>
+                </a>
+        </nav>
+    </div>
+    </nav>
+
+<h3>Cadastrar ponto de coleta</h3>
+
+<div class="d-flex justify-content-center" style="padding-left: 6%;">
+    <div class="d-flex flex-column" style="width: 230px;">
+      <h4 style="width: 100%; text-align:center; margin-bottom: 18px;">Insira um novo ponto de coleta</h4>
+      <label>CEP</label>
+      <input type="text" id="cep">
+      <label>Cidade</label>
+      <input type="text" id="localidade">
+      <label>Bairro</label>
+      <input type="text" id="bairro">
+      <label>Rua</label>
+      <input type="text" id="logradouro">
+      <label>Número</label>
+      <input type="text" id="numero">
+      <label>Complemento</label>
+      <input type="text" id="complemento">
+   </div>
+
+    <div class="ms-5" style="padding-left: 5%;">
+        <h4 style="width: 70%; text-align:center;">Tipos de lixos aceitos no ponto de coleta</h4>
+        <div class="mt-4">
+        <div style="height: 250px; width: 367px; align-items: center;" class="d-flex flex-column justify-content-center">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                    <input class="mx-1" name="acceptedTrash" type="checkbox" value="Lâmpada">Lâmpada</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Geladeira">Geladeira</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Pilha">Pilha</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Bateria">Bateria</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Fio">Fio</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Carregador">Carregador</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Celular">Celular</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Telefone">Telefone</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Rádio">Rádio</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Fogão">Fogão</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Micro-ondas">Micro-ondas</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Televisor">Televisor</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Aparelho de Som">Aparelho de Som</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Câmera Fotográfica">Câmera Fotográfica</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Impressora">Impressora</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Teclado">Teclado</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Monitor">Monitor</input>
+                    </div>
+                    <div class="col-6">
+                        <input class="mx-1" name="acceptedTrash" type="checkbox" value="Tablet">Tablet</input>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6">
+                    </div>
+                </div>           
+            </div>
+
+        <!-- <button  class="mt-2 btn btn-sm" style="width: 116px; background-color: #126E82; color: white;" type="submit" onclick="validateNewListItem()">Adicionar</button> -->
+
+    </div>
+</div>
+
+
+<button class="mt-3 btn btn-success" style="width: 132px; color: white; margin-left: 100px; margin-bottom: 24%;" type="submit" onclick="validateFields()">Salvar ponto</button>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./script.js"></script>
+
+</body>
+</html>

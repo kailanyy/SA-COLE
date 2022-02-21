@@ -1,0 +1,318 @@
+/* se possível botem todas as fonts family externas aqui. além de alterar as fontes,
+também é o código da tabela pronta */
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+  font-family: Lato-Regular;
+  src: url('../geral/fonts/Lato/Lato-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Lato-Bold;
+  src: url('../geral/fonts/Lato/Lato-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: KGRedHands;
+  src: url('../geral/fonts/dafont/KGRedHands.ttf'); 
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	background-color: #E5E5E5 !important;
+  margin: 0px;
+}
+
+/* ------------------------------------ */
+a {
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* ------------------------------------ */
+h1,h2,h3,h4,h5,h6 {margin: 0px;}
+
+p {margin: 0px;}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+label{
+  margin-bottom: 1px;
+  margin-top: 8px;
+}
+
+/* ------------------------------------ */
+
+textarea {
+  display: block;
+  outline: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+/* ------------------------------------ */
+
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Scroll bar ]*/
+.js-pscroll {
+  position: relative;
+  overflow: hidden;
+}
+
+.table100 .ps__rail-y {
+  width: 9px;
+  background-color: transparent;
+  opacity: 1 !important;
+  right: 5px;
+}
+
+.table100 .ps__rail-y::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(100% - 30px);
+  left: 0;
+  top: 15px;
+}
+
+.table100 .ps__rail-y .ps__thumb-y {
+  width: 100%;
+  right: 0;
+  background-color: transparent;
+  opacity: 1 !important;
+}
+
+.table100 .ps__rail-y .ps__thumb-y::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #cccccc;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(100% - 30px);
+  left: 0;
+  top: 15px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-table100 {
+  width: 100%;
+  background: #D8E3E7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 100%;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+.table100 {
+  background-color: #ffff;
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+
+.column1 {
+  width: 15%;
+  text-align: center;
+}
+
+.column2 {
+  width: 19%;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.column3 {
+  width: 14%;
+  text-align: center;
+  padding-left: 30px;
+}
+
+.column4 {
+  width: 15%;
+  text-align: center;
+  padding-left: 30px;
+}
+
+.column5 {
+  width: 14%;
+  text-align: center;
+}
+
+.table100-head th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.table100-body td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/*==================================================================
+[ Fix header ]*/
+.table100 {
+  position: relative;
+  padding-top: 60px;
+}
+
+.table100-head {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.table100-body {
+  max-height: 585px;
+  overflow: auto;
+}
+
+/*==================================================================
+[ Ver5 ]*/
+.table100.ver5 {
+  margin-right: 0;
+}
+
+.table100.ver5 .table100-head {
+  padding-right: 30px;
+  margin: 0;
+}
+
+.table100.ver5 th {
+  font-family: Lato-Bold;
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  background-color: transparent;
+}
+
+.table100.ver5 td {
+  font-family: Lato-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.4;
+
+  background-color: #f7f7f7;
+}
+
+.table100.ver5 .table100-body tr {
+  overflow: hidden; 
+  border-bottom: 10px solid #fff;
+  border-radius: 10px;
+}
+
+.table100.ver5 .table100-body table { 
+  border-collapse: separate; 
+  border-spacing: 0 10px; 
+}
+.table100.ver5 .table100-body td {
+    border: solid 1px transparent;
+    border-style: solid none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.table100.ver5 .table100-body td:first-child {
+    border-left-style: solid;
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px;
+}
+.table100.ver5 .table100-body td:last-child {
+    border-right-style: solid;
+    border-bottom-right-radius: 10px; 
+    border-top-right-radius: 10px; 
+}
+
+.table100.ver5 tr:hover td {
+  background-color: #ebebeb;
+  cursor: pointer;
+}
+
+.table100.ver5 .table100-head th {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+/*---------------------------------------------*/
+
+.table100.ver5 {
+  overflow: hidden;
+}
+
+
+.table100.ver5 .ps__rail-y {
+  right: 0px;
+}
+
+.table100.ver5 .ps__rail-y::before {
+  background-color: #ebebeb;
+}
+
+.table100.ver5 .ps__rail-y .ps__thumb-y::before {
+  background-color: #cccccc;
+}

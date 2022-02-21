@@ -1,0 +1,27 @@
+/* css das pags de registros e listagem, altera a navbar, input de numero e o texto de "cadastre blablabla"
+>>>> p kailany: eu sei q vc ja fez uma pro navbar, mas se eu usasse aquela la ia alterar as minhas pags e
+se botasse na sua ia alterar a home*/
+
+.navbar {
+    background-color: #495371;
+    height: 110px;
+    color: rgb(236, 236, 236);
+    padding: 100px;
+}
+
+h3{
+    padding-bottom: 25px;
+    text-align: center;
+    color: #495371 !important;
+    margin-top: 2% !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
