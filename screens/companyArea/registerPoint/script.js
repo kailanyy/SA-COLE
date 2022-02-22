@@ -12,7 +12,8 @@ function validateFields() {
     console.log(acceptedTrash);
 
      if (!cep || !logradouro || !numero || !bairro || !localidade) {
-         alert('Todos os campos devem estar preenchidos!')
+        //  alert('Todos os campos devem estar preenchidos!')
+
          return;
      }
      saveCollectionPoint({
@@ -42,9 +43,17 @@ function saveCollectionPoint(formFields) {
     else collectionPoint = JSON.parse(collectionPoint);
     collectionPoint.push(formFields);
     localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
-    alert("Ponto de coleta cadastrado com sucesso!");
+     
+    Swal.fire({
+        title: 'Ponto de coleta cadastrado com sucesso!',
+        showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+        }
+    })
     
-
 }
 
 function listCollectionPoint() {
