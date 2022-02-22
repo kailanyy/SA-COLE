@@ -26,7 +26,6 @@ function printListCollectionPoints(collectionPoint) {
 }
 
 document.getElementById('collectionPointsList').innerHTML = htmlListString
-
 }
 
 function getAcceptedTrash(acceptedTrash) {

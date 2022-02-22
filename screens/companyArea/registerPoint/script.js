@@ -12,8 +12,15 @@ function validateFields() {
     console.log(acceptedTrash);
 
      if (!cep || !logradouro || !numero || !bairro || !localidade) {
-        //  alert('Todos os campos devem estar preenchidos!')
-
+        Swal.fire({
+            title: 'Todos os campos devem estar preenchidos',
+            showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
          return;
      }
      saveCollectionPoint({
@@ -53,7 +60,6 @@ function saveCollectionPoint(formFields) {
         popup: 'animate__animated animate__fadeOutUp'
         }
     })
-    
 }
 
 function listCollectionPoint() {
