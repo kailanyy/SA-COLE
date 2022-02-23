@@ -14,7 +14,16 @@ function listarCadastros() {
               </table>`
 
   if (usuariosCadastrados == null){
-  alert("Ainda não há cadastros realizados.");
+    htmlListString = ""
+    Swal.fire({
+      title: 'Ainda não há contas cadastradas.',
+      showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+      }
+  })
 
   } else {
      for(i = 0; i < usuariosCadastrados.length; i++) {
@@ -24,53 +33,15 @@ function listarCadastros() {
             <td class="cell100 column1">${i}</td>
             <td class="cell100 column2">${usuariosCadastrados[i].username}</td>
             <td class="cell100 column5">${usuariosCadastrados[i].password}</td>
-            <td class="cell100 column1"><button class='btn btn-danger' onclick="removeItemByIndex(${i})">Excluir</button></td>
+            <td class="cell100 column1"><button class='btn btn-danger' onclick="removeItemById(${i})">Excluir</button></td>
         </tr>
     </tbody>`
 
      }
   }
 
-  document.getElementById('listarCadastro').innerHTML = htmlListString
+  document.getElementById('listagem').innerHTML = htmlListString
 }
-
-
-/* FUNÇÃO Q FUNCIONA
-   function listarCadastros() {
-   let usuariosCadastrados = JSON.parse(localStorage.getItem("dadosCadastros"))
-   let htmlListString = `<table class='table table-light' style="text-align: center;">
-   <thead>
-     <tr> 
-       <th scope='col'>ID</th> 
-       <th scope='col'>Usuário</th> 
-       <th scope='col'>Senha</th> 
-       <th scope='col'>Ação</th> 
-     </tr> 
-   </thead> 
-   <tbody id="listarCadastro">
-   </tbody>
- </table>`
-
-   if (usuariosCadastrados == null){
-   alert("Ainda não há cadastros realizados.");
-
-   } else {
-      for(i = 0; i < usuariosCadastrados.length; i++) {
-
-         htmlListString += 
-         "<tr class='table-light'>" +
-         `<th scope='row'></th>` +
-         `<td>${usuariosCadastrados[i].username} </td>` +
-         `<td>${usuariosCadastrados[i].password}</td>` +
-         `<td><button class='btn btn-light' onclick="removeItemById(${i})">Excluir</button></td>` +
-     "</tr>"
-
-      }
-   }
-
-   document.getElementById('listarCadastro').innerHTML = htmlListString
-}*/
-
 
 //  function removeItemById(id) {
 //      let usuariosCadastrados = JSON.parse(localStorage.getItem("dadosCadastros"))

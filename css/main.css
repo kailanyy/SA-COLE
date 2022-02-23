@@ -299,7 +299,7 @@ th, td {
 }
 
 .table100.ver5 tr:hover td {
-  background-color: #ebebeb;
+  background-color: #f1f0f0;
   cursor: pointer;
 }
 

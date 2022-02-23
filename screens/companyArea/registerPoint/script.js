@@ -11,7 +11,7 @@ function validateFields() {
     })
     console.log(acceptedTrash);
 
-     if (!cep || !logradouro || !numero || !bairro || !localidade) {
+     if (!cep || !logradouro || !numero || !bairro || !localidade || !complemento) {
         Swal.fire({
             title: 'Todos os campos devem estar preenchidos',
             showClass: {

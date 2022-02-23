@@ -24,7 +24,7 @@ function validateFields() {
     let numero = document.getElementById('numero').value;
     let complemento = document.getElementById('complemento').value;
 
-    if (!cep || !logradouro || !numero || !bairro || !localidade || !newPointItems.length) {
+    if (!cep || !logradouro || !numero || !bairro || !localidade || !complemento || !newPointItems.length) {
         Swal.fire({
             title: 'Todos os campos devem estar preenchidos',
             showClass: {
