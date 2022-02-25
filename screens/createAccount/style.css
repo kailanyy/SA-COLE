@@ -2414,7 +2414,8 @@ fieldset:disabled a.btn {
 
 .btn-outline-light {
   color: #f8f9fa;
-  border-color: #f8f9fa; }
+  border-color: #495371; 
+  background-color: #495371;}
   .btn-outline-light:hover {
     color: #212529;
     background-color: #f8f9fa;
@@ -8167,7 +8168,7 @@ h1, h2, h3, h4, h5,
   background: #8d448b !important; }
 
 .ftco-section {
-  padding: 2em 0; }
+  padding: 0; }
 
 .ftco-no-pt {
   padding-top: 0; }
@@ -8337,12 +8338,7 @@ h1, h2, h3, h4, h5,
       .form-group .submit {
         top: 0; } }
 
-.navbar {
-  background-color: #495371;
-  height: 110px;
-  color: rgb(236, 236, 236);
-  padding: 100px;
-}
+
 
 h3{
   text-align: center;
