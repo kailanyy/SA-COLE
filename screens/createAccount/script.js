@@ -30,21 +30,6 @@ function validarPreenchimentoCampos() {
     window.location = "../../registerStockPoints/index.html"
   }
   
-  function listarCadastros() {
-    let cadastros = localStorage.getItem("dadosCadastros");
-    if (cadastros == null)
-    alert("Ainda não há cadastros realizados.");
-    else {
-      let elementoTela = document.getElementById("listagemRegistros")
-      cadastros = JSON.parse(cadastros);
-      elementoTela.innerHTML += '<ul class="list-group" > <br>';
-      cadastros.forEach(cadastro => {
-        elementoTela.innerHTML += '<li style="background-color: white;" class="list-group-item" >Nome: ' + cadastro.username + '</li>';
-        elementoTela.innerHTML += '<li class="list-group-item ">Senha: ' + cadastro.password + '</li> <br>';
-      });
-    }
-  }
-  
   function login() {
     let usuarioInput = document.getElementById('usuario').value
     let senhaInput = document.getElementById('senha').value

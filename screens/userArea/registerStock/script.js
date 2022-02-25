@@ -24,8 +24,16 @@ function validateFields() {
     let numero = document.getElementById('numero').value;
     let complemento = document.getElementById('complemento').value;
 
-    if (!cep || !logradouro || !numero || !bairro || !localidade || !newPointItems.length) {
-        alert('Todos os campos devem estar preenchidos')
+    if (!cep || !logradouro || !numero || !bairro || !localidade || !complemento || !newPointItems.length) {
+        Swal.fire({
+            title: 'Todos os campos devem estar preenchidos',
+            showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
         return;
     }
     saveStockPoint({
@@ -37,25 +45,6 @@ function validateFields() {
         complemento
     })
 }
-
-// async function saveStockPoint(formFields) {
-//     let geoCoder = await new google.maps.Geocoder({
-//         address: "88032-270"
-//     })
-//     console.log(geoCoder);
-//     if(geoCoder != null || geoCoder === null)
-//     return;
-
-    // let aa = await $.ajax({
-    //     url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
-    //     dataType: 'json',
-        
-    //     success: function(resposta)
-    // })
-
-    console.log("função saveStockPoint, parametros: ");
-    console.log(formFields);
-
     let stockPoint = localStorage.getItem("stockPoints");
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
 
@@ -72,13 +61,20 @@ function validateFields() {
     localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
     alert("Ponto de estoque cadastrado");
 
-
 function validateNewListItem() {
     let trashType = document.getElementById('trashType').value;
     let amountTrash = document.getElementById('amountTrash').value;
 console.log(trashType, amountTrash);
     if (!trashType || !amountTrash) {
-        alert('Todos os campos devem estar preenchidos')
+        Swal.fire({
+            title: 'Todos os campos devem estar preenchidos',
+            showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
         return;
     } 
     addItem({
@@ -107,8 +103,6 @@ function printListItems() {
         </tr>
     </tbody>`
 
-    console.log(htmlListString);
-
     document.getElementById('listRegisteredItems').innerHTML = htmlListString
 }}
 
@@ -118,7 +112,6 @@ function removeItemByIndex(index) {
     printListItems();
 }
 
-// função da tabela pronta, não mexer
 (function ($) {
 	"use strict";
 	$('.column100').on('mouseover',function(){
@@ -141,5 +134,4 @@ function removeItemByIndex(index) {
 		$(table1).find(".row100.head ."+column).removeClass('hov-column-head-'+ verTable);
 	});
     
-
 })(jQuery);

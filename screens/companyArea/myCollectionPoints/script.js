@@ -7,16 +7,12 @@ function listCollectionPoints() {
   });
 
   printListCollectionPoints(companyCollectionPoints)
-  console.log("Filter:", companyCollectionPoints);
-  console.log("listCollectionPoints:", listCollectionPoints);
 }
 
 function printListCollectionPoints(collectionPoint) {
   let htmlListString = ""
-  console.log("collectionPoint.length", collectionPoint.length);
   
   for(i = 0; i < collectionPoint.length; i++) {
-    console.log(i);
     htmlListString += 
         `<li class="list-group-item" style="text-align: center; background-color: #3C8B63; color: white; padding: 13px;">Ponto de Coleta</li>` +
         `<li class="list-group-item bg-light"><b>CEP: </b>${collectionPoint[i].cep}</li>` +
@@ -29,22 +25,16 @@ function printListCollectionPoints(collectionPoint) {
         `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir</button></li>`
 }
 
-console.log(htmlListString);
-
 document.getElementById('collectionPointsList').innerHTML = htmlListString
-
 }
 
 function getAcceptedTrash(acceptedTrash) {
-  console.log(getAcceptedTrash);
   let htmlString = ""
   for(i = 0; i < acceptedTrash.length; i++) {
     htmlString +=
     `<li class="list-group-item bg-light text-center">${acceptedTrash[i]}</li>` 
   }
-
   return htmlString;
-
 }
 
 function removeItemById(id) {

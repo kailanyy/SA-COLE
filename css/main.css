@@ -162,7 +162,7 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Table ]*/
 .table100 {
-  background-color: #ffff;
+  background-color: #E5E5E5;
 }
 
 table {
@@ -202,6 +202,11 @@ th, td {
   text-align: center;
 }
 
+.column6 {
+  width: 14%;
+  text-align: center;
+}
+
 .table100-head th {
   padding-top: 18px;
   padding-bottom: 18px;
@@ -217,6 +222,11 @@ th, td {
 .table100 {
   position: relative;
   padding-top: 60px;
+}
+
+.table10 {
+  position: relative;
+  padding-top: 30px;
 }
 
 .table100-head {
@@ -245,7 +255,7 @@ th, td {
 .table100.ver5 th {
   font-family: Lato-Bold;
   font-size: 14px;
-  color: #555555;
+  color: #495371;
   line-height: 1.4;
   text-transform: uppercase;
 
@@ -289,7 +299,7 @@ th, td {
 }
 
 .table100.ver5 tr:hover td {
-  background-color: #ebebeb;
+  background-color: #f1f0f0;
   cursor: pointer;
 }
 
