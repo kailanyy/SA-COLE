@@ -36,6 +36,7 @@ function validateFields() {
         })
         return;
     }
+    
     saveStockPoint({
         cep,
         localidade,
@@ -45,21 +46,31 @@ function validateFields() {
         complemento
     })
 }
-    let stockPoint = localStorage.getItem("stockPoints");
-    let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
 
-    formFields = {
-        ...formFields,
-        stockItems: newPointItems,
-        userID: userInfo.id,
-        id: Math.floor(Date.now() * Math.random()).toString(36)
+    function saveStockPoint(formFields) {
+
+        let stockPoint = localStorage.getItem("stockPoints");
+        let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
+    
+    
+        formFields = {
+            ...formFields,
+            stockItems: newPointItems,
+            userID: userInfo.id,
+            id: Math.floor(Date.now() * Math.random()).toString(36)
+        }
+    
+        console.log("formFields", formFields);
+    
+        if (stockPoint == null) stockPoint = [];
+        else stockPoint = JSON.parse(stockPoint);
+        stockPoint.push(formFields);
+        localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
+        alert("Ponto de estoque cadastrado");
+
+        console.log("função saveStockPoint, parametros: ");
+        console.log(formFields);
     }
-
-    if (stockPoint == null) stockPoint = [];
-    else stockPoint = JSON.parse(stockPoint);
-    stockPoint.push(formFields);
-    localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
-    alert("Ponto de estoque cadastrado");
 
 function validateNewListItem() {
     let trashType = document.getElementById('trashType').value;

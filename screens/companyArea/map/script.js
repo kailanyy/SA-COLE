@@ -294,15 +294,16 @@ let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
 console.log("stockPoints",stockPoints);
 
 const CONFIGURATION = {
-    "locations": stockPoints.map(function(stockPoint){
+    "locations": stockPoints.map(function(stockPoints){
         return {
-            "title":`${stockPoint.bairro}`,
-            "address1":`${stockPoint.localidade}`,
-            "address2":`CEP: ${stockPoint.cep}`,
-            "address3":`${stockPoint.logradouro}, nº${stockPoint.numero}`,
+            "title":`${stockPoints.bairro}`,
+            "address1":`${stockPoints.localidade}`,
+            "address2":`CEP: ${stockPoints.cep}`,
+            "address3":`${stockPoints.logradouro}, nº${stockPoints.numero}`,
             "coords":{"lat":-27.613483273777113, "lng":-48.52663053558198},
             "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
             "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
         }
     })    
 };
+
