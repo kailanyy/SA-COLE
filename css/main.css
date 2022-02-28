@@ -207,6 +207,22 @@ th, td {
   text-align: center;
 }
 
+.column7 {
+  width: 25%;
+  text-align: center;
+}
+
+.column8 {
+  width: 15%;
+  text-align: center;
+}
+
+.column9 {
+  width: 10%;
+  padding-left: 8%;
+  text-align: center;
+}
+
 .table100-head th {
   padding-top: 18px;
   padding-bottom: 18px;

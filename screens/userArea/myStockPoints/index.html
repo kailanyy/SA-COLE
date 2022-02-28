@@ -9,6 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../geral/icofont/icofont.min.css">
     <link rel="stylesheet" type="text/css" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../geral/fonts/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../geral/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../geral/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/util.css">
     <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
 </head>
 <body>
@@ -40,14 +45,31 @@
       <h3>Meus estoques de lixo</h3>
     <a href="../registerStock/index.html" class="btn btn-secondary" style="margin-left: 38em;">Adicionar estoque</a>
 
-    
-      <ul class="list-group" style="width: 30%; margin: auto; margin-bottom: 3em; margin-top: 3em; box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%)">
+
         <div id="stockPointsList" style="border-radius: 10px;"></div>
-      </ul>
 
     
+        
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="../myStockPoints/script.js"></script>
+<script src="../../../js/jquery.min.js"></script>
+<script src="../../../geral/vendor/select2/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="../../../geral/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script>
+	$('.js-pscroll').each(function(){
+		var ps = new PerfectScrollbar(this);
+
+		$(window).on('resize', function(){
+			ps.update();
+		})
+	});	
+</script>
+
+<script src="../../../sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABD" async defer></script>
     
 </body>
 </html>
