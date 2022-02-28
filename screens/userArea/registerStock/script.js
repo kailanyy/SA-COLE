@@ -66,7 +66,16 @@ function validateFields() {
         else stockPoint = JSON.parse(stockPoint);
         stockPoint.push(formFields);
         localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
-        alert("Ponto de estoque cadastrado");
+        
+        Swal.fire({
+            title: 'Ponto de estoque cadastrado com sucesso!',
+            showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
 
         console.log("função saveStockPoint, parametros: ");
         console.log(formFields);
