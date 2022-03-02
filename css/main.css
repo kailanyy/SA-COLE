@@ -28,7 +28,7 @@ também é o código da tabela pronta */
 	box-sizing: border-box;
 }
 
-body, html {
+body {
 	background-color: #E5E5E5 !important;
   margin: 0px;
 }

@@ -10,52 +10,58 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../geral/icofont/icofont.min.css">
     <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
-</head>
+  </head>
 <body>
-    <img src="../../geral/imgs/lateral.png" width="100%" height="100%" style="position: absolute; top: 0;">
-
-  <div class="d-flex flex-row position-absolute" style="top: 3%; padding-left: 5%;">
+  
+  <img src="../../geral/imgs/lateral.png" width="100%" height="100%" style="position: absolute; top: 0; z-index: -50; ">
+  
+  <div class="d-flex position-absolute" style="top: 3%; padding-left: 5%;">
 		<img style="margin-left: 10%; height: 50px; margin-top: 8px;" width="50px" src="../../geral/imgs/lixoRoxo.png">
 		<h1 style="margin-left: 10%; font-family: KGRedHands; color: #495371; line-height: 1.5;">mave</h1>
 	</div>
-
-	  <a href="../../../SA/screens/createAccount/login.html" class="btn btn-outline-light btn-lg position-absolute" style="border-radius: 100px; padding: .5rem 1rem; font-size: 1.25rem; top: 4.5%; left: 80%;">
+  
+	  <a href="../../../SA/screens/createAccount/login.html" class=" btn1 btn btn-outline-light btn-lg position-absolute" 
+      style="border-radius: 100px; padding: .5rem 1rem; font-size: 1.25rem; top: 4.5%; left: 80%;">
       <span class="icofont-user"></span>
       <span>Entrar</span>
 	  </a>
-
-    <div style="position:absolute; width: 40%; top: 35%; left: 9%;">
-      <h2 style="font-weight: bold;">
-        Seu lixo eletrônico descartado da maneira certa!
-      </h2>
-      <p>
-        Durante a decomposição de lixos eletrônicos, há formação de substâncias tóxicas que podem causar
-        riscos à saúde e ao meio ambiente. Para fazer a sua parte, os itens que não têm mais utilidade
-        podem ser entregues em nossos postos de coleta!
-      </p>
-      <a href="../../screens/createAccount/register.html"><button class="bn632-hover bn20">Começar agora</button></a>
+    
+    <div class="d-flex bd-highlight justify-content-center" style=" margin-top:190px;">
+      <div style="margin-left: 90px;" class="p-2 w-100 bd-highlight">
+        <h2 style="font-weight: bold; width: 450px; ">
+          Seu lixo eletrônico descartado da maneira certa!
+        </h2>
+        <p style="width: 70%;">
+          Durante a decomposição de lixos eletrônicos, há formação de substâncias tóxicas que podem causar
+          riscos à saúde e ao meio ambiente. Para fazer a sua parte, os itens que não têm mais utilidade
+          podem ser entregues em nossos postos de coleta!
+        </p>
+        <a href="../../screens/createAccount/register.html"><button class="bn632-hover bn20">Começar agora</button></a>
+      </div>
+      <div class="p-2 flex-shrink-1 bd-highlight">
+        <img width="90%" src="https://fyber.co.in/wp-content/uploads/2019/11/e-waste.png" class="img2 img-fluid">
+      </div>
     </div>
-  
-  <img src="https://fyber.co.in/wp-content/uploads/2019/11/e-waste.png" style="position: absolute; top: 20%; left: 50%;" width="35%" height="70%">
-
-    <div class="info text-center">
-      <h5 style="color: #4A8D70;">Serviços</h5>
-      <h3>Conheça mais sobre o que oferecemos</h3>
-
+    
+    <div class="half" style="margin-top: 200px; margin-bottom: 200px;">
+      <h5 style="color: #4A8D70; display: flex; justify-content: center;">Serviços</h5>
+      <div  style="display: flex; justify-content: center;">
+        <h3>Conheça mais sobre o que oferecemos</h3>
+      </div>
     <div class="d-flex justify-content-center mt-5">
       <div class="d-flex flex-column text-center col-3">
-        <img src="../../geral/imgs/personIcon.png" width="60%" height="60%" style="margin: auto;">
+        <img class="img-fluid" src="../../geral/imgs/personIcon.png" width="60%" height="60%">
         <h5>Contato direto</h5>
         <h5>Relação otimizada entre usuário e empresa.</h5>
       </div>
 
-      <div class="d-flex flex-column text-center col-3" style="margin: 0 7% 0 7%">
+      <div class="d-flex flex-column text-center col-3 img-fluid" style="margin: 0 7% 0 7%">
         <img src="../../geral/imgs/trashIcon.png" width="60%" height="120%" style="margin: auto;">
         <h5>Pontos e estoques únicos</h5>
         <h5>Você pode criar seu próprio ponto de coleta ou adicionar seu estoque de lixo.</h5>
       </div>
 
-      <div class="d-flex flex-column text-center col-3">
+      <div class="img-fluid d-flex flex-column text-center col-3">
         <img src="../../geral/imgs/mapIcon.png" width="60%" height="120%" style="margin: auto;">
         <h5>Mapas</h5>
         <h5>Com a nossa tecnologia disponibilizamos as informações da melhor maneira para você.</h5>
@@ -88,27 +94,10 @@
           </ul>
         </div>
     </footer>
-  </div>
-
-  <!-- <div class="text-center">
-    <h2>Brasil é o país que mais produz lixo eletrônico na América Latina</h2>
-
-    <div class="d-flex justify-content-center">
-      <div class="d-flex flex-column text-center">
-        <h5>cerca de</h5>
-        <h3>1,5 milhão</h3>
-        <h5>de toneladas<br>por ano</h5>
-      </div>
-
-      <div class="d-flex flex-column text-center">
-        <h5>apenas</h5>
-        <h3>3%</h3>
-        <h5>com descarte<br>adequado</h5>
-      </div>
-
+  </div> 
 
     </div>
-  </div> -->
+  </div>
 
 </body>
 </html>
