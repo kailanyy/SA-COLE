@@ -6,16 +6,11 @@ function listStockPoints() {
         return stockPoint.userID === loggedUser.id 
     });
     printListStockPoints(userStockPoints)
-
-    console.log("Resultado do filter", userStockPoints);
-    console.log(stockPoints);
 }
 
 function printListStockPoints(stockPoints) {
     let htmlListString = "";
-    console.log("stockPoints.length", stockPoints.length);
     for(i = 0; i < stockPoints.length; i++) {
-        console.log(i);
         htmlListString += 
             `<ul class="list-group" style="width: 30%; margin: auto; margin-bottom: 2em; margin-top: 3em; box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%)">` +
             `<li class="list-group-item" style="text-align: center; background-color: #3c8b63; color: white; padding: 13px;">Ponto de Estoque</li>` +
@@ -28,13 +23,11 @@ function printListStockPoints(stockPoints) {
             `${getHtmlStockPointItemsList(stockPoints[i].stockItems)}` +
             `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir</button></li></ul>`
     }
-
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }
 
 function getHtmlStockPointItemsList(stockItems) {
     
-    console.log("Itens de estoque", stockItems);
     let htmlString = `<div class="limiter">
                 <div class="wrap-table100">
                     <div class="table100 ver5" style="background-color: #F8F9FA;">
@@ -54,7 +47,6 @@ function getHtmlStockPointItemsList(stockItems) {
                                 <tbody>`
 
     for(y = 0; y < stockItems.length; y++) {
-        console.log("for item");
         htmlString += 
         `<tr class="row100 body">
             <td class="cell100 column6">${stockItems[y].trashType}</td>

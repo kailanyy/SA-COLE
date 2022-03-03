@@ -13,7 +13,6 @@ function validarPreenchimentoCampos() {
   }
   cadastrar(usuario, senha, typeUser);
   validateUserType()
-  
 }
 
 function cadastrar(usuario, senha, typeUser) {
@@ -29,33 +28,35 @@ function cadastrar(usuario, senha, typeUser) {
   if (cadastros == null) cadastros = [];
   else cadastros = JSON.parse(cadastros);
   cadastros.push(dadosCadastros);
-  localStorage.setItem("dadosCadastros", JSON.stringify(cadastros)) 
-  
-  
-  localStorage.setItem("loggedUser", JSON.stringify({id: dadosCadastros.id, typeUser}))
 
-  // Swal.fire('Cadastro Realizado!')
+  localStorage.setItem("dadosCadastros", JSON.stringify(cadastros)) 
+  localStorage.setItem("loggedUser", JSON.stringify({id: dadosCadastros.id, typeUser}))
   
   if(typeUser === "user"){
-    console.log("Entered if") 
-    window.location = "../userArea/myStockPoints/index.html";
-  } else {
-    console.log("Entered else")
+    window.location = "../userArea/registerStock/index.html";
+  }
+  if(typeUser === "company"){
     window.location = "../companyArea/registerPoint/index.html"
   }
 }
   
-function login() {
+function login(typeUser){
   let usuarioInput = document.getElementById('usuario').value
   let senhaInput = document.getElementById('senha').value
 
   let usuariosCadastrados = JSON.parse(localStorage.getItem("dadosCadastros"));
 
   for (let i=0; i<usuariosCadastrados.length; i++){
-    usuariosCadastrados[i]
-    let usuario = usuariosCadastrados[i]
-    if (usuario.username === usuarioInput && usuario.password === senhaInput) {
-      localStorage.setItem("loggedUser", JSON.stringify({id: usuario.id, typeUser}))
+    if(usuarioInput === usuariosCadastrados[i].username && senhaInput === usuariosCadastrados[i].password){
+      localStorage.setItem("loggedUser", JSON.stringify({id: usuariosCadastrados.id, typeUser}))
+      if (usuariosCadastrados[i].typeUser === "user") {
+        window.location = "../userArea/registerStock/index.html"
+        return;
+      }
+      if (usuariosCadastrados[i].typeUser === "company") {
+        window.location = "../companyArea/registerPoint/index.html"
+        return;
+      }
       return;
     } else {
       Swal.fire({
@@ -63,7 +64,6 @@ function login() {
         title: 'Oops...',
         text: 'Usuário ou senha incorretos!',
       })
-      return;
     }
   }
 }
@@ -84,22 +84,17 @@ function mostrarCadastros(){
 }
 
 function validateUserType(){
-  let user = JSON.parse(localStorage.getItem('loggedUser')) 
+  // let user = JSON.parse(localStorage.getItem('loggedUser')) 
 
   // if(user === "user"){
   //   window.location = "../userArea/registerStock/index.html"
   // } else {
-  //   console.log("aaa")
   //   window.location = "../companyArea/registerPoint/index.html"
   // }
-
-  console.log("user",user);
 }
-
 
 (function($) {
 
 	"use strict";
-
 
 })(jQuery);
