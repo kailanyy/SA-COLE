@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus pontos</title>
-    <link rel="stylesheet" href="../../../css/form.css">
+    <title>Meus estoques</title>
+    <link rel="stylesheet" href="../../../style/form.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../geral/icofont/icofont.min.css">
-    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../../style/main.css">
     <link rel="stylesheet" href="../../../geral/fonts/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="../../../geral/vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../../../geral/vendor/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" type="text/css" href="../../../css/util.css">
     <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
 </head>
 <body>
@@ -28,11 +27,11 @@
         <nav>
           <a href="../map/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
             <span class="icofont-google-map"></span>
-            <span>Pontos de estoque</span>
+            <span>Pontos de coleta</span>
             </a>
-            <a href="../myCollectionPoints/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+            <a href="../myStockPoints/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
             <span class="icofont-garbage"></span>
-            <span>Meus pontos</span>
+            <span>Meus estoques</span>
             </a>
             <a href="../../createAccount/login.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
             <span class="icofont-user"></span>
@@ -42,16 +41,14 @@
     </div>
     </nav>
 
-      <h3>Meus pontos de coleta</h3>
-    <a href="../registerPoint/index.html" class="btn btn-secondary" style="margin-left: 38em;">Adicionar ponto</a>
-
-    
-        <div id="collectionPointsList" style="border-radius: 10px;"></div>
+      <h3>Meus estoques de lixo</h3>
+    <a href="../registerStock/index.html" class="btn btn-secondary" style="margin-left: 38em;">Adicionar estoque</a>
 
 
-        
-<script src="../myCollectionPoints/script.js"></script>
+        <div id="stockPointsList" style="border-radius: 10px;"></div>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./script.js"></script>
 <script src="../../../js/jquery.min.js"></script>
 <script src="../../../geral/vendor/select2/select2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -64,35 +61,12 @@
 			ps.update();
 		})
 	});	
-
-  (function ($) {
-	"use strict";
-	$('.column100').on('mouseover',function(){
-		var table1 = $(this).parent().parent().parent();
-		var table2 = $(this).parent().parent();
-		var verTable = $(table1).data('vertable')+"";
-		var column = $(this).data('column') + ""; 
-
-		$(table2).find("."+column).addClass('hov-column-'+ verTable);
-		$(table1).find(".row100.head ."+column).addClass('hov-column-head-'+ verTable);
-	});
-
-	$('.column100').on('mouseout',function(){
-		var table1 = $(this).parent().parent().parent();
-		var table2 = $(this).parent().parent();
-		var verTable = $(table1).data('vertable')+"";
-		var column = $(this).data('column') + ""; 
-
-		$(table2).find("."+column).removeClass('hov-column-'+ verTable);
-		$(table1).find(".row100.head ."+column).removeClass('hov-column-head-'+ verTable);
-	});
-    
-})(jQuery);
 </script>
 
 <script src="../../../sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABD" async defer></script>
+    
 </body>
 </html>
