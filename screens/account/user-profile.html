@@ -7,8 +7,8 @@
     <title>Minha conta</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../createAccount/style.css">
-	<link rel="stylesheet" href="../../css/main.css">
+	<link rel="stylesheet" href="../../style/login-register.css">
+	<link rel="stylesheet" href="../../style/main.css">
     <link rel="stylesheet" href="../../sweetalert/node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
 	<link rel="stylesheet" href="../../geral/icofont/icofont.min.css">
@@ -49,9 +49,8 @@
 			<img class="img-center mb-1" src="../../geral/imgs/perfil.png" style="margin-left: 41%; ">
 			<h3 class="text-center mb-4">Minha conta</h3>
 			<div class="form-group" style="margin-bottom: 5em;">
-				<label>Usuário: </label><br>
-				<label>Tipo de conta:</label><br>
-				<label>Senha: </label>
+				<label>Usuário: </label> <label id="id_usuario" showUser()></label> <br>
+				<label>Senha: </label> <label></label>
 			</div>
 			
 			<a onclick="" class="btn btn-danger" style="color: #fff; border-radius: 100px;">
@@ -71,6 +70,19 @@
 	</div>
 </section>
 
+<script>
+function showUser() {
+let cadastros = JSON.parse(localStorage.getItem("dadosCadastros"))
+let htmlUser = ""
+for(i = 0; i < cadastros.length; i++) {
+let htmlUser = `${cadastros[i].username}`
+}
+document.getElementById('id_usuario').innerHTML = htmlUser
+}
+
+
+
+</script>
 <script src="../../sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 

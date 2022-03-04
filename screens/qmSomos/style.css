@@ -1,5 +1,5 @@
 body{
-    background-color: #4A8D70 !important;
+    background-color: #495A90 !important;
     margin: 0px;
 }
 
@@ -8,9 +8,9 @@ body{
 }
  
 .navbar {
-    background-color: white;
+    background-color: #495A90;
     height: 110px;
-    color: #4A8D70;
+    color: #E5E5E5;
     padding: 100px;
 }
 
@@ -21,10 +21,20 @@ body{
 }
 
 footer{
-    background-color: #206648;
+
+    background-color: #495A90;
     width: 100%;
-    color: white;
+    color: #E5E5E5;
     padding: 30px;
     margin: 0px auto;
     margin-top: 7%;
+}
+
+h6{
+color:#495A90 ;
+}
+
+
+#col-2{
+    color:#495A90 
 }
