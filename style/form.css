@@ -26,33 +26,25 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-@media screen and (max-width: 770px) and (min-width: 575px){
-    .btn{
-        display: block !important;
-    }
+/* responsividade navbar */
 
-    .btn1{
+@media screen and (max-width: 997px) and (min-width: 683px){
+    .btn2{
         margin-bottom: 6px;
+        display: block !important;
     }
 
     .navbar{
-        height: 140px;
-    }
-
-    h3{
-        margin-top: 5% !important;
+        height: 200px;
     }
 }
 
-@media screen and (max-width: 574px) {
-    .btn{
-        display: block !important;
-    }
-
-    .btn1{
+@media screen and (max-width: 683px) {
+    .btn2{
         margin-bottom: 6px;
         width: 100%;
-        margin-left: 45%;
+        margin-left: 30%;
+        display: block !important;
     }
 
     .navbar{
@@ -73,5 +65,68 @@ input[type=number] {
 
     h3{
         margin-top: 5% !important;
+    }
+}
+
+/* responsividade navbar admin */
+
+@media screen and (max-width: 770px) and (min-width: 575px){
+    .btn1{
+        margin-bottom: 6px;
+        display: block !important;
+    }
+
+    .navbar1{
+        height: 140px;
+    }
+
+    h3{
+        margin-top: 5% !important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .btn1{
+        margin-bottom: 6px;
+        width: 100%;
+        margin-left: 45%;
+        display: block !important;
+    }
+
+    .navbar1{
+        height: 250px;
+        padding: 50px;
+    }
+
+    .logo{
+        margin-bottom: 5%;
+        margin-left: 15%;
+    }
+
+    .h1, h1{
+        font-weight: 500;
+        line-height: 1.2;
+        font-size: calc(1.375rem + 1.5vw) !important;
+    }
+
+    h3{
+        margin-top: 5% !important;
+    }
+}
+
+/* responsividade pag de registro de pontos de coleta */
+
+@media screen and (max-width: 694px){
+    .containerColeta{
+        display: block !important;
+        padding-left: 0 !important;
+    }
+
+    .endereçoColeta{
+        margin: auto auto 10% auto;
+    }
+
+    .lixoColeta{
+        margin-left: 13% !important;
     }
 }

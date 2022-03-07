@@ -21,15 +21,15 @@
             </div>
         </head>
         <nav>
-            <a href="../../map/company/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+            <a href="../../map/company/index.html" class="btn2 btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
                 <span class="icofont-google-map"></span>
                 <span>Pontos de estoque</span>
                 </a>
-                <a href="../../company/myCollectionPoints/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+                <a href="../../company/myCollectionPoints/index.html" class="btn2 btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
                 <span class="icofont-garbage"></span>
                 <span>Meus pontos</span>
                 </a>
-                <a href="../../account/user-profile.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
+                <a href="../../account/user-profile.html" class="btn2 btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
                 <span class="icofont-user"></span>
                 <span>Conta</span>
                 </a>
@@ -39,8 +39,8 @@
 
 <h3>Cadastrar ponto de coleta</h3>
 
-<div class="d-flex justify-content-center" style="padding-left: 6%;">
-    <div class="d-flex flex-column" style="width: 230px;">
+<div class="containerColeta justify-content-center" style="padding-left: 6%; display: flex;">
+    <div class="endereçoColeta d-flex flex-column" style="width: 230px;">
       <h4 style="width: 100%; text-align:center; margin-bottom: 18px;">Insira um novo ponto de coleta</h4>
       <label>CEP</label>
       <input type="text" id="cep">
@@ -56,11 +56,10 @@
       <input type="text" id="complemento">
    </div>
 
-    <div class="ms-5" style="padding-left: 5%;">
-        <h4 style="width: 70%; text-align:center;">Tipos de lixos aceitos no ponto de coleta</h4>
+    <div class="lixoColeta" style="padding-left: 5%; margin: 2% 0 0 3em;">
+        <h4 style="width: 70%; text-align: center;">Tipos de lixos aceitos no ponto de coleta</h4>
         <div class="mt-4">
         <div style="height: 250px; width: 367px; align-items: center;" class="d-flex flex-column justify-content-center">
-
             <div class="container">
                 <div class="row">
                     <div class="col-6">
@@ -130,9 +129,6 @@
                     </div>
                 </div>           
             </div>
-
-        <!-- <button  class="mt-2 btn btn-sm" style="width: 116px; background-color: #126E82; color: white;" type="submit" onclick="validateNewListItem()">Adicionar</button> -->
-
     </div>
 </div>
 
