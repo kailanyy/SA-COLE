@@ -7,7 +7,7 @@ se botasse na sua ia alterar a home*/
     height: 110px;
     color: rgb(236, 236, 236);
     padding: 100px;
-}
+} 
 
 h3{
     padding-bottom: 25px;
@@ -24,4 +24,54 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 770px) and (min-width: 575px){
+    .btn{
+        display: block !important;
+    }
+
+    .btn1{
+        margin-bottom: 6px;
+    }
+
+    .navbar{
+        height: 140px;
+    }
+
+    h3{
+        margin-top: 5% !important;
+    }
+}
+
+@media screen and (max-width: 574px) {
+    .btn{
+        display: block !important;
+    }
+
+    .btn1{
+        margin-bottom: 6px;
+        width: 100%;
+        margin-left: 45%;
+    }
+
+    .navbar{
+        height: 250px;
+        padding: 50px;
+    }
+
+    .logo{
+        margin-bottom: 5%;
+        margin-left: 15%;
+    }
+
+    .h1, h1{
+        font-weight: 500;
+        line-height: 1.2;
+        font-size: calc(1.375rem + 1.5vw) !important;
+    }
+
+    h3{
+        margin-top: 5% !important;
+    }
 }
