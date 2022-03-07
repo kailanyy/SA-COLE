@@ -30,13 +30,12 @@ function cadastrar(usuario, senha, typeUser) {
   cadastros.push(dadosCadastros);
 
   localStorage.setItem("dadosCadastros", JSON.stringify(cadastros)) 
-  localStorage.setItem("loggedUser", JSON.stringify({id: dadosCadastros.id, typeUser}))
-  
+  localStorage.setItem("loggedUser", JSON.stringify({id: dadosCadastros.id, typeUser, username: dadosCadastros.username}))
   if(typeUser === "user"){
-    window.location = "../userArea/registerStock/index.html";
+    window.location = "../user/registerStock/index.html";
   }
   if(typeUser === "company"){
-    window.location = "../companyArea/registerPoint/index.html"
+    window.location = "../company/registerPoint/index.html"
   }
 }
   
