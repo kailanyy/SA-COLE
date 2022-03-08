@@ -46,14 +46,19 @@ function login(typeUser){
   let usuariosCadastrados = JSON.parse(localStorage.getItem("dadosCadastros"));
 
   for (let i=0; i<usuariosCadastrados.length; i++){
+    if(senhaInput === "admin" &&  usuarioInput === "admin"){
+      window.location = "../admin/index.html"
+      return;
+    }
     if(usuarioInput === usuariosCadastrados[i].username && senhaInput === usuariosCadastrados[i].password){
       localStorage.setItem("loggedUser", JSON.stringify({id: usuariosCadastrados.id, typeUser}))
+
       if (usuariosCadastrados[i].typeUser === "user") {
-        window.location = "../userArea/registerStock/index.html"
+        window.location = "../user/registerStock/index.html"
         return;
       }
       if (usuariosCadastrados[i].typeUser === "company") {
-        window.location = "../companyArea/registerPoint/index.html"
+        window.location = "../company/registerPoint/index.html"
         return;
       }
       return;
