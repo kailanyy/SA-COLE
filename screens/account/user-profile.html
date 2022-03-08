@@ -46,47 +46,33 @@
 		<div class="row justify-content-center">
 			<div class="col-md-6 col-lg-5">
 				<div class="login-wrap p-4 p-md-5">
-			<img class="img-center mb-1" src="../../geral/imgs/perfil.png" style="margin-left: 41%; ">
-			<h3 class="text-center mb-4">Minha conta</h3>
-			<div class="form-group" style="margin-bottom: 5em;">
-				<label>Usuário:</label> 
-				<label id="infoLoggedUser"></label> <br>
-				<label>Senha:</label> <br>
-				<a onclick="" class="btn btn-danger" style="color: #fff; border-radius: 100px;">
+				<img class="img-center mb-1" src="../../geral/imgs/perfil.png" style="margin-left: 41%; ">
+				<h3 class="text-center mb-4">Minha conta</h3>
+				<div class="form-group" style="margin-bottom: 5em;">
+					<label>Usuário:</label> 
+					<label id="infoLoggedUser"></label><br>
+					<label>Senha:</label> <br>
+				</div>
+				
+				<a onclick="deleteAccount()" class="btn btn-danger btn-sm" style="color: #fff; border-radius: 100px;">
 					<span class="icofont-trash"></span>
+					<span>Excluir conta</span>
+				</a>
+
+				<a class="btn btn-secondary btn-sm" style="color: #fff;  border-radius: 100px; margin-left: 10px;">
+					<span class="icofont-ui-password"></span>
 					<span>Alterar Senha</span>
 				</a>
-			</div>
-			
-			<a onclick="" class="btn btn-danger" style="color: #fff; border-radius: 100px;">
-				<span class="icofont-trash"></span>
-				<span onclick="removeItemById()">Excluir conta</span>
-			</a>
 
-			<a onclick="" class="btn btn-dark" style="color: #fff; border-radius: 100px; margin-left: 20%;">
-				<span class="icofont-logout"></span>
-				<span>Sair</span>
-			</a>
-					<!-- <button type="button" class="btn btn-danger">Deletar conta</button>
-					<button type="button" class="btn btn-secondary" style="margin-left: 30%;">Sair da conta</button> -->
+				<a onclick= "exitAccount()" class="btn btn-dark btn-sm" style="color: #fff; border-radius: 100px; margin-left: 10px;">
+					<span class="icofont-logout"></span>
+					<span>Sair</span>
+				</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<!-- <script>
-function showUser() {
-let cadastros = JSON.parse(localStorage.getItem("dadosCadastros"))
-let htmlUser = ""
-for(i = 0; i < cadastros.length; i++) {
-let htmlUser = `${cadastros[i].username}`
-}
-document.getElementById('id_usuario').innerHTML = htmlUser
-}
-
-
-</script> -->
 
 <script src="./user-profile.js"></script>
 <script src="../../sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
