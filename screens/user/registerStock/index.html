@@ -44,8 +44,8 @@
 	  
 		<h3>Registre seu estoque de lixo</h3>
 	
-	<div class="d-flex justify-content-center">
-	  <div class="d-flex flex-column" style="width: 230px;">
+	<div class="containerEstoque justify-content-center" style="display: flex;">
+	  <div class="endereçoEstoque d-flex flex-column" style="width: 230px;">
 		<h4 style="width: 100%; text-align:center; margin-bottom: 18px;">Insira um local com estoque de lixo</h4>
 		<label>CEP</label>
 		<input type="text" id="cep">
@@ -61,8 +61,8 @@
 		<input type="text" id="complemento">
 	 </div>
 	
-	  <div style="margin-left: 8pc;">
-		  <h4 style="margin-top: 20%; margin-bottom: 18px;">Lixos a serem descartados</h4>
+	  <div class="lixoEstoque" style="text-align: center;">
+		  <h4 style="margin-top: 15%; margin-bottom: 18px;">Lixos a serem descartados</h4>
 		  <div>
 	
 			<label>Tipo de Lixo</label><br>
@@ -97,9 +97,12 @@
 	  </div>
 	</div>
 	
-	<button class="mt-4 btn btn-success" style="width: 132px; color: white; margin-left: 46%;" type="submit" onclick="validateFields()">Salvar estoque</button>
+	<div style="text-align: center;">
+	<button class="mt-5 btn btn-success" style="width: 132px; color: white; text-align: center;" type="submit" onclick="validateFields()">Salvar estoque</button>
+	</div>
+
 	<div>
-		<h4 style="text-align: center; margin-top: 40px; margin-bottom: 30px;">Itens registrados</h4>
+		<h4 style="text-align: center; margin-top: 40px; margin-bottom: 30px;">Itens registrados</h4> 
 	  </div>	
 	
 	<div class="limiter">

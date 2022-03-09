@@ -47,44 +47,44 @@ function validateFields() {
     })
 }
 
-    function saveStockPoint(formFields) {
+function saveStockPoint(formFields) {
 
-        let stockPoint = localStorage.getItem("stockPoints");
-        let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
-    
-    
-        formFields = {
-            ...formFields,
-            stockItems: newPointItems,
-            userID: userInfo.id,
-            id: Math.floor(Date.now() * Math.random()).toString(36)
-        }
-    
-        console.log("formFields", formFields);
-    
-        if (stockPoint == null) stockPoint = [];
-        else stockPoint = JSON.parse(stockPoint);
-        stockPoint.push(formFields);
-        localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
-        
-        Swal.fire({
-            title: 'Ponto de estoque cadastrado com sucesso!',
-            showClass: {
-            popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-            }
-        })
+    let stockPoint = localStorage.getItem("stockPoints");
+    let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
 
-        console.log("função saveStockPoint, parametros: ");
-        console.log(formFields);
+
+    formFields = {
+        ...formFields,
+        stockItems: newPointItems,
+        userID: userInfo.id,
+        id: Math.floor(Date.now() * Math.random()).toString(36)
     }
+
+    console.log("formFields", formFields);
+
+    if (stockPoint == null) stockPoint = [];
+    else stockPoint = JSON.parse(stockPoint);
+    stockPoint.push(formFields);
+    localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
+    
+    Swal.fire({
+        title: 'Ponto de estoque cadastrado com sucesso!',
+        showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+        }
+    })
+
+    console.log("função saveStockPoint, parametros: ");
+    console.log(formFields);
+}
 
 function validateNewListItem() {
     let trashType = document.getElementById('trashType').value;
     let amountTrash = document.getElementById('amountTrash').value;
-console.log(trashType, amountTrash);
+
     if (!trashType || !amountTrash) {
         Swal.fire({
             title: 'Todos os campos devem estar preenchidos',
@@ -104,9 +104,7 @@ console.log(trashType, amountTrash);
 }
 
 function addItem(item) {
-    console.log(item);
     newPointItems.push(item)
-    console.log(newPointItems);
     printListItems();
 }
 
