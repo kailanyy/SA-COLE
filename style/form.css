@@ -26,6 +26,19 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+.lixoColeta{
+    padding-left: 5%;
+    margin: 2% 0 0 3em;
+}
+
+.lixoEstoque{
+    margin-left: 8pc;
+}
+
+.btnColeta{
+    margin-right: 25%;
+}
+
 /* responsividade navbar */
 
 @media screen and (max-width: 997px) and (min-width: 683px){
@@ -135,6 +148,27 @@ input[type=number] {
     }
 
     .lixoColeta{
-        margin-left: 13% !important;
+        margin: 15% 0 0 10%;
+    }
+
+    .btnColeta{
+        margin-left: 10%;
+    }
+}
+
+/* responsividade pag de registro de estoque de lixo */
+
+@media screen and (max-width: 682px){
+    .containerEstoque{
+        display: block !important;
+        padding-left: 0 !important;
+    }
+
+    .endereçoEstoque{
+        margin: auto auto 10% auto;
+    }
+
+    .lixoEstoque{
+        margin: auto auto 4% auto;
     }
 }
