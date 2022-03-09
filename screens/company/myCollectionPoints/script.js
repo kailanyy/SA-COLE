@@ -14,7 +14,7 @@ function printListCollectionPoints(collectionPoint) {
   
   for(i = 0; i < collectionPoint.length; i++) {
     htmlListString += 
-        `<ul class="list-group" style="width: 30%; margin: auto; margin-bottom: 2em; margin-top: 3em; box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%)">` +
+        `<ul class="list-group" style="width: 310px; margin: 50px 0 0 100px; display: inline-block">` +
         `<li class="list-group-item" style="text-align: center; background-color: #3C8B63; color: white; padding: 13px;">Ponto de Coleta</li>` +
         `<li class="list-group-item bg-light"><b>CEP: </b>${collectionPoint[i].cep}</li>` +
         `<li class="list-group-item bg-light"><b>Cidade: </b>${collectionPoint[i].localidade}</li>` +
