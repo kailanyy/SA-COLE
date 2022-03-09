@@ -12,7 +12,6 @@ function validarPreenchimentoCampos() {
     return;
   }
   cadastrar(usuario, senha, typeUser);
-  validateUserType()
 }
 
 function cadastrar(usuario, senha, typeUser) {
@@ -31,6 +30,7 @@ function cadastrar(usuario, senha, typeUser) {
 
   localStorage.setItem("dadosCadastros", JSON.stringify(cadastros)) 
   localStorage.setItem("loggedUser", JSON.stringify({id: dadosCadastros.id, typeUser, username: dadosCadastros.username}))
+
   if(typeUser === "user"){
     window.location = "../user/registerStock/index.html";
   }
@@ -85,16 +85,6 @@ function mostrarCadastros(){
     let listagemRegistros = document.getElementById("listaDeRegistro")
     cadastros = JSON.parse(cadastros);
   };
-}
-
-function validateUserType(){
-  // let user = JSON.parse(localStorage.getItem('loggedUser')) 
-
-  // if(user === "user"){
-  //   window.location = "../userArea/registerStock/index.html"
-  // } else {
-  //   window.location = "../companyArea/registerPoint/index.html"
-  // }
 }
 
 (function($) {

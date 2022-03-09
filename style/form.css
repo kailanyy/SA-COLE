@@ -83,6 +83,10 @@ input[type=number] {
     h3{
         margin-top: 5% !important;
     }
+
+    .btnNav{
+        margin-top: 50px;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -111,6 +115,10 @@ input[type=number] {
 
     h3{
         margin-top: 5% !important;
+    }
+
+    .btnNav{
+        margin-top: 20px;
     }
 }
 

@@ -22,47 +22,48 @@
                 </div>
             </head>
             <nav>
-            <a href="../../map/user/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
-                <span class="icofont-google-map"></span>
-                <span>Pontos de coleta</span>
+                <a href="../../map/user/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+                    <span class="icofont-google-map"></span>
+                    <span>Pontos de coleta</span>
                 </a>
                 <a href="../myStockPoints/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
-                <span class="icofont-garbage"></span>
-                <span>Meus estoques</span>
+                    <span class="icofont-garbage"></span>
+                    <span>Meus estoques</span>
                 </a>
                 <a href="../../account/user-profile.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
-                <span class="icofont-user"></span>
-                <span>Conta</span>
-        </nav>
+                    <span class="icofont-user"></span>
+                    <span>Conta</span>
+                </a>
+            </nav>
         </div>
-        </nav>
+    </nav>
         
     <div id="map-container">
-    <div id="locations-panel">
-        <div id="locations-panel-list">
-        <header>
-            <h1 class="search-title">
-            <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
-            Encontre um ponto de coleta
-            </h1>
-            <div class="search-input">
-            <input id="location-search-input" placeholder="Digite seu CEP ou endereço">
-            <div id="search-overlay-search" class="search-input-overlay search">
-                <button id="location-search-button">
-                <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="Search"/>
-                </button>
+        <div id="locations-panel">
+            <div id="locations-panel-list">
+                <header>
+                    <h1 class="search-title">
+                    <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
+                    Encontre um ponto de coleta
+                    </h1>
+                    <div class="search-input">
+                        <input id="location-search-input" placeholder="Digite seu CEP ou endereço">
+                        <div id="search-overlay-search" class="search-input-overlay search">
+                            <button id="location-search-button">
+                            <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="Search"/>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+                <div class="section-name" id="location-results-section-name">
+                    Todos os pontos de coleta
+                </div>
+                <div class="results">
+                    <ul id="location-results-list"></ul>
+                </div>
             </div>
-            </div>
-        </header>
-        <div class="section-name" id="location-results-section-name">
-            Todos os pontos de coleta
         </div>
-        <div class="results">
-            <ul id="location-results-list"></ul>
-        </div>
-        </div>
-    </div>
-    <div id="map"></div>
+        <div id="map"></div>
     </div>
 
 
