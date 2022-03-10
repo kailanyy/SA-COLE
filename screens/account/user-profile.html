@@ -22,7 +22,7 @@
 			<head>
 				<div class="d-flex flex-row">
 					<img style="margin-left: 40px;" width="50px" src="../../geral/imgs/lixoCinza.png">
-					<h1 style="margin-left: 13px; font-family: KGRedHands;">mave</h1>
+					<h1 style="margin-left: 13px !important; font-family: KGRedHands;">cole</h1>
 				</div>
 			</head>
 			<nav> 
@@ -44,73 +44,35 @@
 		</div>
 	</nav>
 
-	<section class="ftco-section" style="margin-top: 2% !important;">
+	<section class="ftco-section" style="margin-top: 6% !important;">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
 						<img class="img-center mb-1" src="../../geral/imgs/perfil.png" style="margin-left: 41%; ">
-						<h3 class="text-center mb-4">Minha conta</h3>
-						<div class="form-group" style="margin-bottom: 5em;">
-							<label>Usuário:</label> 
-							<label id="infoLoggedUser"></label><br>
-							<label>Senha:</label> <br>
-						</div>
+						<h3 id="infoLoggedUser" class="mb-5"></h3>
 						
-						<a onclick="deleteAccount()" class="btn btn-danger btn-sm" style="color: #fff; border-radius: 100px;">
-							<span class="icofont-trash"></span>
-							<span>Excluir conta</span>
-						</a>
+						<div class="d-flex justify-content-around">
+							<a onclick="deleteAccount()" class="btn btn-danger btn-sm" style="color: #fff; border-radius: 100px;">
+								<span class="icofont-trash"></span>
+								<span>Excluir conta</span>
+							</a>
 
-						<a class="btn btn-secondary btn-sm" style="color: #fff;  border-radius: 100px; margin-left: 10px;">
-							<span class="icofont-ui-password"></span>
-							<span>Alterar Senha</span>
-						</a>
+							<a onclick="changePassword()" class="btn btn-secondary btn-sm" style="color: #fff;  border-radius: 100px;">
+								<span class="icofont-ui-password"></span>
+								<span>Alterar senha</span>
+							</a>
 
-						<a onclick= "exitAccount()" class="btn btn-dark btn-sm" style="color: #fff; border-radius: 100px; margin-left: 10px;">
-							<span class="icofont-logout"></span>
-							<span>Sair</span>
-						</a>
+							<a onclick= "exitAccount()" class="btn btn-dark btn-sm" style="color: #fff; border-radius: 100px;">
+								<span class="icofont-logout"></span>
+								<span>Sair</span>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<footer style="background-color: #495371; margin-top: 20px !important;" class="fixed-bottom">
-		<div class="row" style="text-align: center;">
-			<div class="col-3" style="margin-left: 120px;">
-				<ul class="nav flex-column">
-					<li class="nav-item mt-3">
-						<a href="../home/index.html" class="nav-link p-0 text-light">
-							<i class="icofont-home" style="color: black;"></i>
-							<span>Home</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="col-4 nav-item mt-2">
-				<span class="icofont-ui-call" style="color: black;"></span>
-				<span style="color: white;">Fale Conosco</span>
-				<ul class="nav flex-column">
-					<li class="nav-item mb-2">
-						<a class="nav-link p-0 text-light">cole@contato.com</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="col-2">
-				<ul class="nav flex-column">
-					<li class="nav-item mt-3">
-						<a href="../qmSomos/index.html" class="nav-link p-0 text-light">
-							<span>Sobre a COLE</span>
-							<i class="icofont-info-circle" style="color: black;"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-	</footer>
 
 <script src="./user-profile.js"></script>
 <script src="../../sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
