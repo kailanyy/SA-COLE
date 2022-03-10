@@ -28,26 +28,58 @@
           <a href="../../map/user/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
             <span class="icofont-google-map"></span>
             <span>Pontos de coleta</span>
-            </a>
-            <a href="../myStockPoints/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+          </a>
+          <a href="../myStockPoints/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
             <span class="icofont-garbage"></span>
             <span>Meus estoques</span>
-            </a>
-            <a href="../../account/user-profile.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
+          </a>
+          <a href="../../account/user-profile.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
             <span class="icofont-user"></span>
             <span>Conta</span>
-            </a>
+          </a>
         </nav>
     </div>
-    </nav>
+  </nav>
 
-      <h3>Meus estoques de lixo</h3>
+  <h3>Meus estoques de lixo</h3>
 
-      <div class="justify-content-center text-center">
-      <a href="../registerStock/index.html" class="btn btn-secondary">Adicionar estoque</a>
-      </div>
-      
-      <div id="stockPointsList" style="border-radius: 10px;"></div>
+  <div class="justify-content-center text-center">
+    <a href="../registerStock/index.html" class="btn btn-secondary">Adicionar estoque</a>
+  </div>
+  
+  <div id="stockPointsList" style="border-radius: 10px;"></div>
+
+  <nav class="navigation d-flex justify-content-around  flex-direction: column" style="height: 100px; align-items: center; margin-top: 20px;">
+    <div>
+      <a href="../home/index.html" class="nav-link p-0 text-light">
+        <i class="icofont-home" style="color: white;"></i>
+        <span>Home</span>
+      </a>
+    </div>
+
+    <div>
+      <a href="../../qmSomos/index.html" class="nav-link p-0 text-light">
+        <i class="icofont-info-circle" style="color: white;"></i>
+        <span>Sobre a COLE</span>
+      </a>
+    </div>
+    
+    <div>
+      <i class="icofont-ui-call" style="color: white;"></i>
+      <span style="color: white;">Fale Conosco</span>
+      <a class="nav-link p-0 text-light">cole@contato.com</a>
+    </div>
+  </nav>
+
+  <script>
+    $('.js-pscroll').each(function(){
+      var ps = new PerfectScrollbar(this);
+  
+      $(window).on('resize', function(){
+        ps.update();
+      })
+    });	
+  </script>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="./script.js"></script>
@@ -55,20 +87,9 @@
 <script src="../../../geral/vendor/select2/select2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="../../../geral/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script>
-	$('.js-pscroll').each(function(){
-		var ps = new PerfectScrollbar(this);
-
-		$(window).on('resize', function(){
-			ps.update();
-		})
-	});	
-</script>
-
 <script src="../../../sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABD" async defer></script>
-    
 </body>
 </html>

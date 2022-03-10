@@ -60,13 +60,31 @@ function getHtmlStockPointItemsList(stockItems) {
 
 function removeItemById(id) {
     let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
-    
-    let index = stockPoints.find(function(stockPoint){
-        return stockPoint.id === id 
-    });
-    stockPoints.splice(index, 1)
-    localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
-    listStockPoints()
+
+    Swal.fire({
+        title: 'Você tem certeza?',
+        text: "Você não será capaz de reverter essa ação!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Sim, excluir'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Excluído!',
+            'O ponto com estoque foi exclúido',
+            'success'
+            )
+            let index = stockPoints.find(function(stockPoint){
+                return stockPoint.id === id 
+            });
+            stockPoints.splice(index, 1)
+            localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
+            listStockPoints()
+        }
+      })
 }
 
 (function ($) {
