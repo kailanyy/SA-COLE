@@ -172,3 +172,23 @@ input[type=number] {
         margin: auto auto 4% auto;
     }
 }
+
+/* footer */
+.navigation {
+    text-align: center;
+    background: #495371;
+    padding: 10px;
+}
+
+.navigation a {
+    text-decoration: none;
+    /* background: rgb(204, 191, 191);
+    width: 300px; */
+    border-radius: 5px;
+    color: white;
+    padding: 3px 8px;
+}
+
+.navigation a :hover {
+    color: black
+}
