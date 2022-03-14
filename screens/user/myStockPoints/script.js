@@ -21,7 +21,7 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item bg-light"><b>Número:</b> ${stockPoints[i].numero}</li>` +
             `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
             `${getHtmlStockPointItemsList(stockPoints[i].stockItems)}` +
-            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir</button></li></ul>`
+            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir Estoque</button></li></ul>` 
     }
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }
@@ -37,11 +37,11 @@ function getHtmlStockPointItemsList(stockItems) {
                                     <tr class="row100 head">
                                         <th class="cell100 column7">Tipo de lixo</th>
                                         <th class="cell100 column8">Quantidade</th>
+                                        <th class="cell100 column8">Opções</th>
                                     </tr>
                                 </thead>
                             </table>
                         </div>
-
                         <div class="table100-body js-pscroll">
                             <table>
                                 <tbody>`
@@ -51,6 +51,7 @@ function getHtmlStockPointItemsList(stockItems) {
         `<tr class="row100 body">
             <td class="cell100 column6">${stockItems[y].trashType}</td>
             <td class="cell100 column8">${stockItems[y].amountTrash}</td>
+            <td><button class='btn btn-danger' onclick="removeTrash(${i})">Excluir</button></td>
         </tr>`
     }
 
@@ -85,6 +86,16 @@ function removeItemById(id) {
             listStockPoints()
         }
       })
+}
+
+function removeTrash(){
+    let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
+    let index = stockPoints.find(function(stockPoints){
+        return stockPoints.stockItems[i]
+    });
+    stockPoints.splice(index, 1)
+    // localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
+    listStockPoints()
 }
 
 (function ($) {

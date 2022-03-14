@@ -117,7 +117,7 @@ function printListItems() {
             <td class="cell100 column1">${i}</td>
             <td class="cell100 column2">${newPointItems[i].trashType}</td>
             <td class="cell100 column5">${newPointItems[i].amountTrash}</td>
-            <td class="cell100 column1"><button class='btn btn-danger' onclick="removeItemByIndex(${i})">Excluir</button></td>
+            <td class="cell100 column1"><button class='btn btn-danger' onclick="removeItemById(${i})">Excluir</button></td>
         </tr>
     </tbody>`
 
