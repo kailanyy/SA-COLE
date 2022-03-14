@@ -30,6 +30,8 @@ function cadastrar(usuario, senha, typeUser) {
 
   localStorage.setItem("dadosCadastros", JSON.stringify(cadastros)) 
   localStorage.setItem("loggedUser", JSON.stringify({id: dadosCadastros.id, typeUser, username: dadosCadastros.username}))
+  // localStorage.setItem("loggedUser", JSON.stringify({id: usuariosCadastrados.id, typeUser}))
+
 
   if(typeUser === "user"){
     window.location = "../user/registerStock/index.html";
@@ -50,9 +52,14 @@ function login(typeUser){
       window.location = "../admin/index.html"
       return;
     }
-    if(usuarioInput === usuariosCadastrados[i].username && senhaInput === usuariosCadastrados[i].password){
-      localStorage.setItem("loggedUser", JSON.stringify({id: usuariosCadastrados.id, typeUser}))
 
+    // if(usuarioInput === usuariosCadastrados[i].username && senhaInput === usuariosCadastrados[i].password){
+    //   localStorage.setItem("loggedUser", JSON.stringify({id: usuariosCadastrados.id, typeUser, username: usuariosCadastrados.username}))
+    // }
+
+    if(usuarioInput === usuariosCadastrados[i].username && senhaInput === usuariosCadastrados[i].password){
+      // localStorage.setItem("loggedUser", JSON.stringify({id: usuariosCadastrados.id, typeUser}))
+      
       if (usuariosCadastrados[i].typeUser === "user") {
         window.location = "../user/registerStock/index.html"
         return;
@@ -61,6 +68,7 @@ function login(typeUser){
         window.location = "../company/registerPoint/index.html"
         return;
       }
+      localStorage.setItem("loggedUser", JSON.stringify({id: usuariosCadastrados.id, typeUser, username: usuariosCadastrados.username}))
       return;
     } else {
       Swal.fire({
