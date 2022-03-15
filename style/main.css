@@ -264,7 +264,8 @@ th, td {
 }
 
 .table100.ver5 .table100-head {
-  padding-right: 30px;
+  padding-right: 5px;
+  padding-left: 8.5px;
   margin: 0;
 }
 

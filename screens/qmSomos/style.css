@@ -1,5 +1,5 @@
 body{
-    background-color: #495A90 !important;
+    background-color: #495371 !important;
     margin: 0px;
 }
 
@@ -8,7 +8,7 @@ body{
 }
  
 .navbar {
-    background-color: #495A90;
+    background-color: #495371;
     height: 110px;
     color: #E5E5E5;
 }
@@ -20,20 +20,10 @@ body{
 }
 
 footer{
-
-    background-color: #495A90;
+    background-color: #495371;
     width: 100%;
     color: #E5E5E5;
     padding: 30px;
     margin: 0px auto;
     margin-top: 7%;
-}
-
-h6{
-color:#495A90 ;
-}
-
-
-#col-2{
-    color:#495A90 
 }

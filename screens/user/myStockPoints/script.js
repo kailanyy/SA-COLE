@@ -21,7 +21,7 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item bg-light"><b>Número:</b> ${stockPoints[i].numero}</li>` +
             `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
             `${getHtmlStockPointItemsList(stockPoints[i].stockItems)}` +
-            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir Estoque</button></li></ul>` 
+            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir estoque</button></li></ul>` 
     }
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }
@@ -49,9 +49,9 @@ function getHtmlStockPointItemsList(stockItems) {
     for(y = 0; y < stockItems.length; y++) {
         htmlString += 
         `<tr class="row100 body">
-            <td class="cell100 column6">${stockItems[y].trashType}</td>
+            <td class="cell100 column7">${stockItems[y].trashType}</td>
             <td class="cell100 column8">${stockItems[y].amountTrash}</td>
-            <td><button class='btn btn-danger' onclick="removeTrash(${i})">Excluir</button></td>
+            <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="removeTrash(${i})">Excluir</button></td>
         </tr>`
     }
 
@@ -68,14 +68,13 @@ function removeItemById(id) {
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#d33',
-        cancelButtonColor: '#3085d6',
         cancelButtonText: 'Cancelar',
         confirmButtonText: 'Sim, excluir'
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
             'Excluído!',
-            'O ponto com estoque foi exclúido',
+            'O ponto com estoque foi excluído',
             'success'
             )
             let index = stockPoints.find(function(stockPoint){
