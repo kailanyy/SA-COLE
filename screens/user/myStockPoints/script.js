@@ -51,7 +51,7 @@ function getHtmlStockPointItemsList(stockItems) {
         `<tr class="row100 body">
             <td class="cell100 column7">${stockItems[y].trashType}</td>
             <td class="cell100 column8">${stockItems[y].amountTrash}</td>
-            <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="removeTrash(${i})">Excluir</button></td>
+            <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="removeStockItemsById(${i})">Excluir</button></td>
         </tr>`
     }
 
@@ -60,6 +60,7 @@ function getHtmlStockPointItemsList(stockItems) {
 } 
 
 function removeItemById(id) {
+
     let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
 
     Swal.fire({
@@ -87,14 +88,27 @@ function removeItemById(id) {
       })
 }
 
-function removeTrash(){
+function removeStockItemsById(stockItems,id){
+    
+    stockItems = JSON.parse(localStorage.getItem("stockItems"))
+    newPointItems = JSON.parse(localStorage.getItem("newPointItems"))
     let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
-    let index = stockPoints.find(function(stockPoints){
-        return stockPoints.stockItems[i]
+    
+    console.log("stockPoints",stockPoints);
+    console.log("stockItems",stockPoints.userID);
+    
+    
+    let index = stockItems.find(function(stockItem){
+        return stockItem.id === id 
     });
-    stockPoints.splice(index, 1)
-    // localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
+    
+    stockItems.splice(index, 1)
+    
+    localStorage.setItem("stockItems", JSON.stringify(stockItems)) 
+    localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
+    
     listStockPoints()
+    
 }
 
 (function ($) {

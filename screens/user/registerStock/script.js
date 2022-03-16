@@ -1,4 +1,6 @@
 let newPointItems = []
+// localStorage.setItem("loggedUser", JSON.stringify({id: dadosCadastros.id, typeUser, username: dadosCadastros.username}))
+
 
 $("#cep").focusout(function(){
     $.ajax({
@@ -49,9 +51,8 @@ function validateFields() {
 
 function saveStockPoint(formFields) {
 
-    let stockPoint = localStorage.getItem("stockPoints");
+    let stockPoint = localStorage.getItem('stockPoints');
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
-
 
     formFields = {
         ...formFields,
@@ -59,8 +60,6 @@ function saveStockPoint(formFields) {
         userID: userInfo.id,
         id: Math.floor(Date.now() * Math.random()).toString(36)
     }
-
-    console.log("formFields", formFields);
 
     if (stockPoint == null) stockPoint = [];
     else stockPoint = JSON.parse(stockPoint);
@@ -76,9 +75,6 @@ function saveStockPoint(formFields) {
         popup: 'animate__animated animate__fadeOutUp'
         }
     })
-
-    console.log("função saveStockPoint, parametros: ");
-    console.log(formFields);
 }
 
 function validateNewListItem() {
@@ -99,7 +95,8 @@ function validateNewListItem() {
     } 
     addItem({
         trashType,
-        amountTrash
+        amountTrash,
+        id: Math.floor(Date.now() * Math.random()).toString(36)
     })
 }
 
