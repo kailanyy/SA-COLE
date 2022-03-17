@@ -1,15 +1,12 @@
+
 function showResult(result) {
-    let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"));
     document.getElementById('latitude').value = result.geometry.location.lat();
+    console.log("latitude",latitude);
     // document.getElementById('longitude').value = result.geometry.location.lng();
-
-
 }
 
 function getLatitudeLongitude(callback, address) {
-    // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
     address = address || 'Ferrol, Galicia, Spain';
-    // Initialize the Geocoder
     geocoder = new google.maps.Geocoder();
     if (geocoder) {
         geocoder.geocode({
@@ -20,6 +17,7 @@ function getLatitudeLongitude(callback, address) {
             }
         });
     }
+    console.log(results);
 }
 
 
@@ -34,7 +32,6 @@ function validateFields() {
     let acceptedTrash = checkboxes.map(function (checkbox){
         return checkbox.value;
     })
-    console.log(acceptedTrash);
 
      if (!cep || !logradouro || !numero || !bairro || !localidade || !complemento) {
         Swal.fire({
@@ -60,15 +57,26 @@ function validateFields() {
      })
 }
 
-function saveCollectionPoint(formFields) {
+function saveCollectionPoint(formFields, results) {
     
     let collectionPoint = localStorage.getItem("collectionPoint");
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
+    document.getElementById('latitude').value 
+    // let latitude = JSON.parse(localStorage.setItem('latitude'));
+    
+//    let latitude = JSON.stringify(localStorage.getItem('latitude'));
+    // latitude.push(latitude)
+//    let latitude = JSON.stringify(localStorage.getItem('latitude')); 
+
+let latitude = document.getElementById("latitude").value;
+
+
 
     formFields = {
         ...formFields,
         userID: userInfo.id,
-        id: Math.floor(Date.now() * Math.random()).toString(36)
+        id: Math.floor(Date.now() * Math.random()).toString(36),
+        results: results
     }
     console.log(formFields);
     
