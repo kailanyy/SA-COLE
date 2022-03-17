@@ -1,3 +1,28 @@
+function showResult(result) {
+    let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"));
+    document.getElementById('latitude').value = result.geometry.location.lat();
+    // document.getElementById('longitude').value = result.geometry.location.lng();
+
+
+}
+
+function getLatitudeLongitude(callback, address) {
+    // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
+    address = address || 'Ferrol, Galicia, Spain';
+    // Initialize the Geocoder
+    geocoder = new google.maps.Geocoder();
+    if (geocoder) {
+        geocoder.geocode({
+            'address': address
+        }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                callback(results[0]);
+            }
+        });
+    }
+}
+
+
 function validateFields() {
     let cep = document.getElementById('cep').value;
     let localidade = document.getElementById('localidade').value;
@@ -23,6 +48,7 @@ function validateFields() {
         })
          return;
      }
+     
      saveCollectionPoint({
          cep,
          localidade,
@@ -30,7 +56,7 @@ function validateFields() {
          bairro,
          numero,
          complemento,
-         acceptedTrash
+         acceptedTrash,
      })
 }
 
@@ -60,7 +86,12 @@ function saveCollectionPoint(formFields) {
         popup: 'animate__animated animate__fadeOutUp'
         }
     })
+
+    for(i = 0; i < collectionPoint.lenght; i++){
+    var address = `${collectionPoint[i].logradouro}, ${collectionPoint[i].numero}` }
+    getLatitudeLongitude(showResult, address)
 }
+
 
 function listCollectionPoint() {
     let collectionPoint = localStorage.getItem("collectionPoint");
