@@ -20,14 +20,14 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item bg-light"><b>Rua:</b> ${stockPoints[i].logradouro}</li>` +
             `<li class="list-group-item bg-light"><b>Número:</b> ${stockPoints[i].numero}</li>` +
             `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
-            `${getHtmlStockPointItemsList(stockPoints[i].stockItems)}` +
+            `${getHtmlStockPointItemsList(stockPoints[i].stockItems, stockPoints[i].id)}` +
             `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir estoque</button></li></ul>` 
     }
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }
 
-function getHtmlStockPointItemsList(stockItems) {
-    
+function getHtmlStockPointItemsList(stockItems, stockPointId) {
+    console.log(stockPointId);
     let htmlString = `<div class="limiter">
                 <div class="wrap-table100">
                     <div class="table100 ver5" style="background-color: #F8F9FA;">
@@ -47,11 +47,12 @@ function getHtmlStockPointItemsList(stockItems) {
                                 <tbody>`
 
     for(y = 0; y < stockItems.length; y++) {
+        "qbr123"
         htmlString += 
         `<tr class="row100 body">
             <td class="cell100 column7">${stockItems[y].trashType}</td>
             <td class="cell100 column8">${stockItems[y].amountTrash}</td>
-            <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="removeStockItemsById(${i})">Excluir</button></td>
+            <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="removeStockItemsById('${stockItems[y].id}','${stockPointId}')">Excluir</button></td>
         </tr>`
     }
 
@@ -88,27 +89,25 @@ function removeItemById(id) {
       })
 }
 
-function removeStockItemsById(stockItems,id){
-    
-    stockItems = JSON.parse(localStorage.getItem("stockItems"))
-    newPointItems = JSON.parse(localStorage.getItem("newPointItems"))
+function removeStockItemsById(idItem, stockPointId){
+    console.log("removeStockItemsById",idItem, stockPointId);
     let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
     
     console.log("stockPoints",stockPoints);
-    console.log("stockItems",stockPoints.userID);
     
-    
-    let index = stockItems.find(function(stockItem){
-        return stockItem.id === id 
+    let pointIndex = stockPoints.findIndex(function(stockPoint){
+        return stockPoint.id === stockPointId
+    });
+
+    let itemIndex = stockPoints[pointIndex].stockItems.findIndex(function(stockItem){
+        return stockItem.id === idItem
     });
     
-    stockItems.splice(index, 1)
-    
-    localStorage.setItem("stockItems", JSON.stringify(stockItems)) 
+    stockPoints[pointIndex].stockItems.splice(itemIndex, 1)
+
     localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
     
     listStockPoints()
-    
 }
 
 (function ($) {
