@@ -298,8 +298,8 @@ const CONFIGURATION = {
             "title":`${stockPoints.bairro}`,
             "address1":`${stockPoints.logradouro}`,
             "address2":`${stockPoints.numero}, ${stockPoints.numero} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
-            "coords":{"lat":38.0, "lng":-100.0},
-            "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
+            "coords":{"lat":`${stockPoints.lat}`, "lng":`${stockPoints.lng}`},
+            "mapOptions": {"center":{"lat":`${stockPoints.lat}`,"lng":`${stockPoints.lng}`},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
             "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
         }
     })    

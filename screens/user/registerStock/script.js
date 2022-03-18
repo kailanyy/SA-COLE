@@ -19,7 +19,6 @@ async function getLatitudeLongitude(address) {
             }
         });
 
-        console.log("RESULTADO", geocoderSearch)
         return {
             lat: geocoderSearch.results[0].geometry.location.lat(),
             lng: geocoderSearch.results[0].geometry.location.lng()
