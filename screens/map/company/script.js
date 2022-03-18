@@ -286,38 +286,38 @@ locator.updateTravelTimes = function() {
 };
 }
 
+function initMap() {
+    new LocatorPlus(CONFIGURATION);
+} 
+
+let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
+console.log("stockPoints",stockPoints);
+
 const CONFIGURATION = {
-"locations": [
-    {"title":"Recicla Futuro","address1":"R. Dep. Antônio Edu Vieira","address2":"46 - Pantanal, Florianópolis - SC, 88040-000, Brasil","coords":{"lat":-27.613483273777113,"lng":-48.52663053558198},"placeId":"ChIJsbltAqU5J5URwn5n--IoZ-8"},
-    {"title":"Ecoponto Comcap","address1":"R. Prof. Egídio Ferreira","address2":"1817 - Capoeiras, Florianópolis - SC, 88090-500, Brasil","coords":{"lat":-27.596381700071834,"lng":-48.603646871302786},"placeId":"ElNSLiBQcm9mLiBFZ8OtZGlvIEZlcnJlaXJhLCAxODE3IC0gQ2Fwb2VpcmFzLCBGbG9yaWFuw7Nwb2xpcyAtIFNDLCA4ODA5MC01MDAsIEJyYXppbCJREk8KNAoyCWtA4zssNieVEWryZancK4aUGh4LEO7B7qEBGhQKEgnx0i781EknlRFNbJFpPf6N4gwQmQ4qFAoSCaGDT0wqNieVEa-s1wM9qfOA"},
-    {"title":"Ecoponto Comcap Morro das Pedras","address1":"R. Francisco Viêira","address2":"198 - Morro das Pedras, Florianópolis - SC, 88066-010, Brasil","coords":{"lat":-27.70646768049001,"lng":-48.50507397843476},"placeId":"ChIJ-31ztzM7J5URRbktztgJoGI"},
-    {"title":"SOS Entulho","address1":"R. Joaquim Carneiro","address2":"989 - Capoeiras, Florianópolis - SC, 88085-157, Brasil","coords":{"lat":-27.605099804599966,"lng":-48.5910750588955},"placeId":"ChIJfRU0LMg3J5UR5lHNccft0Fw"},
-    {"title":"Brasil Atacadista","address1":"Estrada - Rod. Armando Calil Bulos","address2":"5890 - Ingleses Centro, Florianópolis - SC, 88058-001, Brasil","coords":{"lat":-27.43808849023087,"lng":-48.40311773558195},"placeId":"ChIJ-aADcQFCJ5URZXh92s2l50g"},
-    {"title":"Angeloni Ingleses","address1":"Rodovia - SC-403","address2":"6375 - Ingleses Norte, Florianópolis - SC, 88058-001, Brasil","coords":{"lat":-27.437202756489516,"lng":-48.3982270067459},"placeId":"ChIJnTry0f9pJ5UR6FZDVVps00w"},
-    {"title":"Angeloni Centro","address1":"R. Esteves Júnior","address2":"307 - Centro, Florianópolis - SC, 88015-130, Brasil","coords":{"lat":-27.59199113921723,"lng":-48.55312689140168},"placeId":"ChIJfZ8KBiI4J5URW8yltidLYHY"},
-    {"title":"CS Entulhos","address1":"Rod. Tertuliano Brito Xavier","address2":"967 - Canasvieiras, Florianópolis - SC, 88054-600, Brasil","coords":{"lat":-27.434920713912685,"lng":-48.46696216441802},"placeId":"ChIJtzA8nZpDJ5UReZvWFet1M_8"},
-    {"title":"Floripa Shopping","address1":"SC-401","address2":"3116 - Saco Grande, Florianópolis - SC, 88032-005, Brasil","coords":{"lat":-27.55403016050506,"lng":-48.498512606745905},"placeId":"ChIJFUcjnVBBJ5URzBrQOJNN8UA"},
-    {"title":"Centro Integrado de Atendimento ao Cidadão – CIAC","address1":"R. Crisógono Viêira da Cruz - Lagoa da Conceição","address2":"Florianópolis - SC, 88062-110, Brasil","coords":{"lat":-27.60306599423719,"lng":-48.47060243187713},"placeId":"ChIJ_cwBr7c-J5URSdklyCbnpJ0"}
-],
-"mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
-"mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
+    "locations": stockPoints.map(function(stockPoints){
+        return {
+            "title":`${stockPoints.bairro}`,
+            "address1":`${stockPoints.logradouro}`,
+            "address2":`${stockPoints.numero}, ${stockPoints.numero} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
+            "coords":{"lat":38.0, "lng":38.0},
+            "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
+            "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
+        }
+    })    
 };
 
-function initMap() {
-new LocatorPlus(CONFIGURATION);
-} marker
 
-google.maps.event.addDomListener(window, 'load', initialize);
-function initialize() {
-var autocomplete = new google.maps.places.Autocomplete(input);
-autocomplete.addListener('place_changed', function () {
-var place = autocomplete.getPlace();
-// place variable will have all the information you are looking for.
+// google.maps.event.addDomListener(window, 'load', initialize);
+// function initialize() {
+// var autocomplete = new google.maps.places.Autocomplete(input);
+// autocomplete.addListener('place_changed', function () {
+// var place = autocomplete.getPlace();
+// // place variable will have all the information you are looking for.
  
-  document.getElementById("latitude").value = place.geometry['location'].lat();
-  document.getElementById("longitude").value = place.geometry['location'].lng();
-});
-}
+//   document.getElementById("latitude").value = place.geometry['location'].lat();
+//   document.getElementById("longitude").value = place.geometry['location'].lng();
+// });
+// }
 
 // const CONFIGURATION = {
 // "locations": [

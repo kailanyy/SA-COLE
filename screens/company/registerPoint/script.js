@@ -1,25 +1,29 @@
-
-function showResult(result) {
-    document.getElementById('latitude').value = result.geometry.location.lat();
-    console.log("latitude",latitude);
-    // document.getElementById('longitude').value = result.geometry.location.lng();
+function getResult(result) {
+    return {
+        lat: result.geometry.location.lat(),
+        lng: result.geometry.location.lng()
+    }
 }
 
-function getLatitudeLongitude(callback, address) {
+async function getLatitudeLongitude(address) {
     address = address || 'Ferrol, Galicia, Spain';
     geocoder = new google.maps.Geocoder();
     if (geocoder) {
-        geocoder.geocode({
+        let geocoderSearch = await geocoder.geocode({
             'address': address
         }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                callback(results[0]);
+                return results[0];
             }
         });
-    }
-    console.log(results);
-}
 
+        console.log("RESULTADO", geocoderSearch)
+        return {
+            lat: geocoderSearch.results[0].geometry.location.lat(),
+            lng: geocoderSearch.results[0].geometry.location.lng()
+        };
+    }
+}
 
 function validateFields() {
     let cep = document.getElementById('cep').value;
@@ -57,28 +61,21 @@ function validateFields() {
      })
 }
 
-function saveCollectionPoint(formFields, results) {
-    
+async function saveCollectionPoint(formFields) {    
     let collectionPoint = localStorage.getItem("collectionPoint");
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
     document.getElementById('latitude').value 
-    // let latitude = JSON.parse(localStorage.setItem('latitude'));
+        
+    var address = `${formFields.logradouro}, ${formFields.numero}` 
+
+    let results = await getLatitudeLongitude(address);
     
-//    let latitude = JSON.stringify(localStorage.getItem('latitude'));
-    // latitude.push(latitude)
-//    let latitude = JSON.stringify(localStorage.getItem('latitude')); 
-
-let latitude = document.getElementById("latitude").value;
-
-
-
     formFields = {
         ...formFields,
-        userID: userInfo.id,
+        ...results,
         id: Math.floor(Date.now() * Math.random()).toString(36),
-        results: results
+        userID: userInfo.id,
     }
-    console.log(formFields);
     
     if (collectionPoint == null) collectionPoint = [];
     else collectionPoint = JSON.parse(collectionPoint);
@@ -94,12 +91,7 @@ let latitude = document.getElementById("latitude").value;
         popup: 'animate__animated animate__fadeOutUp'
         }
     })
-
-    for(i = 0; i < collectionPoint.lenght; i++){
-    var address = `${collectionPoint[i].logradouro}, ${collectionPoint[i].numero}` }
-    getLatitudeLongitude(showResult, address)
 }
-
 
 function listCollectionPoint() {
     let collectionPoint = localStorage.getItem("collectionPoint");
@@ -112,7 +104,6 @@ function listCollectionPoint() {
       collectionPoint.forEach(collectionPointInfo => {
         elementoTela.innerHTML += '<li class="list-group-item" >CEP: ' + collectionPointInfo.cep + '</li>';
         elementoTela.innerHTML += '<li class="list-group-item ">Cidade: ' + collectionPointInfo.localidade + '</li> <br>';
-        
       });
     }
   }

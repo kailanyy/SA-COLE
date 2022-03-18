@@ -121,12 +121,6 @@ function printListItems() {
     document.getElementById('listRegisteredItems').innerHTML = htmlListString
 }}
 
-// function removeItemByIndex(index) {
-//     console.log(index);
-//     newPointItems.splice(index, 1)
-//     printListItems();
-// }
-
 (function ($) {
 	"use strict";
 	$('.column100').on('mouseover',function(){

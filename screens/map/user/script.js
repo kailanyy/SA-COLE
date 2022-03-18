@@ -299,7 +299,7 @@ const CONFIGURATION = {
             "title":`${collectionPoints.bairro}`,
             "address1":`${collectionPoints.logradouro}`,
             "address2":`${collectionPoints.numero}, ${collectionPoints.numero} - ${collectionPoints.localidade} - SC, ${collectionPoints.cep}`,
-            "coords":{"lat":-27.613483273777113, "lng":-48.52663053558198},
+            "coords":{"lat":`${collectionPoints.lat}`, "lng":`${collectionPoints.lng}`},
             "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
             "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
         }

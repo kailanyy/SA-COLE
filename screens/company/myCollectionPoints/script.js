@@ -51,6 +51,7 @@ function getAcceptedTrash(acceptedTrash) {
       htmlString +=
       `<tr class="row100 body">
           <td class="cell100 column6">${acceptedTrash[y]}</td>
+          <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="">Excluir</button></td>
       </tr>`
 
     }
@@ -67,6 +68,27 @@ function removeItemById(id) {
   collectionPoint.splice(index, 1)
   localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
   listCollectionPoints()
+}
+
+function removeAcceptedItemById(idItem, stockPointId){
+  console.log("removeStockItemsById",idItem, stockPointId);
+  let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
+  
+  console.log("stockPoints",stockPoints);
+  
+  let pointIndex = stockPoints.findIndex(function(stockPoint){
+      return stockPoint.id === stockPointId
+  });
+
+  let itemIndex = stockPoints[pointIndex].stockItems.findIndex(function(stockItem){
+      return stockItem.id === idItem
+  });
+  
+  stockPoints[pointIndex].stockItems.splice(itemIndex, 1)
+
+  localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
+  
+  listStockPoints()
 }
 
 listCollectionPoints()
