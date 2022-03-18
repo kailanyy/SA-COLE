@@ -291,7 +291,6 @@ function initMap() {
 } 
 
 let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
-console.log("collectionPoint",collectionPoint);
 
 const CONFIGURATION = {
     "locations": collectionPoint.map(function(collectionPoints){

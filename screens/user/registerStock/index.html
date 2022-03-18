@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar pontos</title>
+    <title>Registrar Estoque de Lixo</title>
 	<link rel="stylesheet" href="../../../style/form.css">
 	<link rel="stylesheet" type="text/css" href="../../../style/main.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -16,7 +16,6 @@
 	<link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
 </head>
 <body>
-
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container-fluid">
 		<head>
@@ -100,37 +99,7 @@
 	<div style="text-align: center;">
 	<button class="mt-5 btn btn-success" style="width: 132px; color: white; text-align: center;" type="submit" onclick="validateFields()">Salvar estoque</button>
 	</div>
-
-	<div>
-		<h4 style="text-align: center; margin-top: 40px; margin-bottom: 30px;">Itens registrados</h4> 
-	  </div>	
 	
-	<div class="limiter">
-			<div class="wrap-table100">
-				<div class="table100 ver5 m-b-110">
-					<div class="table100-head">
-						<table>
-							<thead>
-								<tr class="row100 head">
-									<th class="cell100 column1">#</th>
-									<th class="cell100 column2">Tipo de lixo</th>
-									<th class="cell100 column3">Quantidade</th>
-									<th class="cell100 column4">Ação</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
-
-					<div class="table100-body js-pscroll">
-						<table>
-							<tbody id="listRegisteredItems">
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-	</div>
-
 	<nav class="navigation d-flex justify-content-around  flex-direction: column" style="height: 100px; align-items: center;">
 		<div>
 			<a href="../home/index.html" class="nav-link p-0 text-light">
@@ -151,25 +120,15 @@
 		</div>
 	</nav>
 
-
 <script src="../../../js/jquery.min.js"></script>
 <script src="../../../geral/vendor/select2/select2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="../../../geral/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<!-- <script>
-	$('.js-pscroll').each(function(){
-		var ps = new PerfectScrollbar(this);
-
-		$(window).on('resize', function(){
-			ps.update();
-		})
-	});	
-</script> -->
 <script src="../../../sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <script src="./script.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABD" async defer></script>
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </body>
 </html>

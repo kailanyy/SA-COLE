@@ -291,7 +291,6 @@ function initMap() {
 } 
 
 let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
-console.log("stockPoints",stockPoints);
 
 const CONFIGURATION = {
     "locations": stockPoints.map(function(stockPoints){
@@ -299,13 +298,12 @@ const CONFIGURATION = {
             "title":`${stockPoints.bairro}`,
             "address1":`${stockPoints.logradouro}`,
             "address2":`${stockPoints.numero}, ${stockPoints.numero} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
-            "coords":{"lat":38.0, "lng":38.0},
+            "coords":{"lat":38.0, "lng":-100.0},
             "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
             "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
         }
     })    
 };
-
 
 // google.maps.event.addDomListener(window, 'load', initialize);
 // function initialize() {

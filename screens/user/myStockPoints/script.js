@@ -21,7 +21,8 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item bg-light"><b>Número:</b> ${stockPoints[i].numero}</li>` +
             `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
             `${getHtmlStockPointItemsList(stockPoints[i].stockItems, stockPoints[i].id)}` +
-            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir estoque</button></li></ul>` 
+            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir estoque</button></li></ul>` +
+            `<td class="cell100 column8"><button class='btn btn-success btn-sm' onclick="validateNewListItem()">Adicionar ao estoque</button></td>`
     }
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }
@@ -53,12 +54,83 @@ function getHtmlStockPointItemsList(stockItems, stockPointId) {
             <td class="cell100 column7">${stockItems[y].trashType}</td>
             <td class="cell100 column8">${stockItems[y].amountTrash}</td>
             <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="removeStockItemsById('${stockItems[y].id}','${stockPointId}')">Excluir</button></td>
-        </tr>`
+            </tr>`
     }
 
     return htmlString + `</tbody></table></div></div></div></div>`;
 
 } 
+
+function validateNewListItem() {
+    Swal.fire({
+        title: 'Adicionando itens ao estoque atual',
+        html: 
+        `<select>` +
+        `<option value="" selected>Escolha o tipo de lixo</option>` +
+              `<option value="Lâmpada">Lâmpada</option>` +
+              `<option value="Geladeira">Geladeira</option>` +
+              `<option value="Pilha">Pilha</option>` +
+              `<option value="Bateria">Bateria</option>` +
+              `<option value="Fio">Fio</option>` +
+              `<option value="Carregador">Carregador</option>` +
+              `<option value="Celular">Celular</option>` +
+              `<option value="Telefone">Telefone</option>` +
+              `<option value="Rádio">Rádio</option>` +
+              `<option value="Micro-ondas">Micro-ondas</option>` +
+              `<option value="Fogão">Fogão</option>` +
+              `<option value="Televisor">Televisor</option>` +
+              `<option value="Aparelho de Som">Aparelho de Som</option>` +
+              `<option value="Câmera Fotográfica">Câmera Fotográfica</option>` +
+              `<option value="Impressora">Impressora</option>` +
+              `<option value="Teclado">Teclado</option>` +
+              `<option value="Monitor">Monitor</option>` +
+              `<option value="Tablet">Tablet</option>` +
+              ` </select>` +
+              `<p>Quantidade</p>` +
+			  `<input style="width: 48px; margin-top: 7px;" type="number" id="amountTrash">`,
+
+        confirmButtonText: 'confirmar',
+        preConfirm: () => {
+        //   var alcool = Swal.getPopup().querySelector('#alcool').checked
+        //   var cigarro = Swal.getPopup().querySelector('#cigarro').checked
+        //   console.log("Alcool = " + alcool + " Cigarro = "+ cigarro)
+        //   return {alcool: alcool, cigarro: cigarro}
+        validateNewListItem()
+        // Swal.fire('ADDD')
+        }
+      }).then((result) => {
+        // Swal.fire("alcool: "+`${result.value.alcool}`+" and Cigarro: "+`${result.value.cigarro}`);
+        
+      })
+
+    let trashType = document.getElementById('trashType').value;
+    let amountTrash = document.getElementById('amountTrash').value;
+
+    if (!trashType || !amountTrash) {
+        Swal.fire({
+            title: 'Todos os campos devem estar preenchidos',
+            showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+        return;
+    } 
+    Swal.fire('Item Adicionado!')
+    addItem({
+        trashType,
+        amountTrash,
+        id: Math.floor(Date.now() * Math.random()).toString(36)
+    })
+}
+
+let newPointItems = []
+function addItem(item) {
+    newPointItems.push(item)
+    printListItems();
+}
 
 function removeItemById(id) {
 

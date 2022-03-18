@@ -1,6 +1,31 @@
 let newPointItems = []
-// localStorage.setItem("loggedUser", JSON.stringify({id: dadosCadastros.id, typeUser, username: dadosCadastros.username}))
 
+function getResult(result) {
+    return {
+        lat: result.geometry.location.lat(),
+        lng: result.geometry.location.lng()
+    }
+}
+
+async function getLatitudeLongitude(address) {
+    address = address || 'Ferrol, Galicia, Spain';
+    geocoder = new google.maps.Geocoder();
+    if (geocoder) {
+        let geocoderSearch = await geocoder.geocode({
+            'address': address
+        }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                return results[0];
+            }
+        });
+
+        console.log("RESULTADO", geocoderSearch)
+        return {
+            lat: geocoderSearch.results[0].geometry.location.lat(),
+            lng: geocoderSearch.results[0].geometry.location.lng()
+        };
+    }
+}
 
 $("#cep").focusout(function(){
     $.ajax({
@@ -49,13 +74,18 @@ function validateFields() {
     })
 }
 
-function saveStockPoint(formFields) {
+async function saveStockPoint(formFields) {
 
     let stockPoint = localStorage.getItem('stockPoints');
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
 
+    var address = `${formFields.logradouro}, ${formFields.numero}` 
+
+    let results = await getLatitudeLongitude(address);
+
     formFields = {
         ...formFields,
+        ...results,
         stockItems: newPointItems,
         userID: userInfo.id,
         id: Math.floor(Date.now() * Math.random()).toString(36)
@@ -93,6 +123,7 @@ function validateNewListItem() {
         })
         return;
     } 
+    Swal.fire('Item Adicionado!')
     addItem({
         trashType,
         amountTrash,
@@ -105,21 +136,21 @@ function addItem(item) {
     printListItems();
 }
 
-function printListItems() {
-    let htmlListString = "";
-    for(i = 0; i < newPointItems.length; i++) {
-        htmlListString += 
-        `<tbody>
-        <tr class="row100 body">
-            <td class="cell100 column1">${i}</td>
-            <td class="cell100 column2">${newPointItems[i].trashType}</td>
-            <td class="cell100 column5">${newPointItems[i].amountTrash}</td>
-            <td class="cell100 column1"><button class='btn btn-danger' onclick="removeItemById(${i})">Excluir</button></td>
-        </tr>
-    </tbody>`
+// function printListItems() {
+//     let htmlListString = "";
+//     for(i = 0; i < newPointItems.length; i++) {
+//         htmlListString += 
+//         `<tbody>
+//         <tr class="row100 body">
+//             <td class="cell100 column1">${i}</td>
+//             <td class="cell100 column2">${newPointItems[i].trashType}</td>
+//             <td class="cell100 column5">${newPointItems[i].amountTrash}</td>
+//             <td class="cell100 column1"><button class='btn btn-danger' onclick="removeItemById(${i})">Excluir</button></td>
+//         </tr>
+//     </tbody>`
 
-    document.getElementById('listRegisteredItems').innerHTML = htmlListString
-}}
+//     document.getElementById('listRegisteredItems').innerHTML = htmlListString
+// }}
 
 (function ($) {
 	"use strict";
