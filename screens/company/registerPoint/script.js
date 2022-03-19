@@ -17,7 +17,6 @@ async function getLatitudeLongitude(address) {
             }
         });
 
-        console.log("RESULTADO", geocoderSearch)
         return {
             lat: geocoderSearch.results[0].geometry.location.lat(),
             lng: geocoderSearch.results[0].geometry.location.lng()
@@ -64,7 +63,7 @@ function validateFields() {
 async function saveCollectionPoint(formFields) {    
     let collectionPoint = localStorage.getItem("collectionPoint");
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
-    document.getElementById('latitude').value 
+   // document.getElementById('latitude').value 
         
     var address = `${formFields.logradouro}, ${formFields.numero}` 
 
@@ -82,7 +81,7 @@ async function saveCollectionPoint(formFields) {
     collectionPoint.push(formFields);
     localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
      
-    Swal.fire({
+    await Swal.fire({
         title: 'Ponto de coleta cadastrado com sucesso!',
         showClass: {
         popup: 'animate__animated animate__fadeInDown'
@@ -91,6 +90,7 @@ async function saveCollectionPoint(formFields) {
         popup: 'animate__animated animate__fadeOutUp'
         }
     })
+    window.location = "../myCollectionPoints/index.html";
 }
 
 function listCollectionPoint() {
