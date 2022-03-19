@@ -51,7 +51,7 @@ function getAcceptedTrash(acceptedTrash) {
       htmlString +=
       `<tr class="row100 body">
           <td class="cell100 column6">${acceptedTrash[y]}</td>
-          <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="">Excluir</button></td>
+          <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="">"Excluir</button></td>
       </tr>`
 
     }

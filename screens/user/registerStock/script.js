@@ -95,7 +95,7 @@ async function saveStockPoint(formFields) {
     stockPoint.push(formFields);
     localStorage.setItem("stockPoints", JSON.stringify(stockPoint)) 
     
-    Swal.fire({
+    await Swal.fire({
         title: 'Ponto de estoque cadastrado com sucesso!',
         showClass: {
         popup: 'animate__animated animate__fadeInDown'
@@ -104,6 +104,7 @@ async function saveStockPoint(formFields) {
         popup: 'animate__animated animate__fadeOutUp'
         }
     })
+    window.location = "../myStockPoints/index.html";
 }
 
 function validateNewListItem() {
@@ -134,22 +135,6 @@ function addItem(item) {
     newPointItems.push(item)
     printListItems();
 }
-
-// function printListItems() {
-//     let htmlListString = "";
-//     for(i = 0; i < newPointItems.length; i++) {
-//         htmlListString += 
-//         `<tbody>
-//         <tr class="row100 body">
-//             <td class="cell100 column1">${i}</td>
-//             <td class="cell100 column2">${newPointItems[i].trashType}</td>
-//             <td class="cell100 column5">${newPointItems[i].amountTrash}</td>
-//             <td class="cell100 column1"><button class='btn btn-danger' onclick="removeItemById(${i})">Excluir</button></td>
-//         </tr>
-//     </tbody>`
-
-//     document.getElementById('listRegisteredItems').innerHTML = htmlListString
-// }}
 
 (function ($) {
 	"use strict";
