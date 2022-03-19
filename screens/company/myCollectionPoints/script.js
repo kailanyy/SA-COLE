@@ -14,8 +14,8 @@ function printListCollectionPoints(collectionPoint) {
   
   for(i = 0; i < collectionPoint.length; i++) {
     htmlListString += 
-        `<ul class="list-group" style="width: 310px; margin: 50px 0 0 100px; display: inline-block">` +
-        `<li class="list-group-item" style="text-align: center; background-color: #3C8B63; color: white; padding: 13px;">Ponto de Coleta</li>` +
+        `<ul class="list-group" style="width: 330px; margin: 50px 0 0 90px; display: inline-block">` +
+        `<li class="list-group-item" style="text-align: center; background-color: #495371; color: white; padding: 13px;"><span class="icofont-recycle"> </span>Ponto de coleta</li>` +
         `<li class="list-group-item bg-light"><b>CEP: </b>${collectionPoint[i].cep}</li>` +
         `<li class="list-group-item bg-light"><b>Cidade: </b>${collectionPoint[i].localidade}</li>` +
         `<li class="list-group-item bg-light"><b>Bairro: </b>${collectionPoint[i].bairro}</li>` +
@@ -24,7 +24,7 @@ function printListCollectionPoints(collectionPoint) {
         `<li class="list-group-item bg-light"><b>Complemento: </b>${collectionPoint[i].complemento}</li>` +
         `<li class="list-group-item bg-light text-center">${getAcceptedTrash(collectionPoint[i].acceptedTrash)}</li>` +
         `<li class="list-group-item"><button class='btn btn-success w-100' onclick="validateNewListItem()">Adicionar lixos aceitos</button></li>` +
-        `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeAcceptedItemById()">Excluir</button></li></ul>` 
+        `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir ponto de coleta</button></li></ul>` 
     }
 
       document.getElementById('collectionPointsList').innerHTML = htmlListString
@@ -62,13 +62,32 @@ function getAcceptedTrash(acceptedTrash) {
 
 function removeItemById(id) {
   let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
-  
-  let index = collectionPoint.find(function(collectionPoint){
-      return collectionPoint.id === id 
-  });
-  collectionPoint.splice(index, 1)
+
+  Swal.fire({
+    title: 'Você tem certeza?',
+    text: "Você não será capaz de reverter essa ação!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonText: 'Cancelar',
+    confirmButtonText: 'Sim, excluir'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Excluído!',
+        'O ponto de coleta foi excluído.',
+        'success'
+        )
+        let index = collectionPoint.find(function(collectionPoint){
+          return collectionPoint.id === id 
+        });
+        collectionPoint.splice(index, 1)
+        localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
   localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
-  listCollectionPoints()
+        localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+        listCollectionPoints()
+    }
+  })
 }
 
 function removeAcceptedItemById(idItem, collectionPointId){

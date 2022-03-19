@@ -12,8 +12,8 @@ function printListStockPoints(stockPoints) {
     let htmlListString = "";
     for(i = 0; i < stockPoints.length; i++) {
         htmlListString += 
-            `<ul class="list-group" style="width: 310px; margin: 50px 0 0 100px; display: inline-block">` +
-            `<li class="list-group-item" style="text-align: center; background-color: #3c8b63; color: white; padding: 13px;">Meu estoque</li>` +
+            `<ul class="list-group" style="width: 330px; margin: 50px 0 0 90px; display: inline-block">` +
+            `<li class="list-group-item" style="text-align: center; background-color: #495371; color: white; padding: 13px;"><span class="icofont-recycle"> </span>Estoque de lixo</li>` +
             `<li class="list-group-item bg-light"><b>CEP:</b> ${stockPoints[i].cep}</li>` +
             `<li class="list-group-item bg-light"><b>Cidade:</b> ${stockPoints[i].localidade}</li>` +
             `<li class="list-group-item bg-light"><b>Bairro:</b> ${stockPoints[i].bairro}</li>` +
@@ -148,7 +148,7 @@ function removeItemById(id) {
         if (result.isConfirmed) {
           Swal.fire(
             'Excluído!',
-            'O ponto com estoque foi excluído',
+            'O estoque de lixo foi excluído.',
             'success'
             )
             let index = stockPoints.find(function(stockPoint){
@@ -164,22 +164,32 @@ function removeItemById(id) {
 function removeStockItemsById(idItem, stockPointId){
     console.log("removeStockItemsById",idItem, stockPointId);
     let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
-    
-    console.log("stockPoints",stockPoints);
-    
-    let pointIndex = stockPoints.findIndex(function(stockPoint){
-        return stockPoint.id === stockPointId
-    });
 
-    let itemIndex = stockPoints[pointIndex].stockItems.findIndex(function(stockItem){
-        return stockItem.id === idItem
-    });
-    
-    stockPoints[pointIndex].stockItems.splice(itemIndex, 1)
-
-    localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
-    
-    listStockPoints()
+    Swal.fire({
+        title: 'Excluir o lixo do estoque?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Sim, excluir'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Lixo excluído!',
+            '',
+            'success'
+            )
+            let pointIndex = stockPoints.findIndex(function(stockPoint){
+                return stockPoint.id === stockPointId
+            });
+            let itemIndex = stockPoints[pointIndex].stockItems.findIndex(function(stockItem){
+                return stockItem.id === idItem
+            });
+            stockPoints[pointIndex].stockItems.splice(itemIndex, 1)
+            localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
+            listStockPoints()
+        }
+      })
 }
 
 (function ($) {
