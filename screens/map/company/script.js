@@ -295,12 +295,26 @@ let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
 const CONFIGURATION = {
     "locations": stockPoints.map(function(stockPoints){
         return {
-            "title":`${stockPoints.bairro}`,
-            "address1":`${stockPoints.logradouro}`,
+            "title": stockPoints.bairro,
+            "address1": stockPoints.logradouro,
             "address2":`${stockPoints.numero}, ${stockPoints.numero} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
-            "coords":{"lat":`${stockPoints.lat}`, "lng":`${stockPoints.lng}`},
-            "mapOptions": {"center":{"lat":`${stockPoints.lat}`,"lng":`${stockPoints.lng}`},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
-            "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
+            "coords": {
+                "lat": stockPoints.lat,
+                "lng": stockPoints.lng
+            },
+            "mapOptions": {
+                "center": {
+                    "lat": -27.5923185,
+                    "lng": -48.5987419
+                },
+                "fullscreenControl": true,
+                "mapTypeControl": false,
+                "streetViewControl": false,
+                "zoom": 4,
+                "zoomControl": true,
+                "maxZoom": 17
+            },
+            "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"            
         }
     })    
 };

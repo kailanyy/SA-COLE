@@ -295,11 +295,25 @@ let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
 const CONFIGURATION = {
     "locations": collectionPoint.map(function(collectionPoints){
         return {
-            "title":`${collectionPoints.bairro}`,
-            "address1":`${collectionPoints.logradouro}`,
+            "title": collectionPoints.bairro,
+            "address1": collectionPoints.logradouro,
             "address2":`${collectionPoints.numero}, ${collectionPoints.numero} - ${collectionPoints.localidade} - SC, ${collectionPoints.cep}`,
-            "coords":{"lat":`${collectionPoints.lat}`, "lng":`${collectionPoints.lng}`},
-            "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
+            "coords": {
+                "lat": collectionPoints.lat,
+                "lng": collectionPoints.lng
+            },
+            "mapOptions": {
+                "center": {
+                    "lat": -27.5923185,
+                    "lng": -48.5987419
+                },
+                "fullscreenControl": true,
+                "mapTypeControl": false,
+                "streetViewControl": false,
+                "zoom": 4,
+                "zoomControl": true,
+                "maxZoom": 17
+            },
             "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
         }
     })    
