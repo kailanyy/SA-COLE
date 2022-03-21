@@ -297,26 +297,26 @@ const CONFIGURATION = {
         return {
             "title": stockPoints.bairro,
             "address1": stockPoints.logradouro,
-            "address2":`${stockPoints.numero}, ${stockPoints.numero} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
+            "address2":`${stockPoints.numero}, ${stockPoints.complemento} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
             "coords": {
                 "lat": stockPoints.lat,
                 "lng": stockPoints.lng
-            },
-            "mapOptions": {
-                "center": {
-                    "lat": -27.5923185,
-                    "lng": -48.5987419
-                },
-                "fullscreenControl": true,
-                "mapTypeControl": false,
-                "streetViewControl": false,
-                "zoom": 4,
-                "zoomControl": true,
-                "maxZoom": 17
-            },
-            "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"            
+            }
         }
-    })    
+    }),    
+    "mapOptions": {
+        "center": {
+            "lat": 38.0,
+            "lng": -100.0
+        },
+        "fullscreenControl": true,
+        "mapTypeControl": false,
+        "streetViewControl": false,
+        "zoom": 4,
+        "zoomControl": true,
+        "maxZoom": 17
+    },
+    "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"            
 };
 
 // google.maps.event.addDomListener(window, 'load', initialize);

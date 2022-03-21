@@ -297,24 +297,24 @@ const CONFIGURATION = {
         return {
             "title": collectionPoints.bairro,
             "address1": collectionPoints.logradouro,
-            "address2":`${collectionPoints.numero}, ${collectionPoints.numero} - ${collectionPoints.localidade} - SC, ${collectionPoints.cep}`,
+            "address2":`${collectionPoints.numero}, ${collectionPoints.complemento} - ${collectionPoints.localidade} - SC, ${collectionPoints.cep}`,
             "coords": {
                 "lat": collectionPoints.lat,
                 "lng": collectionPoints.lng
-            },
-            "mapOptions": {
-                "center": {
-                    "lat": -27.5923185,
-                    "lng": -48.5987419
-                },
-                "fullscreenControl": true,
-                "mapTypeControl": false,
-                "streetViewControl": false,
-                "zoom": 4,
-                "zoomControl": true,
-                "maxZoom": 17
-            },
-            "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
+            }
         }
-    })    
+    }),    
+    "mapOptions": {
+        "center": {
+            "lat": 38.0,
+            "lng": -100.0
+        },
+        "fullscreenControl": true,
+        "mapTypeControl": false,
+        "streetViewControl": false,
+        "zoom": 4,
+        "zoomControl": true,
+        "maxZoom": 17
+    },
+    "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
 };
