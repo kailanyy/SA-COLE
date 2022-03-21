@@ -32,10 +32,27 @@ function validateFields() {
     let numero = document.getElementById('numero').value;
     let complemento = document.getElementById('complemento').value;
     let checkboxes = [...document.querySelectorAll('input[name=acceptedTrash]:checked')];
-    let acceptedTrash = checkboxes.map(function (checkbox){
+    let acceptedTrash = checkboxes.map(function(checkbox){
         return checkbox.value;
     })
 
+    // ainda sendo um  array
+
+    // console.log("acceptedTrash Array",acceptedTrash);
+
+    // transformando em objeto
+
+    // let acceptedTrashobj = acceptedTrash;
+    //  acceptedTrash = Object.assign({}, acceptedTrashobj);
+
+    // console.log("acceptedTrash",acceptedTrash)
+    // console.log("acceptedTrashobj",acceptedTrashobj)
+
+    //  acceptedTrash = {...acceptedTrash};
+    // console.log(acceptedTrash);
+
+
+  
      if (!cep || !logradouro || !numero || !bairro || !localidade || !complemento) {
         Swal.fire({
             title: 'Todos os campos devem estar preenchidos',
@@ -48,7 +65,18 @@ function validateFields() {
         })
          return;
      }
-     
+
+    //  acceptedTrash = {
+    //      id: Math.floor(Date.now() * Math.random()).toString(36),
+    //      ...acceptedTrash
+    //  }
+
+    //  acceptedTrash = ({
+    //     acceptedTrash,
+    //     id: Math.floor(Date.now() * Math.random()).toString(36)
+    // })
+
+
      saveCollectionPoint({
          cep,
          localidade,
@@ -57,13 +85,13 @@ function validateFields() {
          numero,
          complemento,
          acceptedTrash,
-     })
+        })
 }
 
 async function saveCollectionPoint(formFields) {    
     let collectionPoint = localStorage.getItem("collectionPoint");
+
     let userInfo = JSON.parse(localStorage.getItem('loggedUser'));
-   // document.getElementById('latitude').value 
         
     var address = `${formFields.logradouro}, ${formFields.numero}` 
 
@@ -73,7 +101,7 @@ async function saveCollectionPoint(formFields) {
         ...formFields,
         ...results,
         id: Math.floor(Date.now() * Math.random()).toString(36),
-        userID: userInfo.id,
+        userID: userInfo.id, 
     }
     
     if (collectionPoint == null) collectionPoint = [];

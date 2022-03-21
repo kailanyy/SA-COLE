@@ -22,7 +22,7 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
             `${getHtmlStockPointItemsList(stockPoints[i].stockItems, stockPoints[i].id)}` +
             `<li class="list-group-item"><button class='btn btn-success w-100' onclick="validateNewListItem('${stockPoints[i].id}')">Adicionar lixos ao estoque</button></li>` +
-            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir estoque</button></li></ul>`
+            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removessssssssssItemById(1)">Excluir estoque</button></li></ul>`
     }
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }

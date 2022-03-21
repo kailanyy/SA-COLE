@@ -90,8 +90,8 @@ function removeItemById(id) {
   })
 }
 
-function removeAcceptedItemById(idItem, collectionPointId){
-  console.log("removeStockItemsById",idItem, collectionPointId);
+function removeAcceptedItemByIndex(collectionPointId){
+  console.log("removeAcceptedItemByIndex", collectionPointId);
   let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
   
   console.log("collectionPoint",collectionPoint);
