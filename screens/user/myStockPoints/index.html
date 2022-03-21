@@ -14,26 +14,27 @@
     <link rel="stylesheet" type="text/css" href="../../../geral/vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../../../geral/vendor/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
+    <style>body{min-height:100vh; margin:0; display:flex; flex-direction:column; }</style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <head>
-            <div class="d-flex flex-row">
+            <div class="logo d-flex flex-row">
                 <img style="margin-left: 40px;" width="50px" src="../../../geral/imgs/lixoCinza.png">
                 <h1 style="margin-left: 13px; font-family: KGRedHands;">cole</h1>
             </div>
         </head>
         <nav>
-          <a href="../../map/user/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+          <a href="../../map/user/index.html" class="btn2 btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
             <span class="icofont-google-map"></span>
             <span>Pontos de coleta</span>
           </a>
-          <a href="../myStockPoints/index.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
+          <a href="../myStockPoints/index.html" class="btn2 btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid; margin-right: 2px;">
             <span class="icofont-garbage"></span>
             <span>Meus estoques</span>
           </a>
-          <a href="../../account/user-profile.html" class="btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
+          <a href="../../account/user-profile.html" class="btn2 btn btn-outline-light btn-lg" style="border-radius: 100px; border-radius: 2px solid;">
             <span class="icofont-user"></span>
             <span>Conta</span>
           </a>
@@ -44,12 +45,12 @@
   <h3>Meus estoques de lixo</h3>
 
   <div class="justify-content-center text-center">
-    <a href="../registerStock/index.html" class="btn btn-secondary">Adicionar estoque</a>
+    <a href="../registerStock/index.html" class="btn btn-secondary" style="margin-bottom: 5%;">Adicionar estoque</a>
   </div>
   
   <div id="stockPointsList" style="border-radius: 10px;"></div>
 
-	<nav class="navigation d-flex justify-content-around  flex-direction: column" style="height: 100px; align-items: center;">
+	<nav class="navigation d-flex justify-content-around  flex-direction: column" style="height: 100px; align-items: center; margin-top:auto;">
 		<div>
 			<a href="../../../index.html" class="nav-link p-0 text-light">
 				<i class="icofont-home" style="color: white;"></i>

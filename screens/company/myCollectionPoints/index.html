@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../../../geral/vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../../../geral/vendor/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="shortcut icon" type="imagex/png" href="https://images.vexels.com/media/users/3/128548/isolated/lists/0b91b591dbd426d0c244cbf0c46d3f35-reciclagem-icon-svg.png">
+    <style>body{min-height:100vh; margin:0; display:flex; flex-direction:column; }</style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
@@ -44,10 +45,32 @@
   <h3>Meus pontos de coleta</h3>
 
   <div class="justify-content-center text-center">
-    <a href="../registerPoint/index.html" class="btn btn-secondary">Adicionar ponto</a>
+    <a href="../registerPoint/index.html" class="btn btn-secondary" style="margin-bottom: 5%;">Adicionar ponto</a>
   </div>
 
   <div id="collectionPointsList" style="border-radius: 10px;"></div>
+
+  <nav class="navigation d-flex justify-content-around  flex-direction: column" style="height: 100px; align-items: center; margin-top:auto;">
+		<div>
+			<a href="../../../index.html" class="nav-link p-0 text-light">
+				<i class="icofont-home" style="color: white;"></i>
+				<span>Home</span>
+			</a>
+		</div>
+		
+		<div>
+			<a href="../../qmSomos/index.html" class="nav-link p-0 text-light">
+				<i class="icofont-info-circle" style="color: white;"></i>
+				<span>Sobre a COLE</span>
+			</a>
+		</div>
+
+		<div>
+			<i class="icofont-ui-call" style="color: white;"></i>
+			<span style="color: white;">Fale Conosco</span>
+			<a class="nav-link p-0 text-light">cole@contato.com</a>
+		</div>
+	</nav>
 
   
   <script src="../myCollectionPoints/script.js"></script>

@@ -12,7 +12,7 @@ function printListStockPoints(stockPoints) {
     let htmlListString = "";
     for(i = 0; i < stockPoints.length; i++) {
         htmlListString += 
-            `<ul class="list-group" style="width: 330px; margin: 50px 0 0 90px; display: inline-block">` +
+            `<ul class="list-group" style="width: 330px; margin: 0 0 5% 90px; display: inline-block">` +
             `<li class="list-group-item" style="text-align: center; background-color: #495371; color: white; padding: 13px;"><span class="icofont-recycle"> </span>Estoque de lixo</li>` +
             `<li class="list-group-item bg-light"><b>CEP:</b> ${stockPoints[i].cep}</li>` +
             `<li class="list-group-item bg-light"><b>Cidade:</b> ${stockPoints[i].localidade}</li>` +
