@@ -22,7 +22,7 @@ function printListCollectionPoints(collectionPoint) {
         `<li class="list-group-item bg-light"><b>Rua: </b>${collectionPoint[i].logradouro}</li>` +
         `<li class="list-group-item bg-light"><b>Número: </b>${collectionPoint[i].numero}</li>` +
         `<li class="list-group-item bg-light"><b>Complemento: </b>${collectionPoint[i].complemento}</li>` +
-        `<li class="list-group-item bg-light text-center">${getAcceptedTrash(collectionPoint[i].acceptedTrash)}</li>` +
+        `<li class="list-group-item bg-light text-center">${getAcceptedTrash(collectionPoint[i].acceptedTrash, collectionPoint[i].id)}</li>` +
         `<li class="list-group-item"><button class='btn btn-success w-100' onclick="validateNewListItem()">Adicionar lixos aceitos</button></li>` +
         `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir ponto de coleta</button></li></ul>` 
     }
@@ -30,7 +30,7 @@ function printListCollectionPoints(collectionPoint) {
       document.getElementById('collectionPointsList').innerHTML = htmlListString
 }
 
-function getAcceptedTrash(acceptedTrash) {
+function getAcceptedTrash(acceptedTrash, pointId) {
   let htmlString = `<div class="limiter">
         <div class="wrap-table100">
             <div class="table100 ver5" style="background-color: #F8F9FA;">
@@ -52,7 +52,7 @@ function getAcceptedTrash(acceptedTrash) {
       htmlString +=
       `<tr class="row100 body">
           <td class="cell100 column6">${acceptedTrash[y]}</td>
-          <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="">Excluir</button></td> 
+          <td class="cell100 column8"><button class='btn btn-danger btn-sm' onclick="removeAcceptedItemByIndex(${y},'${pointId}')">Excluir</button></td> 
       </tr>`
 
     }
@@ -90,21 +90,15 @@ function removeItemById(id) {
   })
 }
 
-function removeAcceptedItemByIndex(collectionPointId){
-  console.log("removeAcceptedItemByIndex", collectionPointId);
-  let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
+function removeAcceptedItemByIndex(itemIndex, collectionPointId){
   
-  console.log("collectionPoint",collectionPoint);
+  let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
   
   let pointIndex = collectionPoint.findIndex(function(collectionPoint){
       return collectionPoint.id === collectionPointId
   });
 
-  let itemIndex = collectionPoint[pointIndex].acceptedTrashs.findIndex(function(acceptedTrash){
-      return acceptedTrash.id === idItem
-  });
-  
-  collectionPoint[pointIndex].acceptedTrashs.splice(itemIndex, 1)
+  collectionPoint[pointIndex].acceptedTrash.splice(itemIndex, 1)
 
   localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
   
