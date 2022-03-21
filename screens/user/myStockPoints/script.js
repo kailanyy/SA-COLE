@@ -21,7 +21,7 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item bg-light"><b>Número:</b> ${stockPoints[i].numero}</li>` +
             `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
             `${getHtmlStockPointItemsList(stockPoints[i].stockItems, stockPoints[i].id)}` +
-            `<li class="list-group-item"><button class='btn btn-success w-100' onclick="validateNewListItem()">Adicionar lixos ao estoque</button></li>` +
+            `<li class="list-group-item"><button class='btn btn-success w-100' onclick="validateNewListItem('${stockPoints[i].id}')">Adicionar lixos ao estoque</button></li>` +
             `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir estoque</button></li></ul>`
     }
     document.getElementById('stockPointsList').innerHTML = htmlListString
@@ -61,11 +61,12 @@ function getHtmlStockPointItemsList(stockItems, stockPointId) {
 
 } 
 
-function validateNewListItem() {
-    Swal.fire({
+async function validateNewListItem(pointId) {
+    console.log("pointId",pointId);
+    await Swal.fire({
         title: 'Adicionando itens ao estoque atual',
         html: 
-        `<select>` +
+        `<select id="trashType">` +
         `<option value="" selected>Escolha o tipo de lixo</option>` +
               `<option value="Lâmpada">Lâmpada</option>` +
               `<option value="Geladeira">Geladeira</option>` +
@@ -91,20 +92,14 @@ function validateNewListItem() {
 
         confirmButtonText: 'confirmar',
         preConfirm: () => {
-        //   var alcool = Swal.getPopup().querySelector('#alcool').checked
-        //   var cigarro = Swal.getPopup().querySelector('#cigarro').checked
-        //   console.log("Alcool = " + alcool + " Cigarro = "+ cigarro)
-        //   return {alcool: alcool, cigarro: cigarro}
-        validateNewListItem()
-        // Swal.fire('ADDD')
+
         }
       }).then((result) => {
-        // Swal.fire("alcool: "+`${result.value.alcool}`+" and Cigarro: "+`${result.value.cigarro}`);
         
       })
 
-    let trashType = document.getElementById('trashType').value;
-    let amountTrash = document.getElementById('amountTrash').value;
+    let trashType = Swal.getPopup().querySelector('#trashType').value;
+    let amountTrash = Swal.getPopup().querySelector('#amountTrash').value;
 
     if (!trashType || !amountTrash) {
         Swal.fire({
@@ -117,13 +112,24 @@ function validateNewListItem() {
             }
         })
         return;
-    } 
+    }
+    
     Swal.fire('Item Adicionado!')
-    addItem({
+    let newItem = {
         trashType,
         amountTrash,
         id: Math.floor(Date.now() * Math.random()).toString(36)
-    })
+    }
+
+    let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
+
+    let index = stockPoints.findIndex(stockPoint => stockPoint.id === pointId)
+
+    stockPoints[index].stockItems.push(newItem)
+    
+    localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
+
+    listStockPoints()
 }
 
 let newPointItems = []
