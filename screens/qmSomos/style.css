@@ -2,10 +2,6 @@ body{
     background-color: #495371 !important;
     margin: 0px;
 }
-
-::-webkit-scrollbar { 
-    display: none; 
-}
  
 .navbar {
     background-color: #495371;
