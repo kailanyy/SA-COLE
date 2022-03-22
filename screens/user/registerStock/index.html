@@ -47,7 +47,7 @@
 	  <div class="endereçoEstoque d-flex flex-column" style="width: 230px;">
 		<h4 style="width: 100%; text-align:center; margin-bottom: 18px;">Insira um local com estoque de lixo</h4>
 		<label>CEP</label>
-		<input type="text" id="cep">
+		<input type="text" id="cep" minlenght="8" maxlength="8">
 		<label>Cidade</label>
 		<input type="text" id="localidade">
 		<label>Bairro</label>
@@ -58,6 +58,8 @@
 		<input type="text" id="numero">
 		<label>Complemento</label>
 		<input type="text" id="complemento">
+		<label>Telefone:</label>
+		<input type="text" id="telefone" minlenght="15" maxlength="15" onkeypress="formatarTelefone(this)">
 	 </div>
 	
 	  <div class="lixoEstoque" style="text-align: center;">

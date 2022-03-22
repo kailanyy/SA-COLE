@@ -224,6 +224,7 @@ input[type=number] {
 #locations-panel-list .location-result .address {
     font-size: 0.9em;
     margin-bottom: 0.5em;
+    white-space: pre-line;
 }
 
 #locations-panel-list .location-result .distance {

@@ -20,9 +20,10 @@ function printListStockPoints(stockPoints) {
             `<li class="list-group-item bg-light"><b>Rua:</b> ${stockPoints[i].logradouro}</li>` +
             `<li class="list-group-item bg-light"><b>Número:</b> ${stockPoints[i].numero}</li>` +
             `<li class="list-group-item bg-light"><b>Complemento:</b> ${stockPoints[i].complemento}</li>` +
+            `<li class="list-group-item bg-light"><b>Telefone: </b>${stockPoints[i].telefone}</li>` +
             `${getHtmlStockPointItemsList(stockPoints[i].stockItems, stockPoints[i].id)}` +
             `<li class="list-group-item"><button class='btn btn-success w-100' onclick="validateNewListItem('${stockPoints[i].id}')">Adicionar lixos ao estoque</button></li>` +
-            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removessssssssssItemById(1)">Excluir estoque</button></li></ul>`
+            `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir estoque</button></li></ul>`
     }
     document.getElementById('stockPointsList').innerHTML = htmlListString
 }
@@ -89,11 +90,9 @@ async function validateNewListItem(pointId) {
               ` </select>` +
               `<p>Quantidade</p>` +
 			  `<input style="width: 48px; margin-top: 7px;" type="number" id="amountTrash">`,
-
-        confirmButtonText: 'confirmar',
-        preConfirm: () => {
-
-        }
+              showCancelButton: true,
+              cancelButtonText: 'Cancelar',
+              confirmButtonText: 'Adicionar',
       }).then((result) => {
         
       })
@@ -122,13 +121,9 @@ async function validateNewListItem(pointId) {
     }
 
     let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
-
     let index = stockPoints.findIndex(stockPoint => stockPoint.id === pointId)
-
     stockPoints[index].stockItems.push(newItem)
-    
     localStorage.setItem("stockPoints", JSON.stringify(stockPoints)) 
-
     listStockPoints()
 }
 

@@ -296,9 +296,8 @@ const CONFIGURATION = {
     "locations": collectionPoint.map(function(collectionPoints){
         return {
             "title": collectionPoints.bairro,
-            "address1": collectionPoints.logradouro,
-            "address2":`${collectionPoints.numero}, ${collectionPoints.complemento} - ${collectionPoints.localidade} - SC, ${collectionPoints.cep}
-            Tipos de lixos aceitos: ${collectionPoints.acceptedTrash}`,
+            "address1": `${collectionPoints.logradouro} ${collectionPoints.numero}, ${collectionPoints.complemento} - ${collectionPoints.localidade} - SC, ${collectionPoints.cep}`,
+            "address2": `Telefone: ${collectionPoints.telefone} \n Tipos de lixos aceitos: ${collectionPoints.acceptedTrash}`,
             "coords": {
                 "lat": collectionPoints.lat,
                 "lng": collectionPoints.lng

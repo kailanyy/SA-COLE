@@ -43,7 +43,7 @@
     <div class="endereçoColeta d-flex flex-column" style="width: 230px;">
       <h4 style="width: 100%; text-align:center; margin-bottom: 18px;">Insira um novo ponto de coleta</h4>
       <label>CEP</label>
-      <input type="text" id="cep">
+      <input type="text" id="cep" minlenght="8" maxlength="8">
       <label>Cidade</label>
       <input type="text" id="localidade">
       <label>Bairro</label>
@@ -54,6 +54,8 @@
       <input type="text" id="numero">
       <label>Complemento</label>
       <input type="text" id="complemento">
+      <label>Telefone:</label>
+      <input type="text" id="telefone" minlenght="15" maxlength="15" onkeypress="formatarTelefone(this)">
 
    </div>
 
@@ -138,7 +140,7 @@
     </div>
     </div></div>
 
-	<nav class="navigation d-flex justify-content-around  flex-direction: column" style="height: 100px; align-items: center;">
+	<nav class="navigation d-flex justify-content-around  flex-direction: column" style="height: 100px; align-items: center; margin-top: 4%;">
 		<div>
 			<a href="../../../index.html" class="nav-link p-0 text-light">
 				<i class="icofont-home" style="color: white;"></i>

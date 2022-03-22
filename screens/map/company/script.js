@@ -296,8 +296,8 @@ const CONFIGURATION = {
     "locations": stockPoints.map(function(stockPoints){
         return {
             "title": stockPoints.bairro,
-            "address1": stockPoints.logradouro,
-            "address2":`${stockPoints.numero}, ${stockPoints.complemento} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
+            "address1": `${stockPoints.logradouro} ${stockPoints.numero}, ${stockPoints.complemento} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
+            "address2": `Telefone: ${stockPoints.telefone}`,
             "coords": {
                 "lat": stockPoints.lat,
                 "lng": stockPoints.lng
@@ -318,18 +318,6 @@ const CONFIGURATION = {
     },
     "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"            
 };
-
-// google.maps.event.addDomListener(window, 'load', initialize);
-// function initialize() {
-// var autocomplete = new google.maps.places.Autocomplete(input);
-// autocomplete.addListener('place_changed', function () {
-// var place = autocomplete.getPlace();
-// // place variable will have all the information you are looking for.
- 
-//   document.getElementById("latitude").value = place.geometry['location'].lat();
-//   document.getElementById("longitude").value = place.geometry['location'].lng();
-// });
-// }
 
 // const CONFIGURATION = {
 // "locations": [

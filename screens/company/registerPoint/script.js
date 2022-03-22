@@ -24,6 +24,18 @@ async function getLatitudeLongitude(address) {
     }
 }
 
+function formatarTelefone(telefone){
+    if(telefone.value.length == 0){
+        telefone.value = '(' + telefone.value
+
+    } else if(telefone.value.length == 3){
+        telefone.value = telefone.value + ') '
+
+    } else if(telefone.value.length == 10){
+        telefone.value = telefone.value + '-'
+    }
+}
+
 function validateFields() {
     let cep = document.getElementById('cep').value;
     let localidade = document.getElementById('localidade').value;
@@ -31,6 +43,7 @@ function validateFields() {
     let bairro = document.getElementById('bairro').value;
     let numero = document.getElementById('numero').value;
     let complemento = document.getElementById('complemento').value;
+    let telefone = document.getElementById('telefone').value;
     let checkboxes = [...document.querySelectorAll('input[name=acceptedTrash]:checked')];
     let acceptedTrash = checkboxes.map(function(checkbox){
         return checkbox.value;
@@ -53,7 +66,7 @@ function validateFields() {
 
 
   
-     if (!cep || !logradouro || !numero || !bairro || !localidade || !complemento) {
+     if (!cep || !logradouro || !numero || !bairro || !localidade || !complemento || !telefone) {
         Swal.fire({
             title: 'Todos os campos devem estar preenchidos',
             showClass: {
@@ -84,6 +97,7 @@ function validateFields() {
          bairro,
          numero,
          complemento,
+         telefone,
          acceptedTrash,
         })
 }

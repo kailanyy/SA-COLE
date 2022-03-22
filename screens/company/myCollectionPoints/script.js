@@ -22,6 +22,7 @@ function printListCollectionPoints(collectionPoint) {
         `<li class="list-group-item bg-light"><b>Rua: </b>${collectionPoint[i].logradouro}</li>` +
         `<li class="list-group-item bg-light"><b>Número: </b>${collectionPoint[i].numero}</li>` +
         `<li class="list-group-item bg-light"><b>Complemento: </b>${collectionPoint[i].complemento}</li>` +
+        `<li class="list-group-item bg-light"><b>Telefone: </b>${collectionPoint[i].telefone}</li>` +
         `<li class="list-group-item bg-light text-center">${getAcceptedTrash(collectionPoint[i].acceptedTrash, collectionPoint[i].id)}</li>` +
         `<li class="list-group-item"><button class='btn btn-success w-100' onclick="validateNewListItem()">Adicionar lixos aceitos</button></li>` +
         `<li class="list-group-item"><button class='btn btn-danger w-100' onclick="removeItemById(${i})">Excluir ponto de coleta</button></li></ul>` 
@@ -82,8 +83,6 @@ function removeItemById(id) {
           return collectionPoint.id === id 
         });
         collectionPoint.splice(index, 1)
-        localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
-  localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
         localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
         listCollectionPoints()
     }
