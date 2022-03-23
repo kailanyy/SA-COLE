@@ -1,5 +1,6 @@
 var iPassword = 0 
 
+// mostra na tela o nome do usuário que está logado
 function printLoggedUser(){
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser")) 
 
@@ -9,6 +10,7 @@ function printLoggedUser(){
 
 }
 
+// redireciona o usuário logado para a página inicial
 function exitAccount() {
 
   Swal.fire({
@@ -25,6 +27,7 @@ function exitAccount() {
   })
 }
 
+// pega a senha do localStorage e muda a partir do novo valor digitado no input
 function changePassword(){
   
   (async () => {
@@ -57,6 +60,7 @@ function changePassword(){
   })()
 }
 
+// deleta todos os dados da conta do localStorage
 function deleteAccount(id) {
   let registeredUser = JSON.parse(localStorage.getItem("dadosCadastros"))
 

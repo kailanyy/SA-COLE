@@ -1,3 +1,4 @@
+// valida se todos os campos necessários estão preenchidos
 function validarPreenchimentoCampos() {
   let usuario = document.getElementById('usuario').value;
   let senha = document.getElementById('senha').value;
@@ -14,6 +15,7 @@ function validarPreenchimentoCampos() {
   cadastrar(usuario, senha, typeUser);
 }
 
+// realiza o cadastro e gera um ID específico
 function cadastrar(usuario, senha, typeUser) {
   let dadosCadastros = {
     username: usuario,
@@ -38,7 +40,8 @@ function cadastrar(usuario, senha, typeUser) {
     window.location = "../company/registerPoint/index.html"
   }
 }
-  
+
+// entra na conta e gera um localStorage novo para diferenciar qual conta está logada, redirecionando a partir do tipo de conta
 function login(typeUser){
   let usuarioInput = document.getElementById('usuario').value
   let senhaInput = document.getElementById('senha').value
