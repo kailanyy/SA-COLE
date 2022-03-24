@@ -288,22 +288,23 @@ locator.updateTravelTimes = function() {
 
 function initMap() {
     new LocatorPlus(CONFIGURATION);
-} 
+}
 
 let stockPoints = JSON.parse(localStorage.getItem("stockPoints"))
 
 const CONFIGURATION = {
-    "locations": stockPoints.map(function(stockPoints){
+    "locations": stockPoints.map(function(stockPoint){
         return {
-            "title": stockPoints.bairro,
-            "address1": `${stockPoints.logradouro} ${stockPoints.numero}, ${stockPoints.complemento} - ${stockPoints.localidade} - SC, ${stockPoints.cep}`,
-            "address2": `Telefone: ${stockPoints.telefone}`,
+            "title": stockPoint.bairro,
+            "address1": `${stockPoint.logradouro} ${stockPoint.numero}, ${stockPoint.complemento} - ${stockPoint.localidade} - SC, ${stockPoint.cep}`,
+            "address2": `Telefone: ${stockPoint.telefone}`,
+            "address3": `Lixos a serem descartados: ${stockPoint.stockItems}`,
             "coords": {
-                "lat": stockPoints.lat,
-                "lng": stockPoints.lng
+                "lat": stockPoint.lat,
+                "lng": stockPoint.lng
             }
         }
-    }),    
+    }),
     "mapOptions": {
         "center": {
             "lat": 38.0,
@@ -316,7 +317,7 @@ const CONFIGURATION = {
         "zoomControl": true,
         "maxZoom": 17
     },
-    "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"            
+    "mapsApiKey": "AIzaSyCzYaZQlUdq9fnIyOzwpaS3rYLWruOPqaQ"
 };
 
 // const CONFIGURATION = {
@@ -338,4 +339,4 @@ const CONFIGURATION = {
 
 // function initMap() {
 // new LocatorPlus(CONFIGURATION);
-// } marker 
+// } marker
