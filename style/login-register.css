@@ -11,6 +11,18 @@
   display: none; 
 }
 
+@media screen and (max-width: 944px) {
+  .nav{
+    display: flex !important;
+    position: relative !important;
+    margin-top: 1%;
+  }
+
+  .logo{
+    position: relative !important;
+  }
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -51,7 +63,8 @@ html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
@@ -3396,7 +3409,8 @@ input[type="button"].btn-block {
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
-  list-style: none; }
+  list-style: none;
+  }
 
 .nav-link {
   display: block;
@@ -6452,7 +6466,7 @@ button.bg-dark:focus {
   position: relative !important; }
 
 .position-absolute {
-  position: absolute !important; }
+  position: absolute}
 
 .position-fixed {
   position: fixed !important; }
@@ -8334,7 +8348,8 @@ h1, h2, h3, h4, h5,
   border-radius: 40px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  font-size: 15px; }
+  font-size: 15px;
+  }
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {

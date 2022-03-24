@@ -9,10 +9,10 @@ body{
     color: #E5E5E5;
 }
 
-.col-7{
+.text{
     color: white;
     text-align: center;
-    margin-left: 270px;
+    width: 52%;
 }
 
 footer{
@@ -22,4 +22,14 @@ footer{
     padding: 30px;
     margin: 0px auto;
     margin-top: 7%;
+}
+
+@media screen and (max-width: 550px) {
+    .navbar{
+        margin-bottom: 10%;
+    }
+
+    .text{
+        width: 80%;
+    }
 }
