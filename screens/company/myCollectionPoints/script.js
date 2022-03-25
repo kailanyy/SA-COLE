@@ -14,7 +14,7 @@ function printListCollectionPoints(collectionPoint) {
   
   for(i = 0; i < collectionPoint.length; i++) {
     htmlListString += 
-        `<ul class="list-group" style="width: 330px; margin: 0 0 5% 90px; display: inline-block">` +
+        `<ul class="list-group" style="width: 330px; margin: 0 0 5% 90px; display: inline-block; align-items: flex-start;">` +
         `<li class="list-group-item" style="text-align: center; background-color: #495371; color: white; padding: 13px;"><span class="icofont-recycle"> </span>Ponto de coleta</li>` +
         `<li class="list-group-item bg-light"><b>CEP: </b>${collectionPoint[i].cep}</li>` +
         `<li class="list-group-item bg-light"><b>Cidade: </b>${collectionPoint[i].localidade}</li>` +
@@ -64,109 +64,107 @@ function getAcceptedTrash(acceptedTrash, pointId) {
 async function validateNewListItem(collectionPointId) {
   await Swal.fire({
       title: 'Adicionando tipos de lixo ao ponto de coleta',
-      html: 
-      `                    <div class="col-6">
-      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Lâmpada">Lâmpada</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Geladeira">Geladeira</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Pilha">Pilha</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Bateria">Bateria</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Fio">Fio</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Carregador">Carregador</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Celular">Celular</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Telefone">Telefone</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Rádio">Rádio</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Fogão">Fogão</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Micro-ondas">Micro-ondas</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Televisor">Televisor</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Aparelho de Som">Aparelho de Som</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Câmera Fotográfica">Câmera Fotográfica</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Impressora">Impressora</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Teclado">Teclado</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Monitor">Monitor</input>
-      </div>
-      <div class="col-6">
-          <input class="mx-1" name="acceptedTrash" type="checkbox" value="Tablet">Tablet</input>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-6">
-      </div>`,
+      html: `<div class="d-flex flex-column">
+          <div class="container">
+              <div class="row">
+                  <div class="col-6">
+                  <input class="mx-1" name="acceptedTrash" type="checkbox" value="Lâmpada">Lâmpada</input>
+                  </div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Geladeira">Geladeira</input>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Pilha">Pilha</input>
+                  </div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Bateria">Bateria</input>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Fio">Fio</input>
+                  </div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Carregador">Carregador</input>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Celular">Celular</input>
+                  </div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Telefone">Telefone</input>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Rádio">Rádio</input>
+                  </div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Fogão">Fogão</input>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Micro-ondas">Micro-ondas</input>
+                  </div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Televisor">Televisor</input>
+                  </div>
+                  <div class="w-100">
+                  </div>
+                 
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Impressora">Impressora</input>
+                  </div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Teclado">Teclado</input>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Monitor">Monitor</input>
+                  </div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Tablet">Tablet</input>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                      <input class="mx-1" name="acceptedTrash" type="checkbox" value="Aparelho de Som">Aparelho de Som</input>
+                  </div>
+                  <div class="col-6">
+                  <input class="mx-1" name="acceptedTrash" type="checkbox" value="Câmera Fotográfica">Câmera Fotográfica</input>
+              </div>
+              </div>
+          </div>
+            `,
             showCancelButton: true,
             cancelButtonText: 'Cancelar',
             confirmButtonText: 'Adicionar',
     }).then((result) => {
-      
-    })
+        if (result.isConfirmed) {
 
-    let checkboxes = [...document.querySelectorAll('input[name=acceptedTrash]:checked')];
-    let acceptedTrash = checkboxes.map(function(checkbox){
-    return checkbox.value;
-    })
+            let checkboxes = [...document.querySelectorAll('input[name=acceptedTrash]:checked')];
+            let acceptedTrash = checkboxes.map(function(checkbox){
+            return checkbox.value;
+            })
 
-  if (!acceptedTrash) {
-      Swal.fire({
-          title: 'Selecione um tipo de lixo.',
-          showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-          },
-          hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-          }
-      })
-      return;
-  }
+            itemIndex = [acceptedTrash]
+            let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
 
-  itemIndex = [
-    acceptedTrash
-  ]
-  
-  Swal.fire('Item Adicionado!')
-  let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
-  let pointIndex = collectionPoint.findIndex(function(collectionPoint){
-      return collectionPoint.id === collectionPointId
-  });
-  collectionPoint[pointIndex].acceptedTrash.push(itemIndex)
+            let pointIndex = collectionPoint.findIndex(function(collectionPoint){
+            return collectionPoint.id === collectionPointId
+            });
+
+            collectionPoint[pointIndex].acceptedTrash.push(itemIndex)
+            localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
   localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
-  listCollectionPoints()
+            localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+  localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+            localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+  localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+            localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+            listCollectionPoints()
+            Swal.fire('Item Adicionado!')
+        }
+    })
 }
 
 function removeItemById(id) {
@@ -200,12 +198,36 @@ function removeItemById(id) {
 function removeAcceptedItemByIndex(itemIndex, collectionPointId){
   let collectionPoint = JSON.parse(localStorage.getItem("collectionPoint"))
 
-  let pointIndex = collectionPoint.findIndex(function(collectionPoint){
-      return collectionPoint.id === collectionPointId
-  });
-  collectionPoint[pointIndex].acceptedTrash.splice(itemIndex, 1)
+  Swal.fire({
+    title: 'Excluir o tipo de lixo aceito do ponto?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonText: 'Cancelar',
+    confirmButtonText: 'Sim, excluir'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Tipo de lixo excluído!',
+        '',
+        'success'
+        )
+        let pointIndex = collectionPoint.findIndex(function(collectionPoint){
+            return collectionPoint.id === collectionPointId
+        });
+        collectionPoint[pointIndex].acceptedTrash.splice(itemIndex, 1)
+        localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
   localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
-  listCollectionPoints()
+        localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+  localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+        localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+  localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+        localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+  localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+        localStorage.setItem("collectionPoint", JSON.stringify(collectionPoint)) 
+        listCollectionPoints()
+    }
+  })
 }
 
 listCollectionPoints()
