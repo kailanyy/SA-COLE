@@ -48,23 +48,6 @@ function validateFields() {
     let acceptedTrash = checkboxes.map(function(checkbox){
         return checkbox.value;
     })
-
-    // ainda sendo um  array
-
-    // console.log("acceptedTrash Array",acceptedTrash);
-
-    // transformando em objeto
-
-    // let acceptedTrashobj = acceptedTrash;
-    //  acceptedTrash = Object.assign({}, acceptedTrashobj);
-
-    // console.log("acceptedTrash",acceptedTrash)
-    // console.log("acceptedTrashobj",acceptedTrashobj)
-
-    //  acceptedTrash = {...acceptedTrash};
-    // console.log(acceptedTrash);
-
-
   
      if (!cep || !logradouro || !numero || !bairro || !localidade || !complemento || !telefone) {
         Swal.fire({
@@ -78,17 +61,6 @@ function validateFields() {
         })
          return;
      }
-
-    //  acceptedTrash = {
-    //      id: Math.floor(Date.now() * Math.random()).toString(36),
-    //      ...acceptedTrash
-    //  }
-
-    //  acceptedTrash = ({
-    //     acceptedTrash,
-    //     id: Math.floor(Date.now() * Math.random()).toString(36)
-    // })
-
 
      saveCollectionPoint({
          cep,

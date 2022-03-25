@@ -81,11 +81,6 @@ function deleteAccount(id) {
     registeredUser.splice(index, 1)
     localStorage.setItem("dadosCadastros", JSON.stringify(registeredUser))
 
-    // Swal.fire(
-    //   'Sua conta foi excluída com sucesso!',
-    //   'success'
-    // )
-
     window.location = "../../index.html"
     }
   })
