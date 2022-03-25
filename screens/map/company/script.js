@@ -298,7 +298,6 @@ const CONFIGURATION = {
             "title": stockPoint.bairro,
             "address1": `${stockPoint.logradouro} ${stockPoint.numero}, ${stockPoint.complemento} - ${stockPoint.localidade} - SC, ${stockPoint.cep}`,
             "address2": `Telefone: ${stockPoint.telefone}`,
-            "address3": `Lixos a serem descartados: ${stockPoint.stockItems}`,
             "coords": {
                 "lat": stockPoint.lat,
                 "lng": stockPoint.lng

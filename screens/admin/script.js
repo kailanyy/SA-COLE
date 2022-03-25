@@ -161,7 +161,7 @@ function listStockPoints() {
                 <tr class="row100 head">
                   <th class="cell100 column1">#</th>
                   <th class="cell100 column2">Localização</th>
-                  <th class="cell100 column6">Descarte</th>
+                  <th class="cell100 column6">Contato</th>
                   <th class="cell100 column6">Ação</th>
                 </tr>
               </thead>
@@ -188,7 +188,7 @@ function listStockPoints() {
         <tr class="row100 body">
             <td class="cell100 column1">${i}</td>
             <td class="cell100 column2">${stockPoints[i].cep}, ${stockPoints[i].localidade}, ${stockPoints[i].bairro},\n${stockPoints[i].logradouro}, ${stockPoints[i].numero}, ${stockPoints[i].complemento}</td>
-            <td class="cell100 column5">${stockPoints[i].stockItems}</td>
+            <td class="cell100 column5">${stockPoints[i].telefone}</td>
             <td class="cell100 column1"><button class='btn btn-danger' onclick="removeStockPoint(${i})">Excluir</button></td>
         </tr>
     </tbody>`
