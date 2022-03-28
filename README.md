@@ -4,7 +4,8 @@ A COLE é um sistema voltado ao meio ambiente, desenvolvido para o primeiro seme
 O objetivo é criar uma relação entre usuários que pretendem descartar corretamente seu resíduo eletrônico e empresas de coleta. Você pode registrar seus estoques de lixo ou pontos de coleta.
 
 ## Tecnologias
-HTML, CSS, JavaScript, SweetAlert2, API Google Maps, Bootstrap e jQuery. É usado o LocalStorage para a simulação de dados.
+HTML, CSS, JavaScript, SweetAlert2, API Google Maps, Bootstrap e jQuery. É usado o LocalStorage para a simulação de dados.<br>
+Mídia: Storyset, Canva, ManyPixels e IcoFont. 
 
 ## Equipe:
 * <a href="https://github.com/Eloiza-Costa">Eloiza Costa</a>, <a href="https://www.linkedin.com/in/eloiza-lacerda/">LinkedIn</a>
